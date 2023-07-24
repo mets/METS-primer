@@ -103,7 +103,7 @@ Used to indicate the type of the associated metadata. Values allowed in METS 1 a
 * `DDI`: Data Documentation Initiative
 * `FGDC`: Federal Geographic Data Committee metadata
 * `LOM`: Learning Object Model
-* `PREMIS: PREservation Metadata`: Implementation Strategies
+* `PREMIS`: PREservation Metadata: Implementation Strategies
 * `PREMIS:OBJECT`: PREMIS Object entiry
 * `PREMIS:AGENT`: PREMIS Agent entity
 * `PREMIS:RIGHTS`: PREMIS Rights entity
@@ -120,16 +120,18 @@ contained in the CHECKSUM attribute.
 
 Values allowed in METS 1 are:
 
-* `Adler-32`
-* `CRC32`
-* `HAVAL`
-* `MD5`
-* `MNP`
+* `Adler-32` as defined in [RFC1950](https://datatracker.ietf.org/doc/html/rfc1950) for the compressed ZLIB data format.
+* `CRC32` as specified by [ISO 3309](https://www.iso.org/standard/8561.html) and implemented by zip, gzip, bzip2, png, the POSIX cksum utility, etc.
+* `HAVAL` as specified by [Zheng, Pieprzyk, and Seaberry](https://web.archive.org/web/20150111210116/http://labs.calyptix.com/haval.php)
+* `MD5` as specified by [RFC1321](https://datatracker.ietf.org/doc/html/rfc1321])
+* `MNP` (Microcom Networking Protocols?)
 * `SHA-1`
 * `SHA-256`
 * `SHA-384`
 * `SHA-512`
 * `TIGER`
 * `WHIRLPOOL`
+
+All checksums SHOULD be encoded as hexadecimal digits (rather than as Base64 or some other binary encoding). For example, an MD5 checksum would appear as `CHECKSUMTYPE="MD5" CHECKSUM="68b329da9893e34099c7d8ad5cb9c940"`
 
 Other values MAY be used; their interpretation is implementation-specific.	

@@ -46,22 +46,27 @@ Begin/End Type: An attribute that specifies the kind of `BEGIN` and/or `END` val
 * `BYTE`: An integer byte offset into the referenced file.
 * `IDREF`: A reference to an `ID` attribute in the referenced XML file as described in [XML 1.1](https://www.w3.org/TR/2006/REC-xml11-20060816/#id) or referenced HTML as file as described in [HTML 5](https://www.w3.org/TR/2011/WD-html5-author-20110809/global-attributes.html#the-id-attribute).
 * `SMIL`: A [SMIL (Synchronized Multimedia Integration Language) time value](https://www.w3.org/TR/SMIL3/smil-timing.html) that would be valid for the SMIL `begin` or `end` attribute.
-* `MIDI`: Integer representing delta time within a MIDI file in [Standard MIDI file (SMF) format](https://www.midi.org/specifications/file-format-specifications/standard-midi-files), as described in Standard MIDI Files 1.0 section "Header Chunks".
-* `TIME`: a simple time code of the form HH:MM:SS
-* `TCF`: Time Code Format.
+* `MIDI`: Integer representing delta time within a Standard MIDI File, as described in [Standard MIDI Files 1.0](https://www.midi.org/specifications/file-format-specifications/standard-midi-files) section "Header Chunks".
+* `TIME`: a simple time code of the form HH:MM:SS (hours, minutes, and seconds) without reference to any particular frame or sample rate.
+* `TCF`: Time Code Format as defined in [AES31-3-2021](https://www.aes.org/publications/standards/search.cfm?docID=32) Annex B
 * `XPTR`: an XPointer as described in [XPointer Framework](https://www.w3.org/TR/xptr-framework/)
 
-The following time values are defined by reference to the [ST 12-1:2008 SMPTE standard](https://ieeexplore.ieee.org/document/7289820)
+### SMPTE time codes
+
+The following time values are defined by reference to the [ST 12-1:2008](https://ieeexplore.ieee.org/document/7289820) and [ST 258:2004](https://ieeexplore.ieee.org/document/7291839) SMPTE standards. 
 
 * `SMPTE-25`: SMPTE time code for 25 frame per second material.
 * `SMPTE-24`:  SMPTE time code for 24 frame per second material.
 * `SMPTE-DF30`: SMPTE time code for 30 frame per second frame material.
 * `SMPTE-NDF30`: SMPTE time code for 30 frame per second non-drop material.
 * `SMPTE-DF29.97`: SMPTE time code for 29.97 frame per second drop frame material.
-* `SMPTE-NDF29.97`: SMPTE time code for 29.97 frame per second non drop material.
+* `SMPTE-NDF29.97`: SMPTE time code for 29.97 frame per second non-drop material.
 
+Time codes SHOULD be formatted as in section 8 (Time code) of [ST 258:2004](https://ieeexplore.ieee.org/document/7291839), for example as HH:MM:SS:FF (hours, minutes, seconds, and frames) for a non-drop time code or as HH:MM:SS;FF for a drop frame time code.
 
-Other values MAY be used for this attribute in METS 2; their interpretation is implementation-specific.	
+### Other values
+
+Other values MAY be used for the `BETYPE` attribute in METS 2; their interpretation is implementation-specific.	
 
 ## `LOCTYPE`: `<mptr>`, `<mdRef>`, `<FLocat>`
 ## `MDTYPE`: `<mdRef>`, `<mdWrap>`

@@ -82,8 +82,8 @@ Values allowed from METS 1 are:
 
 * `ARK`: An [Archival Resource Key](https://arks.org/). This SHOULD be a resolvable URL that includes a name mapping authority as described in [ARK anatomy](https://arks.org/about/), rather than a bare identifier of the form `ark:/.../...`.
 * `URN`: A [Uniform Resource Name](https://datatracker.ietf.org/doc/html/rfc8141), that is, a URI that uses the `urn:` scheme.
-* `URL`: Any [Uniform Resource Locator](https://url.spec.whatwg.org/) not covered by another listed category. Relative URLs MUST be resolved as in [Section 5 of RFC3986](https://datatracker.ietf.org/doc/html/rfc3986#section-5). METS does not provide a mechanism for embedding a base URI, so relative URLs will typically be defined either by the URI used to retrieve the METS document ([section 5.1.3](https://datatracker.ietf.org/doc/html/rfc3986#section-5.1.3)) or via an application-specific default ([section 5.1.4](https://datatracker.ietf.org/doc/html/rfc3986#section-5.1.4))
-* `PURL`: A persistent URL such as those created by [Internet Archive](https://purl.archive.org/help) or the [Government Publishing Office](https://purl.access.gpo.gov/) not falling into any more specific category of persistent identifier.
+* `URL`: Any [Uniform Resource Locator](https://url.spec.whatwg.org/) not covered by another listed category. Relative URLs MUST be resolved as in [Section 5 of RFC3986](https://datatracker.ietf.org/doc/html/rfc3986#section-5). METS does not provide a mechanism for embedding a base URI, so base URIs will typically be resolved either by the URI used to retrieve the METS document ([section 5.1.3](https://datatracker.ietf.org/doc/html/rfc3986#section-5.1.3)) or via an application-specific default ([section 5.1.4](https://datatracker.ietf.org/doc/html/rfc3986#section-5.1.4))
+* `PURL`: A persistent URL, such as those created by [Internet Archive](https://purl.archive.org/help) or the [Government Publishing Office](https://purl.access.gpo.gov/), which does not fall into any more specific category of persistent identifier.
 * `HANDLE`: A persistent URL resolvable via [handle.net](https://handle.net/). This SHOULD be a resolvable URL that includes the `https://handle.net/` prefix.
 * `DOI`: A Digital Object Identifier as described in ISO 26324. This SHOULD be a resolvable URL that includes the `https://doi.org/` prefix.
 
@@ -142,4 +142,3 @@ All checksums SHOULD be encoded as hexadecimal digits (rather than as Base64 or 
 Interoperable implementations of METS SHOULD be able to verify checksums using `CRC32`, `MD5`, `SHA-1`, `SHA-256`, `SHA-384`, and `SHA-512`. Use of other checksum formats is NOT RECOMMENDED for interoperability, as tools to compute those checksums are less widely available.
 
 Other values MAY be used; their interpretation is implementation-specific.
-

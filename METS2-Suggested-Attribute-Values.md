@@ -1,5 +1,7 @@
 This page documents suggested attribute values in METS 2. This list currently includes the allowed values from METS 1.
 
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 [[RFC2119](https://www.rfc-editor.org/rfc/rfc9457.html#RFC2119)] [[RFC8174](https://www.rfc-editor.org/rfc/rfc9457.html#RFC8174)] when, and only when, they appear in all capitals, as shown here.
+
 ## `agent@ROLE`
 
 Specifies the function of the agent with respect to the METS record.
@@ -51,7 +53,7 @@ Values allowed in METS 1 are:
 * `IDREF`: A reference to an `ID` attribute in the referenced XML file as described in [XML 1.1](https://www.w3.org/TR/2006/REC-xml11-20060816/#id) or referenced HTML as file as described in [HTML 5](https://www.w3.org/TR/2011/WD-html5-author-20110809/global-attributes.html#the-id-attribute).
 * `SMIL`: A [SMIL (Synchronized Multimedia Integration Language) time value](https://www.w3.org/TR/SMIL3/smil-timing.html) that would be valid for the SMIL `begin` or `end` attribute.
 * `MIDI`: Integer representing delta time within a Standard MIDI File, as described in [Standard MIDI Files 1.0](https://www.midi.org/specifications/file-format-specifications/standard-midi-files) section "Header Chunks".
-* `TIME`: a simple time code of the form HH:MM:SS (hours, minutes, and seconds) without reference to any particular frame or sample rate.
+* `TIME`: [ISO 8601 extended 24-hour time format](https://en.wikipedia.org/wiki/ISO_8601#Times) `HH:MM:SS[.ss]` (hours, minutes, seconds, fractional seconds), without reference to any particular frame or sample rate.
 * `TCF`: Time Code Format as defined in [AES31-3-2021](https://www.aes.org/publications/standards/search.cfm?docID=32) Annex B
 * `XPTR`: an XPointer as described in [XPointer Framework](https://www.w3.org/TR/xptr-framework/)
 
@@ -78,12 +80,14 @@ Specifies the locator type used in the `LOCREF` attribute.
 
 Values allowed in METS 1 are:
 
-* `ARK`
-* `URN`
+* `ARK`: An [Archival Resource Key](https://arks.org/). This SHOULD be a resolvable URL that includes a name mapping authority as described in [ARK anatomy](https://arks.org/about/), rather than a bare identifier of the form `ark:/.../...`.
+* `URN`: A [Uniform Resource Name](https://arks.org/), that is, a URI that uses the `urn:` scheme. URN resolution is implementation specific.
 * `URL`
 * `PURL`
 * `HANDLE`
 * `DOI`
+
+Note that ARK, PURL, HANDLE, and DOI 
 
 Other values MAY be used; their interpretation is implementation-specific.	
 

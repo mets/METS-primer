@@ -91,29 +91,32 @@ Other values MAY be used; their interpretation is implementation-specific. In ME
 
 ## `MDTYPE`: `<mdRef>`, `<mdWrap>`
 
-Used to indicate the type of the associated metadata. Values allowed in METS 1 are:
+Used to indicate the type of the associated metadata. Metadata included or linked to by METS files is typically (but is not required to be) formatted as XML.
 
-* `MARC`: any form of MARC record
-* `MODS`: metadata in the Library of Congress MODS format
-* `EAD`: Encoded Archival Description finding aid
-3 5
-* `DC`: Dublin Core
-* `NISOIMG`: NISO Technical Metadata for Digital Still Images
-* `LC-AV`: technical metadata specified in the Library of Congress A/V prototyping project
-* `VRA`: Visual Resources Association Core
-* `TEIHDR`: Text Encoding Initiative Header
-* `DDI`: Data Documentation Initiative
-* `FGDC`: Federal Geographic Data Committee metadata
-* `LOM`: Learning Object Model
-* `PREMIS`: PREservation Metadata: Implementation Strategies
-* `PREMIS:OBJECT`: PREMIS Object entiry
+Values allowed in METS 1 are:
+
+* `MARC`: MAchine-Readable Cataloging (MARC) record, typically as [MARC-XML](https://www.loc.gov/standards/marcxml/); may also be used for MARC21 binary data as specified by [ISO 2709:2008](https://www.iso.org/standard/41319.html) or for MARC expressed as JSON (commonly-used, but not standardized).
+* `MODS`: [Metadata Object Description Schema](https://www.loc.gov/standards/mods/) metadata
+* `EAD`: [Encoded Archival Description](https://www.loc.gov/ead/) finding aid
+* `DC`: [Dublin Core](https://www.dublincore.org/) metadata, typically using the [simple or qualified Dublin Core XML schemas](https://www.dublincore.org/schemas/xmls/)
+* `NISOIMG`: NISO Technical Metadata for Digital Still Images, typically using the [MIX XML schema](https://www.loc.gov/standards/mix/)
+* `LC-AV`: [AudioMD and VideoMD technical metadata](https://www.loc.gov/standards/amdvmd/index.html)
+* `VRA`: [Visual Resources Association Core](https://www.loc.gov/standards/vracore/) metadata
+* `TEIHDR`: [Text Encoding Initiative Header](https://tei-c.org/release/doc/tei-p5-doc/en/html/HD.html)
+* `DDI`: [Data Documentation Initiative](https://ddialliance.org/Specification/) metadata
+* `FGDC`: Federal Geographic Data Committee (FGDC) [Content Standard for Digital Geospatial Metadata](https://www.fgdc.gov/metadata/csdgm-standard) (CSDGM)
+* `LOM`: [IEEE 1484.12.1](https://standards.ieee.org/ieee/1484.12.1/7699/) Learning Object metadata
+* `PREMIS`: [PREservation Metadata: Implementation Strategies](https://www.loc.gov/standards/premis/) (PREMIS)
+* `PREMIS:OBJECT`: PREMIS Object entity
 * `PREMIS:AGENT`: PREMIS Agent entity
 * `PREMIS:RIGHTS`: PREMIS Rights entity
 * `PREMIS:EVENT`: PREMIS Event entity
-* `TEXTMD`: textMD Technical metadata for text
-* `METSRIGHTS`: Rights Declaration Schema
+* `TEXTMD`: [textMD Technical metadata for text](https://www.loc.gov/standards/textMD/)
+* `METSRIGHTS`: [METS Rights Schema](https://www.loc.gov/standards/rights/METSRights.xsd)
 
-Other values MAY be used; their interpretation is implementation-specific.	
+Other values MAY be used; their interpretation is implementation-specific.
+
+(To add: [AES-EBU metadata](https://www.aes.org/tmpFiles/aessc/20230815/aes60id-2020-i.pdf), [ISO Geospatial Metadata](https://www.fgdc.gov/metadata/iso-standards), ...?)
 
 ## `CHECKSUMTYPE`: `<mdRef>`, `<mdWrap>`
 
@@ -131,9 +134,12 @@ Values allowed in METS 1 are:
 * `SHA-256` as specified by [FIPS 180-4](https://csrc.nist.gov/pubs/fips/180-4/upd1/final)
 * `SHA-384` as specified by [FIPS 180-4](https://csrc.nist.gov/pubs/fips/180-4/upd1/final)
 * `SHA-512` as specified by [FIPS 180-4](https://csrc.nist.gov/pubs/fips/180-4/upd1/final)
-* `TIGER` as specified by [Anderson and Biham](https://www.cl.cam.ac.uk/~rja14/Papers/tiger.pdf))
+* `TIGER` as specified by [Anderson and Biham](https://www.cl.cam.ac.uk/~rja14/Papers/tiger.pdf)
 * `WHIRLPOOL` as specified by [ISO/IEC 10118-3](https://www.iso.org/standard/67116.html)
 
 All checksums SHOULD be encoded as hexadecimal digits (rather than as Base64 or some other binary encoding). For example, an MD5 checksum would appear as `CHECKSUMTYPE="MD5" CHECKSUM="68b329da9893e34099c7d8ad5cb9c940"`
 
-Other values MAY be used; their interpretation is implementation-specific.	
+Interoperable implementations of METS SHOULD be able to verify checksums using `CRC32`, `MD5`, `SHA-1`, `SHA-256`, `SHA-384`, and `SHA-512`. Use of other checksum formats is NOT RECOMMENDED for interoperability, as tools to compute those checksums are less widely available.
+
+Other values MAY be used; their interpretation is implementation-specific.
+

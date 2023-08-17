@@ -97,6 +97,14 @@ Values allowed from METS 1 are:
 
 Other values MAY be used; their interpretation is implementation-specific. In METS 2 (unlike METS 1), other types of locators or identifiers besides URIs MAY be used.
 
+## `stream@BETYPE`
+
+Begin/End Type: An attribute that specifies the kind of `BEGIN` and/or `END` values that are being used.
+
+The only allowed value from METS 1 is `BYTE`; `BEGIN` and `END` point values represent the byte offsets into the parent file. 
+
+Other values MAY be used in METS 2; their interpretation is implementation-specific.
+
 ## `USE`: `<md>`, `<mdGrp>`
 
 Recommended values for metadata `USE` attributes in METS 2 are:

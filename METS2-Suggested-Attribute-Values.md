@@ -82,6 +82,41 @@ Values allowed from METS 1 are any of the values for `BETYPE` except for `IDREF`
 
 Other values MAY be used for the `EXTTYPE` attribute in METS 2; their interpretation is implementation-specific.	
 
+## `stream@BETYPE`
+
+Begin/End Type: An attribute that specifies the kind of `BEGIN` and/or `END` values that are being used.
+
+The only allowed value from METS 1 is `BYTE`; `BEGIN` and `END` point values represent the byte offsets into the parent file. 
+
+Other values MAY be used in METS 2; their interpretation is implementation-specific.
+
+
+
+## `CHECKSUMTYPE`: `<mdRef>`, `<mdWrap>`
+
+Specifies the checksum algorithm used to produce the value
+contained in the CHECKSUM attribute.
+
+Values allowed in METS 1 are:
+
+* `Adler-32` as specified by [RFC1950](https://datatracker.ietf.org/doc/html/rfc1950) for the compressed ZLIB data format.
+* `CRC32` as specified by [ISO 3309](https://www.iso.org/standard/8561.html) and implemented by zip, gzip, bzip2, png, the POSIX cksum utility, etc.
+* `HAVAL` as specified by [Zheng, Pieprzyk, and Seaberry](https://web.archive.org/web/20150111210116/http://labs.calyptix.com/haval.php)
+* `MD5` as specified by [RFC1321](https://datatracker.ietf.org/doc/html/rfc1321)
+* `MNP` Microcom Networking Protocols
+* `SHA-1` as specified by [FIPS 180-4](https://csrc.nist.gov/pubs/fips/180-4/upd1/final)
+* `SHA-256` as specified by [FIPS 180-4](https://csrc.nist.gov/pubs/fips/180-4/upd1/final)
+* `SHA-384` as specified by [FIPS 180-4](https://csrc.nist.gov/pubs/fips/180-4/upd1/final)
+* `SHA-512` as specified by [FIPS 180-4](https://csrc.nist.gov/pubs/fips/180-4/upd1/final)
+* `TIGER` as specified by [Anderson and Biham](https://www.cl.cam.ac.uk/~rja14/Papers/tiger.pdf)
+* `WHIRLPOOL` as specified by [ISO/IEC 10118-3](https://www.iso.org/standard/67116.html)
+
+All checksums SHOULD be encoded as hexadecimal digits (rather than as Base64 or some other binary encoding). For example, an MD5 checksum would appear as `CHECKSUMTYPE="MD5" CHECKSUM="68b329da9893e34099c7d8ad5cb9c940"`
+
+Interoperable implementations of METS SHOULD be able to verify checksums using `CRC32`, `MD5`, `SHA-1`, `SHA-256`, `SHA-384`, and `SHA-512`. Use of other checksum formats is NOT RECOMMENDED for interoperability, as tools to compute those checksums are less widely available.
+
+Other values MAY be used; their interpretation is implementation-specific.
+
 ## `LOCTYPE`: `<mptr>`, `<mdRef>`, `<FLocat>`
 
 Specifies the locator type used in the `LOCREF` attribute.
@@ -96,27 +131,6 @@ Values allowed from METS 1 are:
 * `DOI`: A Digital Object Identifier as described in ISO 26324. This SHOULD be a resolvable URL that includes the `https://doi.org/` prefix.
 
 Other values MAY be used; their interpretation is implementation-specific. In METS 2 (unlike METS 1), other types of locators or identifiers besides URIs MAY be used.
-
-## `stream@BETYPE`
-
-Begin/End Type: An attribute that specifies the kind of `BEGIN` and/or `END` values that are being used.
-
-The only allowed value from METS 1 is `BYTE`; `BEGIN` and `END` point values represent the byte offsets into the parent file. 
-
-Other values MAY be used in METS 2; their interpretation is implementation-specific.
-
-## `USE`: `<md>`, `<mdGrp>`
-
-Recommended values for metadata `USE` attributes in METS 2 are:
-
-* `DESCRIPTIVE` - Used to record descriptive metadata pertaining to the METS object as a whole or one of its components. Can be expressed according to many description standards (i.e., MARC, MODS, Dublin Core, TEI Header, EAD, VRA, FGDC, DDI) or any other appropriate XML schema. Corresponds to `<dmdSec>` in METS 1.
-* `TECHNICAL` - Used to record technical metadata about a component of the METS object, such as a digital content file. May be expressed using schemas such as [MIX](https://www.loc.gov/mix/), [AudioMD/VideoMD](https://www.loc.gov/standards/amdvmd/index.html), [TextMD](https://www.loc.gov/standards/textMD/), or any other appropriate XML schema. Corresponds to `<techMD>` in METS 1. 
-* `RIGHTS` - Records information about copyright and licensing pertaining to a component of the METS object. Rights metadata can be expressed using [PREMIS](https://www.loc.gov/standards/premis/) Rights or any other appropriate XML schema. Corresponds to `<rightsMD>` in METS 1. 
-* `SOURCE` - Used to record descriptive and administrative metadata about the source format or media of a component of the METS object such as a digital content file. It is often used for discovery, data administration or preservation of the digital object. Corresponds to `<sourceMD>` in METS 1. 
-* `PROVENANCE` - Used to record any preservation-related actions taken on the various files which comprise a digital object (e.g., those subsequent to the initial digitization of the files such as transformation or migrations) or, in the case of born digital materials, the files’ creation. In short, digital provenance should be used to record information that allows both archival/library staff and scholars to understand what modifications have been made to a digital object and/or its constituent parts during its life cycle. This information can then be used to judge how those processes might have altered or corrupted the object’s ability to accurately represent the original item. One might, for example, record master derivative relationships and the process by which those derivations have been created. It may also be used for information regarding the migration/transformation of a file from its original digitization (e.g., OCR, TEI, etc.,) to its current incarnation as a digital object (e.g., JPEG2000). Can be expressed can be expressed using [PREMIS](https://www.loc.gov/standards/premis/) Events or other appropriate XML schemas. Corresponds to `<digiprovMD>` in METS 1. 
-
-Other values MAY be used; their interpretation is implementation-specific.
-
 
 
 ## `MDTYPE`: `<mdRef>`, `<mdWrap>`
@@ -148,27 +162,16 @@ Other values MAY be used; their interpretation is implementation-specific.
 
 (To add: [AES-EBU metadata](https://www.aes.org/tmpFiles/aessc/20230815/aes60id-2020-i.pdf), [ISO Geospatial Metadata](https://www.fgdc.gov/metadata/iso-standards), ...?)
 
-## `CHECKSUMTYPE`: `<mdRef>`, `<mdWrap>`
+## `USE`: `<md>`, `<mdGrp>`
 
-Specifies the checksum algorithm used to produce the value
-contained in the CHECKSUM attribute.
+Recommended values for metadata `USE` attributes in METS 2 are:
 
-Values allowed in METS 1 are:
-
-* `Adler-32` as specified by [RFC1950](https://datatracker.ietf.org/doc/html/rfc1950) for the compressed ZLIB data format.
-* `CRC32` as specified by [ISO 3309](https://www.iso.org/standard/8561.html) and implemented by zip, gzip, bzip2, png, the POSIX cksum utility, etc.
-* `HAVAL` as specified by [Zheng, Pieprzyk, and Seaberry](https://web.archive.org/web/20150111210116/http://labs.calyptix.com/haval.php)
-* `MD5` as specified by [RFC1321](https://datatracker.ietf.org/doc/html/rfc1321)
-* `MNP` Microcom Networking Protocols
-* `SHA-1` as specified by [FIPS 180-4](https://csrc.nist.gov/pubs/fips/180-4/upd1/final)
-* `SHA-256` as specified by [FIPS 180-4](https://csrc.nist.gov/pubs/fips/180-4/upd1/final)
-* `SHA-384` as specified by [FIPS 180-4](https://csrc.nist.gov/pubs/fips/180-4/upd1/final)
-* `SHA-512` as specified by [FIPS 180-4](https://csrc.nist.gov/pubs/fips/180-4/upd1/final)
-* `TIGER` as specified by [Anderson and Biham](https://www.cl.cam.ac.uk/~rja14/Papers/tiger.pdf)
-* `WHIRLPOOL` as specified by [ISO/IEC 10118-3](https://www.iso.org/standard/67116.html)
-
-All checksums SHOULD be encoded as hexadecimal digits (rather than as Base64 or some other binary encoding). For example, an MD5 checksum would appear as `CHECKSUMTYPE="MD5" CHECKSUM="68b329da9893e34099c7d8ad5cb9c940"`
-
-Interoperable implementations of METS SHOULD be able to verify checksums using `CRC32`, `MD5`, `SHA-1`, `SHA-256`, `SHA-384`, and `SHA-512`. Use of other checksum formats is NOT RECOMMENDED for interoperability, as tools to compute those checksums are less widely available.
+* `DESCRIPTIVE` - Used to record descriptive metadata pertaining to the METS object as a whole or one of its components. Can be expressed according to many description standards (i.e., MARC, MODS, Dublin Core, TEI Header, EAD, VRA, FGDC, DDI) or any other appropriate XML schema. Corresponds to `<dmdSec>` in METS 1.
+* `TECHNICAL` - Used to record technical metadata about a component of the METS object, such as a digital content file. May be expressed using schemas such as [MIX](https://www.loc.gov/mix/), [AudioMD/VideoMD](https://www.loc.gov/standards/amdvmd/index.html), [TextMD](https://www.loc.gov/standards/textMD/), or any other appropriate XML schema. Corresponds to `<techMD>` in METS 1. 
+* `RIGHTS` - Records information about copyright and licensing pertaining to a component of the METS object. Rights metadata can be expressed using [PREMIS](https://www.loc.gov/standards/premis/) Rights or any other appropriate XML schema. Corresponds to `<rightsMD>` in METS 1. 
+* `SOURCE` - Used to record descriptive and administrative metadata about the source format or media of a component of the METS object such as a digital content file. It is often used for discovery, data administration or preservation of the digital object. Corresponds to `<sourceMD>` in METS 1. 
+* `PROVENANCE` - Used to record any preservation-related actions taken on the various files which comprise a digital object (e.g., those subsequent to the initial digitization of the files such as transformation or migrations) or, in the case of born digital materials, the files’ creation. In short, digital provenance should be used to record information that allows both archival/library staff and scholars to understand what modifications have been made to a digital object and/or its constituent parts during its life cycle. This information can then be used to judge how those processes might have altered or corrupted the object’s ability to accurately represent the original item. One might, for example, record master derivative relationships and the process by which those derivations have been created. It may also be used for information regarding the migration/transformation of a file from its original digitization (e.g., OCR, TEI, etc.,) to its current incarnation as a digital object (e.g., JPEG2000). Can be expressed can be expressed using [PREMIS](https://www.loc.gov/standards/premis/) Events or other appropriate XML schemas. Corresponds to `<digiprovMD>` in METS 1. 
 
 Other values MAY be used; their interpretation is implementation-specific.
+
+

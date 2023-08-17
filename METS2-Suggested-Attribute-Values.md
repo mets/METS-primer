@@ -82,7 +82,7 @@ Values allowed from METS 1 are any of the values for `BETYPE` except for `IDREF`
 
 Other values MAY be used for the `EXTTYPE` attribute in METS 2; their interpretation is implementation-specific.	
 
-## `stream@BETYPE`
+## `file@BETYPE`, `stream@BETYPE`
 
 Begin/End Type: An attribute that specifies the kind of `BEGIN` and/or `END` values that are being used.
 

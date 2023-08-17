@@ -74,6 +74,14 @@ Time codes SHOULD be formatted as in section 8 (Time code) of [ST 258:2004](http
 
 Other values MAY be used for the `BETYPE` attribute in METS 2; their interpretation is implementation-specific.	
 
+## `area@EXTTYPE`
+
+Extent type: An attribute that specifies the kind of EXTENT values that are being used. For example if BYTE is specified then EXTENT would represent a byte count. If TIME is specified the EXTENT would represent a duration of time.
+
+Values allowed from METS 1 are any of the values for `BETYPE` except for `IDREF` and `XPTR`.
+
+Other values MAY be used for the `EXTTYPE` attribute in METS 2; their interpretation is implementation-specific.	
+
 ## `LOCTYPE`: `<mptr>`, `<mdRef>`, `<FLocat>`
 
 Specifies the locator type used in the `LOCREF` attribute.

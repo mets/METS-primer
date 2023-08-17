@@ -158,9 +158,21 @@ Values allowed in METS 1 are:
 * `TEXTMD`: [textMD Technical metadata for text](https://www.loc.gov/standards/textMD/)
 * `METSRIGHTS`: [METS Rights Schema](https://www.loc.gov/standards/rights/METSRights.xsd)
 
+Additional recommended values include:
+
+* AUDIOOBJECT - [AES57 metadata](https://www.aes.org/publications/standards/search.cfm?docID=84)
+* EBUCORE - [AES60 metadata](https://www.aes.org/publications/standards/search.cfm?docID=85)
+* DATACITE - [DataCite metadata](https://schema.datacite.org/)
+* [BIBFRAME](https://www.loc.gov/bibframe/)
+* [ALTO](https://www.loc.gov/standards/alto/)
+
+TBD:
+
+* Value for various profiles of [ISO19115 Geospatial Metadata](https://www.fgdc.gov/metadata/iso-standards)?
+
 Other values MAY be used; their interpretation is implementation-specific.
 
-(To add: [AES-EBU metadata](https://www.aes.org/tmpFiles/aessc/20230815/aes60id-2020-i.pdf), [ISO Geospatial Metadata](https://www.fgdc.gov/metadata/iso-standards), ...?)
+
 
 ## `USE`: `<md>`, `<mdGrp>`
 

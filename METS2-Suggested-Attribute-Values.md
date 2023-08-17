@@ -90,7 +90,16 @@ The only allowed value from METS 1 is `BYTE`; `BEGIN` and `END` point values rep
 
 Other values MAY be used in METS 2; their interpretation is implementation-specific.
 
+## `transformfile@TRANSFORMTYPE`
 
+Used to indicate the type of transformation needed to render content of a file accessible. This may include unpacking a file into subsidiary files/streams.
+
+Allowed values from METS 1 are:
+
+* `decompression`: The action of reversing data compression, i.e., the process of encoding information using fewer bits than an unencoded representation would use by means of specific encoding schemas.
+* `decryption`: The process of restoring data that has been obscured to make it unreadable without special knowledge (encrypted data) to its original form.
+
+Other values MAY be used in METS 2; their interpretation is implementation-specific.
 
 ## `CHECKSUMTYPE`: `<mdRef>`, `<mdWrap>`
 

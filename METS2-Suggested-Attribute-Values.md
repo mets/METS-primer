@@ -97,6 +97,20 @@ Values allowed from METS 1 are:
 
 Other values MAY be used; their interpretation is implementation-specific. In METS 2 (unlike METS 1), other types of locators or identifiers besides URIs MAY be used.
 
+## `USE`: `<md>`, `<mdGrp>`
+
+Recommended values for metadata `USE` attributes in METS 2 are:
+
+* `DESCRIPTIVE` - Used to record descriptive metadata pertaining to the METS object as a whole or one of its components. Can be expressed according to many description standards (i.e., MARC, MODS, Dublin Core, TEI Header, EAD, VRA, FGDC, DDI) or any other appropriate XML schema. Corresponds to `<dmdSec>` in METS 1.
+* `TECHNICAL` - Used to record technical metadata about a component of the METS object, such as a digital content file. May be expressed using schemas such as [MIX](https://www.loc.gov/mix/), [AudioMD/VideoMD](https://www.loc.gov/standards/amdvmd/index.html), [TextMD](https://www.loc.gov/standards/textMD/), or any other appropriate XML schema. Corresponds to `<techMD>` in METS 1. 
+* `RIGHTS` - Records information about copyright and licensing pertaining to a component of the METS object. Rights metadata can be expressed using [PREMIS](https://www.loc.gov/standards/premis/) Rights or any other appropriate XML schema. Corresponds to `<rightsMD>` in METS 1. 
+* `SOURCE` - Used to record descriptive and administrative metadata about the source format or media of a component of the METS object such as a digital content file. It is often used for discovery, data administration or preservation of the digital object. Corresponds to `<sourceMD>` in METS 1. 
+* `PROVENANCE` - Used to record any preservation-related actions taken on the various files which comprise a digital object (e.g., those subsequent to the initial digitization of the files such as transformation or migrations) or, in the case of born digital materials, the files’ creation. In short, digital provenance should be used to record information that allows both archival/library staff and scholars to understand what modifications have been made to a digital object and/or its constituent parts during its life cycle. This information can then be used to judge how those processes might have altered or corrupted the object’s ability to accurately represent the original item. One might, for example, record master derivative relationships and the process by which those derivations have been created. It may also be used for information regarding the migration/transformation of a file from its original digitization (e.g., OCR, TEI, etc.,) to its current incarnation as a digital object (e.g., JPEG2000). Can be expressed can be expressed using [PREMIS](https://www.loc.gov/standards/premis/) Events or other appropriate XML schemas. Corresponds to `<digiprovMD>` in METS 1. 
+
+Other values MAY be used; their interpretation is implementation-specific.
+
+
+
 ## `MDTYPE`: `<mdRef>`, `<mdWrap>`
 
 Used to indicate the type of the associated metadata. Metadata included or linked to by METS files is typically (but is not required to be) formatted as XML.

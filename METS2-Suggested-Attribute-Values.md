@@ -16,6 +16,10 @@ Values allowed from METS 1 are:
 * `CUSTODIAN`: The person(s) or institution(s) charged with the oversight of a document/collection.
 * `IPOWNER`: Intellectual Property Owner: The person(s) or institution holding copyright, trade or service marks or other intellectual property rights for the object.
 
+### Other values
+
+Other values are possible; their interpretation is up to the specific METS profile.
+
 ## `agent@TYPE`
 
 Used to specify the type of agent.
@@ -25,9 +29,13 @@ Values allowed from METS 1 are:
 * `INDIVIDUAL`: Use if an individual has served as the agent.
 * `ORGANIZATION`: Use if an institution, corporate body, association, non-profit enterprise, government, religious body, etc. has served as the agent.
 
+### Other values
+
+Other values are possible; their interpretation is up to the specific METS profile.
+
 ## `area@SHAPE`
 
-An attribute that can be used [as in HTML](https://www.w3.org/TR/2011/WD-html5-20110405/author/the-map-element.html#attr-area-shape) to define the shape of the relevant area within the content file pointed to by the &lt;area&gt; element. Typically this would be used with image content (still image or video frame) when only a portion of the image pertains. If `SHAPE` is specified then `COORDS` must also be present. `SHAPE` should be used in conjunction with `COORDS` in the manner defined for the `shape` and `coords` attributes on an [HTML5 <area> element](https://www.w3.org/TR/2011/WD-html5-20110405/author/the-map-element.html#the-area-element). 
+An attribute that can be used [as in HTML](https://www.w3.org/TR/2011/WD-html5-20110405/author/the-map-element.html#attr-area-shape) to define the shape of the relevant area within the content file pointed to by the `<area>` element. Typically this would be used with image content (still image or video frame) when only a portion of the image pertains. If `SHAPE` is specified then `COORDS` must also be present. `SHAPE` should be used in conjunction with `COORDS` in the manner defined for the `shape` and `coords` attributes on an [HTML5 <area> element](https://www.w3.org/TR/2011/WD-html5-20110405/author/the-map-element.html#the-area-element). 
 
 Values allowed from METS 1 are:
 
@@ -36,6 +44,8 @@ Values allowed from METS 1 are:
 * `POLY`
 
 Implementations should interpret these values as in HTML 5. 
+
+### Other values
 				
 Other values may be used for this attribute in METS 2, but their interpretation is implementation-specific.
 
@@ -76,6 +86,8 @@ Extent type: An attribute that specifies the kind of `EXTENT` values that are be
 
 Values allowed from METS 1 are any of the values for `BETYPE` except for `IDREF` and `XPTR`.
 
+### Other values
+
 Other values are possible; their interpretation is up to the specific METS profile.
 
 ## `file@BETYPE`, `stream@BETYPE`
@@ -83,6 +95,8 @@ Other values are possible; their interpretation is up to the specific METS profi
 Begin/End Type: An attribute that specifies the kind of `BEGIN` and/or `END` values that are being used.
 
 The only allowed value from METS 1 is `BYTE`; `BEGIN` and `END` point values represent the byte offsets into the parent file. 
+
+### Other values
 
 Other values are possible; their interpretation is up to the specific METS profile.
 
@@ -94,6 +108,8 @@ Allowed values from METS 1 are:
 
 * `decompression`: The action of reversing data compression, i.e., the process of encoding information using fewer bits than an unencoded representation would use by means of specific encoding schemas.
 * `decryption`: The process of restoring data that has been obscured to make it unreadable without special knowledge (encrypted data) to its original form.
+
+### Other values
 
 Possible values and their interpretation should be specified in the METS profile.
 
@@ -120,6 +136,8 @@ Generally, checksums should be encoded as hexadecimal digits (rather than as Bas
 
 Interoperable implementations of METS should be able to verify checksums using `CRC32`, `MD5`, `SHA-1`, `SHA-256`, `SHA-384`, and `SHA-512`, as these checksums are in wide use and tools to compute them are readily available.
 
+### Other values
+
 Other values are possible; their interpretation is up to the specific METS profile.
 
 ## `LOCTYPE`: `<mptr>`, `<mdRef>`, `<FLocat>`
@@ -135,12 +153,14 @@ Values allowed from METS 1 are:
 * `HANDLE`: A persistent URL resolvable via [handle.net](https://handle.net/). For interoperability, this should be a resolvable URL that includes the `https://handle.net/` prefix.
 * `DOI`: A Digital Object Identifier as described in ISO 26324. For interoperability, this should be a resolvable URL that includes the `https://doi.org/` prefix.
 
+### Other values
+
 Other values are possible; their interpretation is up to the specific METS profile.
 
 
 ## `MDTYPE`: `<mdRef>`, `<mdWrap>`
 
-Used to indicate the type of the associated metadata. Metadata included or linked to by METS files is typically (but is not required to be) formatted as XML.  For a given implementation, the METS profile should specify the allowed values for `MDREF` and the corresponding syntax of included or linked metadata.
+Used to indicate the type of the associated metadata. Metadata included or linked to by METS files is typically (but is not required to be) formatted as XML.  For a given implementation, the METS profile should specify the allowed values for `MDTYPE` and the corresponding syntax of included or linked metadata.
 
 Values allowed in METS 1 are:
 
@@ -175,6 +195,8 @@ TBD:
 
 * Value for various profiles of [ISO19115 Geospatial Metadata](https://www.fgdc.gov/metadata/iso-standards)?
 
+### Other values
+
 Other values are possible; their interpretation is up to the specific METS profile.
 
 ## `USE`: `<md>`, `<mdGrp>`
@@ -186,6 +208,8 @@ Recommended values for metadata `USE` attributes in METS 2 are:
 * `RIGHTS` - Records information about copyright and licensing pertaining to a component of the METS object. Rights metadata can be expressed using [PREMIS](https://www.loc.gov/standards/premis/) Rights or any other appropriate XML schema. Corresponds to `<rightsMD>` in METS 1. 
 * `SOURCE` - Used to record descriptive and administrative metadata about the source format or media of a component of the METS object such as a digital content file. It is often used for discovery, data administration or preservation of the digital object. Corresponds to `<sourceMD>` in METS 1. 
 * `PROVENANCE` - Used to record any preservation-related actions taken on the various files which comprise a digital object (e.g., those subsequent to the initial digitization of the files such as transformation or migrations) or, in the case of born digital materials, the files’ creation. In short, digital provenance should be used to record information that allows both archival/library staff and scholars to understand what modifications have been made to a digital object and/or its constituent parts during its life cycle. This information can then be used to judge how those processes might have altered or corrupted the object’s ability to accurately represent the original item. One might, for example, record master derivative relationships and the process by which those derivations have been created. It may also be used for information regarding the migration/transformation of a file from its original digitization (e.g., OCR, TEI, etc.,) to its current incarnation as a digital object (e.g., JPEG2000). Can be expressed can be expressed using [PREMIS](https://www.loc.gov/standards/premis/) Events or other appropriate XML schemas. Corresponds to `<digiprovMD>` in METS 1. 
+
+### Other values
 
 Other values are possible; their interpretation is up to the specific METS profile.
 

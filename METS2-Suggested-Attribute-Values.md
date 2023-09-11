@@ -188,8 +188,8 @@ Additional values could include:
 * `AUDIOOBJECT` - [AES57 metadata](https://www.aes.org/publications/standards/search.cfm?docID=84)
 * `EBUCORE` - [AES60 metadata](https://www.aes.org/publications/standards/search.cfm?docID=85)
 * `DATACITE` - [DataCite metadata](https://schema.datacite.org/)
-* `[BIBFRAME](https://www.loc.gov/bibframe/)`
-* `[ALTO](https://www.loc.gov/standards/alto/)`
+* [`BIBFRAME`](https://www.loc.gov/bibframe/)
+* [`ALTO`](https://www.loc.gov/standards/alto/)
 
 ### Other values
 

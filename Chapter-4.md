@@ -1,3 +1,7 @@
+Text only moved from Primer version 1
+
+***
+
 # Chapter 4:  Common constructs and standards
 
 ## XML Technologies and Specifications used throughout METS

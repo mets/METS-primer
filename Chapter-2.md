@@ -511,16 +511,16 @@ In addition to intellectual property rights information, long-term management an
         			</mix:ScanningSystemSoftware>
 
 
-        		&lt;/mix:ScanningSystemCapture>
+        		</mix:ScanningSystemCapture>
 
 
-        		&lt;mix:DateTimeCreated>2006-03-13T12:05:05&lt;/mix:DateTimeCreated>
+        		<mix:DateTimeCreated>2006-03-13T12:05:05</mix:DateTimeCreated>
 
 
-        	&lt;/mix:ImageCreation>
+        	</mix:ImageCreation>
 
 
-        	&lt;mix:ImagingPerformanceAssessment>
+        	<mix:ImagingPerformanceAssessment>
 
 
         		<mix:SpatialMetrics>

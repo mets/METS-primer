@@ -22,5 +22,5 @@ Questions or issues related to creating a METS profile can also be directed to t
 
 
 
-## **Profile Registration **
+## **Profile Registration**
 Once an institution is ready to register formally its profile, the process is fairly simple. The profile is first vetted for technical compliance with a subset of the METS Editorial Board, and then made available to the full METS community on the METS listserv for a short period of time.  If no serious objections or concerns are expressed by either the Board or the METS community, the profile receives registration status and is listed on the METS website.  Both current and deprecated versions of profiles are included on the METS website in case others in the METS community are relying upon a previous version of a registered schema.  More specific documentation of the elements of the METS profile schema [http://www.loc.gov/standards/mets/profile_docs/mets.profile.v1-2.html] can also be found on the METS website.

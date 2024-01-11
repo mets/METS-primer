@@ -1,3 +1,7 @@
+Text only moved from Primer version 1
+
+***
+
 # Chapter 1:  Introduction and background
 
 

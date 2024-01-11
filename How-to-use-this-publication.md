@@ -3,6 +3,7 @@ Text only moved from Primer version 1
 ***
 
 A wide range of readers were envisioned as this document was being planned, written and edited.  As such, each chapter as presented can often stand alone.
+
 **Chapter 1** serves as its Introduction, providing some general answers to the background and development of METS.  
 **Chapter 2** is designed as an overview and basic tutorial for the use of METS.  It describes how to create a METS document.  
 **Chapter 3** provides more specific documentation about the various elements within the METS schema.  The elements are organized in the order they appear in the METS.xsd.  

@@ -1,3 +1,6 @@
+Text only moved from Primer version 1
+
+***
 
 
 # Chapter 6:  External schema and Controlled Vocabulary

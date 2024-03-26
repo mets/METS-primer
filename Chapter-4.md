@@ -47,7 +47,7 @@ _Example 1: Descriptive metadata_
 
 In the example below the ID attribute value of “MD1” identifies the single ``<md>`` element.  The root `<div>` in the `<structMap>` references this `<md>` by means of its MDID attribute. Thus the encoding indicates that the descriptive metadata in the `<md>` identified by the ID value “MD1” applies to the entire content as represented by the root `<div>` in the `<structMap>`.
 
-```
+```xml
 <mets:mets
     xmlns:mets="http://www.loc.gov/METS/v2" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.loc.gov/METS/v2 https://github.com/mets/METS-schema/raw/mets2/v2/mets.xsd http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-1.xsd"
@@ -77,7 +77,7 @@ In the example below the ID attribute value of “MD1” identifies the single `
 _Example 2: Administrative metadata_ 
 In the example below the ID attribute value of “App4ADM1” identifies the first `<md>` element and the ID value “App4ADM2” identifies the second `<md>` element.  The MDID attribute on the single `<file>` element in the `<fileSec>` references both of these ID values (“App4ADM1 App4ADM2”). Thus the encoding indicates that both the technical metadata in the first `<md>` element identified by the ID value “App4ADM1” and the rights metadata in the second `<md>` element identified by the ID value “App4ADM2” apply to the content file represented by the `<file>` element.
 
-```
+```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:rts="http://cosimo.stanford.edu/sdr/metsrights/" xmlns:mix="http://www.loc.gov/mix/v20"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.loc.gov/METS/v2 https://github.com/mets/METS-schema/raw/mets2/v2/mets.xsd 
@@ -203,7 +203,7 @@ _Example_
 
 In the example below, which is an excerpt from a longer encoding, the second `<div>` element in the `<structMap>` uses the `<area>` element’s BEGIN, END and BETYPE attributes to isolate just the relevant portion of a TEI content file that manifests the `<div>`.  The `<div>` represents a single, dated entry in the diary; and the `<area>` element associates this `<div>` with just the portion of the integral TEI encoding that begins with the TEI element identified by the ID attribute value “entry1” and ends with the TEI element identified by the ID attribute value “entry1end.”
 
-```
+```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2" xmlns:mods="http://www.loc.gov/mods/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.loc.gov/METS/v2 https://github.com/mets/METS-schema/raw/mets2/v2/mets.xsd" OBJID="ark:/13030/kt9s2010hz" TYPE="text"
     LABEL="[Patrick Breen Diary November 20, 1846 - March 1, 1847]" PROFILE="http://www.loc.gov/mets/profiles/00000005.xml">
@@ -243,7 +243,7 @@ _Example_
 
 The example below includes a `<md>` with very abbreviated VRA encoded descriptive metadata.  These metadata include a description of a print series, a description of a single print from this series, and descriptions of multiple images.  The various other parts of the METS document reference the pertinent sections of the VRA encoding by citing ID values identifying elements in the VRA namespace.  For example, each `<file>` element in the `<fileSec>` uses its MDID attribute to cite the ID attribute value that identifies the `<vra:image>` element that describes it. The root `<div>` element in the mets `<structMap>` uses its MDID attribute to cite the ID attribute value that identifies the `<vra:work>` element that describes the print series as a whole; and the `<div>` that is the immediate child of the root `<div>` element, and which represents a single print from the series, uses its MDID attribute to cite the ID attribute value that identifies the `<vra:work>` element that describes the individual print.
 
-```
+```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2" xmlns:vra="http://www.vraweb.org/vracore4.htm" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.loc.gov/METS/v2 https://github.com/mets/METS-schema/raw/mets2/v2/mets.xsd http://www.vraweb.org/vracore4.htm https://www.loc.gov/standards/vracore/vra-strict-20171101.xsd"
     OBJID="ark:/13030/kt9s2009hz" LABEL="Los Caprichos">
@@ -386,12 +386,12 @@ _Example_
 
 In the `<mdSec>` below, the LOCREF attribute cites a URL that identifies the location of an external, EAD based description.
 
-```
-    <mets:mdSec>
-        <mets:md ID="DMD1">
-            <mets:mdRef LABEL="Patrick Breen Papers" LOCREF="http://sunsite2.berkeley.edu/cgi-bin/oac/calher/breenpapers#xyzj0098" LOCTYPE="URL" MDTYPE="EAD"/>
-        </mets:md>
-    </mets:mdSec>
+```xml
+<mets:mdSec>
+    <mets:md ID="DMD1">
+        <mets:mdRef LABEL="Patrick Breen Papers" LOCREF="http://sunsite2.berkeley.edu/cgi-bin/oac/calher/breenpapers#xyzj0098" LOCTYPE="URL" MDTYPE="EAD"/>
+    </mets:md>
+</mets:mdSec>
 ```
 
 **_Context 2: The `<FLocat>` sub-element of the `<file>` elements in the `<fileSec>`_**
@@ -403,12 +403,12 @@ _Example_
 
 In the example below, the LOCREF attribute uses a URL to identify the location of the pertinent external content file. 
 
-```
-        <mets:fileGrp USE="Full view">
-            <mets:file ID="FID1" MIMETYPE="image/jpg" MDID="IMAGE1">
-                <mets:FLocat LOCREF="http://www.museum.cornell.edu/HFJ/permcoll/pdp/img_pr/monstros_l.jpg" LOCTYPE="URL"/>
-            </mets:file>
-        </mets:fileGrp>
+```xml
+<mets:fileGrp USE="Full view">
+  <mets:file ID="FID1" MIMETYPE="image/jpg" MDID="IMAGE1">
+    <mets:FLocat LOCREF="http://www.museum.cornell.edu/HFJ/permcoll/pdp/img_pr/monstros_l.jpg" LOCTYPE="URL"/>
+  </mets:file>
+</mets:fileGrp>
 ```
 
 ## Wrapping metadata and digital content in METS

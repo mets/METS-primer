@@ -1,5 +1,3 @@
-Text currently only moved from Primer version 1
-
 Juha is currently editing:
 
 - Select just needed parts with critical approach
@@ -50,11 +48,8 @@ being stored and/or transmitted by the standard.
 ```xml
 <mets:mets OBJID="loc.natlib.ihas.200003790"
  PROFILE="http://www.loc.gov/mets/profiles/00000007.xml"
- xsi:schemaLocation="http://www.loc.gov/METS_Profile/
- http://www.loc.gov/standards/mets/profile_docs/mets.profile.v1-2.xsd
- http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd
- http://www.loc.gov/mods/v3
- http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
+ xsi:schemaLocation="http://www.loc.gov/METS/v2
+   http://www.loc.gov/standards/mets/mets.xsd">
 ```
 
 ### Elements contained in the root element
@@ -100,12 +95,10 @@ URN, and a human readable LABEL which describes the work being encoded
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<mets:mets xmlns:mets="http://www.loc.gov/METS/"
- xmlns:mods="http://www/loc.gov.mods/v3"
- xmlns:xlink="http://www.w3.org/1999/xlink"
+<mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd
-                     http://www.loc.gov/mods/v3 http://www.loc.gov.mods/v3/mods-3-1.xsd"
+ xsi:schemaLocation="http://www.loc.gov/METS/v2
+   http://www.loc.gov/standards/mets/mets.xsd"
  OBJID="ark:/13030/kt9s2009hz"
  LABEL="Martial Epigrams">
 ```
@@ -260,10 +253,12 @@ supplemented by the XPTR attribute as needed.
 The following example demonstrates the use of the `<mdRef>` element.
 
 ```xml
-<dmdSec ID="DMD1">
-  <mdRef MIMETYPE="text/xml" LABEL="MODS record" LOCTYPE="URN"
-    MDTYPE="MODS" xlink:href="urn:x-nyu:fales1735"/>
-</dmdSec>
+<mdSec>
+  <md ID="DMD1" USE="DESCRIPTIVE">
+    <mdRef MIMETYPE="text/xml" LABEL="MODS record" LOCTYPE="URN"
+      MDTYPE="MODS" LOCREF="urn:x-nyu:fales1735"/>
+  </md>
+</mdSec>
 ```
 
 #### Metadata wrapper -- Example
@@ -303,7 +298,7 @@ the elements appearing in the `<xmlData>` element.
 The following examples demonstrate the use of the `<mdWrap>` element:
 
 ```xml
-<mets:dmdSec ID="DMD1">
+<mets:md ID="DMD1" USE="DESCRIPTIVE">
   <mets:mdWrap MDTYPE="MODS">
     <mets:xmlData>
       <mods:mods>
@@ -349,19 +344,19 @@ The following examples demonstrate the use of the `<mdWrap>` element:
       </mods:mods>
     </mets:xmlData>
   </mets:mdWrap>
-</mets:dmdSec>
+</mets:md>
 ```
 
 #### Descriptive metadata wrapper -- example 2
 
 ```xml
-<dmdSec ID="dmd003">
+<md ID="dmd003" USE="DESCRIPTIVE">
   <mdWrap MIMETYPE="application/marc" MDTYPE="MARC" LABEL="OPAC Record">
     <binData>MDI0ODdjam0gIDIyMDA1ODkgYSA0NU0wMDAxMDA...
       [base 64 encoded data goes here]
     </binData>
   </mdWrap>
-</dmdSec>
+</md>
 ```
 
 [Image]
@@ -374,7 +369,7 @@ have a `<md>` element which includes technical metadata regarding
 a file's preparation:
 
 ```xml
-<mets:techMD ID="AMD001">
+<mets:md ID="AMD001" USE="TECHNICAL">
   <mets:mdWrap MIMETYPE="text/xml" MDTYPE="NISOIMG" LABEL="NISO Img.Data">
     <mets:xmlData>
       <niso:MIMEtype>image/tiff</niso:MIMEtype>
@@ -385,7 +380,7 @@ a file's preparation:
       <niso:ScanningAgency>NYU Press</niso:ScanningAgency>
     </mets:xmlData>
   </mets:mdWrap>
-</mets:techMD>
+</mets:md>
 ```
 
 Within a file section, a `<file>` element within a `<fileGrp>` might
@@ -394,8 +389,8 @@ which it points by referencing an MDID attribute for its `<md>`
 element:
 
 ```xml
-<mets:file ID="FILE001" ADMID="AMD001">
-  <mets:FLocat LOCTYPE="URL"http://dlib.nyu.edu/press/testing.tif"/>
+<mets:file ID="FILE001" MDID="AMD001">
+  <mets:FLocat LOCTYPE="URL" LOCREF="http://dlib.nyu.edu/press/testing.tif"/>
 </mets:file>
 ```
 
@@ -408,7 +403,7 @@ standards (such as CopyrightMD and rightsDeclarationMD) or a locally
 produced XML schema.
 
 ```xml
-<mets:rightsMD ID="ADMRTS1">
+<mets:md ID="ADMRTS1" USE="RIGHTS">
   <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">
     <mets:xmlData>
       <rts:RightsDeclarationMD RIGHTSCATEGORY="PUBLIC DOMAIN">
@@ -429,7 +424,7 @@ produced XML schema.
       </rts:RightsDeclarationMD>
     </mets:xmlData>
   </mets:mdWrap>
-</mets:rightsMD>
+</mets:md>
 ```
 
 #### Source metadata -- example
@@ -449,15 +444,13 @@ important technical metadata about the tape in `<sourceMD>` within an
 `<mdWrap>` element as follows:
 
 ```xml
-<sourceMD ID="SMD_MJF_Tape_0010_Side_A" STATUS="Draft, unformatted"
-    CREATED="2006-08-28T15:36:53">
-  <mdWrap MDTYPE="OTHER" OTHERMDTYPE="Draft AES-X098-SC-03-06-B, version 2006-05-19"
+<mets:md ID="SMD_MJF_Tape_0010_Side_A" STATUS="Draft, unformatted"
+    CREATED="2006-08-28T15:36:53" USE="SOURCE">
+  <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="Draft AES-X098-SC-03-06-B, version 2006-05-19"
       MIMETYPE="audio/x-wave">
-    <xmlData>
+    <mets:xmlData>
       <dataroot xmlns:od="urn:schemas-microsoft-com:officedata"
           generated="2006-08-28T15:36:53">
-        <!--All values for source elements come from the
-            source_metadata table.-->
         <source>
           <ID>1</ID>
           <source_metadata_id>SRC000000001</source_metadata_id>
@@ -481,9 +474,9 @@ important technical metadata about the tape in `<sourceMD>` within an
           <sample_rate/>
         </source>
       </dataroot>
-    </xmlData>
-  </mdWrap>
-</sourceMD>
+    </mets:xmlData>
+  </mets:mdWrap>
+</mets:md>
 ```
 
 #### Digital provenance metadata -- example 1
@@ -508,10 +501,10 @@ expressed according to current digital provenance description standards
 (such as PREMIS) or a locally produced XML schema.
 
 ```xml
-<mets:digiprovMD ID="FPRV24_551">
+<mets:md ID="FPRV24_551" USE="PROVENANCE">
   <mets:xmlData>
     <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="oclcprov">
-      <mets:oclcprov:oclcprov>
+      <oclcprov:oclcprov>
         <oclcprov:digiprovMD>
           <oclcprov:fixityAlgorithm>Adler-32 </oclcprov:fixityAlgorith>
           <oclcprov:fixityCheckResults>202947597</oclcprov:fixityCheckResults>
@@ -522,7 +515,7 @@ expressed according to current digital provenance description standards
           <oclcprov:virusCheckDate>2006-05-15T09:17:49</oclcprov:virusCheckDate>
           <oclcprov:mimeType>application/pdf</oclcprov:mimeType>
         </oclcprov:digiprovMD>
-      </mets:oclcprov:oclcprov>
+      </oclcprov:oclcprov>
     </mets:mdWrap>
   </mets:xmlData>
 </mets:digiprovMD>
@@ -531,16 +524,16 @@ expressed according to current digital provenance description standards
 #### Digital provenance metadata -- example 2
 
 ```xml
-<mets:digiprovMD ID="DP_0755ad93-5fd1-11da-b211-19e7a5cf4814"
-    CREATED="2006-11-27T21:37:13">
+<mets:md ID="DP_0755ad93-5fd1-11da-b211-19e7a5cf4814"
+    CREATED="2006-11-27T21:37:13" USE="PROVENANCE">
   <mets:mdWrap MDTYPE="PREMIS"
     <mets:xmlData xmlns:premis=http://www.loc.gov/standards/premis/v1
         xsi:schemaLocation="http://www.loc.gov/standards/premis/v1
           http://www.loc.gov/standards/premis/v1/Event-v1-1.xsd">
-        <premise:eventIdentifier>
-          <premise:eventIdentifierType>Validation</premises:eventIdentifierType>
-          <premise:eventIdentifierType>Ingest_Validation_01</premis:eventIdentifierValue>
-        </premise:eventIdentifier>
+        <premis:eventIdentifier>
+          <premis:eventIdentifierType>Validation</premis:eventIdentifierType>
+          <premis:eventIdentifierValue>Ingest_Validation_01</premis:eventIdentifierValue>
+        </premis:eventIdentifier>
         <premis:eventType>Validation</premis:eventType>
         <premis:eventDateTime>2006-11-27-08:00</premis:eventDateTime>
         <premis:eventDetail>ValidationResults</premis:eventDetail>
@@ -573,7 +566,7 @@ expressed according to current digital provenance description standards
       </premis:event>
     </mets:xmlData>
   </mets:mdWrap>
-</mets:digiprovMD>
+</mets:md>
 ```
 
 Examples for implementing PREMIS can be found on the PREMIS
@@ -634,13 +627,10 @@ images. The following METS fragment represents the TIFF page images of a
 book:
 
 ```xml
-<mets:mets xmlns:mets="http://www/loc.gov/METS/"
- xmlns:mods="http://www.loc.gov/mods/v3"
- xmlns:xlink="http://www.w3c.org/1999/xlink"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation=" http://www.loc.gov/METS/
- http://www.loc.gov/standards/mets/mets.xsd http://www.loc.gov.mods.v3
- http://www.loc.gov/mods/v3/mods-3-1.xsd" OBJID="ark:/13010/kt9s2009hz"
+<mets:mets xmlns:mets="http://www/loc.gov/METS/v2"
+ xmlns:xsi="http://www/w3/org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.loc.gov/METS/v2
+ http://www.loc.gov/standards/mets/mets.xsd" OBJID="ark:/13010/kt9s2009hz"
  LABEL="Martial Epigrams">
     ...
   <mets:fileSec>
@@ -681,19 +671,16 @@ in the following example as a single file within that group.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8">
-<mets:mets xmlns:mets="http://www.loc.gov/METS/"
- xmlns:mods="http://www/loc.gov/mods/v3"
- xmlns:xlink="http://www.w3.org/1999/xlink"
+<mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
  xmlns:xsi="http://www/w3/org/2001/XMLSchema-instance"
- xsi:schemalocation="http://www.loc.gov/METS
- http://www/loc/gov/standards/mets/mets.xsd
- http://www/loc/gov/mods/v3/mods-3-1.xsd" OBJID="ark:/13010/kt9s2009hz"
+ xsi:schemalocation="http://www.loc.gov/METS/v2
+ http://www/loc/gov/standards/mets/mets.xsd" OBJID="ark:/13010/kt9s2009hz"
  LABEL="Martial Epigrams">
   ...
   <mets:fileSec>
     <mets:fileGrp ID="TIFF_GRP01" USE="MASTER IMAGE">
-      <mets:file ID="epi01m" SIZE="65768" CREATED="2006-04-11T07:35:22
-      "MIMETYPE="image/tiff" ADMID="MIX_v1.0_TIFF_epi01m">
+      <mets:file ID="epi01m" SIZE="65768" CREATED="2006-04-11T07:35:22"
+      MIMETYPE="image/tiff" MDID="MIX_v1.0_TIFF_epi01m">
       ...
       </mets:file>
     </mets:fileGrp>
@@ -716,20 +703,17 @@ location:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<mets:mets xmlns:mets="http://www/loc/gov/METS/"
- xmlns:mods="http://www/loc/gov/,ods/v3/"
- xmlns:xlink="http://www/w3/org/1999/xlink"
+<mets:mets xmlns:mets="http://www/loc/gov/METS/v2"
  xmlns:xsi="http://www/w3/org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www/loc/gov/METS/
- http://www/loc/gov/standards/mets/mets.xsd http://www/loc.gov/mods/v3
- http://www/loc/gov/mods/v3/mods-3-1.xsd"OBJID="ark:/13030/kt9s2009hz"
+ xsi:schemaLocation="http://www/loc/gov/METS/v2
+ http://www/loc/gov/standards/mets/mets.xsd" OBJID="ark:/13030/kt9s2009hz"
  LABEL="Martial Epigrams">
   ...
   <mets:fileSec>
     <mets:fileGrp ID="TIFF_GRP01" USE="MASTER IMAGE">
       <mets:file ID="epi01m" SIZE="65768" CREATED="2006-04-11T07:35:22"
-          MIMETYPE="image/tiff" ADMID="MIX_v1.0_TIFF_epio1m">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/full/01.tiff"
+          MIMETYPE="image/tiff" MDID="MIX_v1.0_TIFF_epio1m">
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/full/01.tiff"
           LOCTYPE="URL"/>
         </mets:FLocat>
       </mets:file>
@@ -760,12 +744,10 @@ scheme is UTF-8 Unicode.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<mets:mets xmlns:mets="http://www/loc/gov/METS/"
- xmlns:mods="http://www.loc.gov/mods/v3"
- xmlns:xlink="http://www.w3.org/1999/xlink"
+<mets:mets xmlns:mets="http://www/loc/gov/METS/v2"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/standards/mets/mets.xsd
- http://www/loc/gov/mods/v3/mods-3-1.xsd"
+ xsi:schemaLocation="http://www/loc/gov/METS/v2
+   http://www/loc/gov/standards/mets/mets.xsd"
  OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   ...
   <mets:fileSec>
@@ -811,7 +793,7 @@ could be illustrated as follows:
     <mets:file ID="FILE001" MIMETYPE="application/xml"
         SIZE="257537" CREATED="2001-06-10">
       <mets:FLocat LOCTYPE="URL"
-          xlink:href="http://dlib.nyu.edu/tamwag/beame.xml"
+          LOCREF="http://dlib.nyu.edu/tamwag/beame.xml"
       </mets:FLocat>
     </mets:file>
   </mets:fileGrp>
@@ -819,7 +801,7 @@ could be illustrated as follows:
     <mets:file ID="FILE002" MIMETYPE="audio/wav" SIZE="64232836"
         CREATED="2001-05-17" GROUPID="AUDIO1">
       <mets:FLocat LOCTYPE="URL"
-        xlink:href="http://dlib/nyu.edu/tamwag/beame.wav"
+        LOCREF="http://dlib/nyu.edu/tamwag/beame.wav"
       </mets:FLocat>
     </mets:file>
   </mets:fileGrp>
@@ -828,9 +810,9 @@ could be illustrated as follows:
     <mets:file ID="FILE004_01" MIMETYPE="application/xml" SIZE="2566764"
         CREATED="2005-4-14">
       <mets:FLocat LOCTYPE="URL"
-        xlink:href="http://dlib.nyu.edu/tamwag/beame_comp01.xml"/>
+        LOCREF="http://dlib.nyu.edu/tamwag/beame_comp01.xml"/>
       <mets:stream ID="BEAME_COMP_01" streamType="AUDIO/X-WAV"
-        OWNERID="HIST_DEPT05_BEAME_COMP_O1" DMDID="MODS_BEAME_COMP_01"/>
+        OWNERID="HIST_DEPT05_BEAME_COMP_O1" MDID="MODS_BEAME_COMP_01"/>
     </mets:file>
   </mets:fileGrp>
 </mets:fileSec>
@@ -854,7 +836,7 @@ image. To use the `<fileSec>` to describe these files, you could use the
 <mets:fileSec ID="TransformEX_01">
   <mets:fileGrp ID="TAR_GZ_container_01" USE="Container">
     <mets:file MIMETYPE="application/tar.gz" USE="Container">
-      <mets:FLocat xlink:href="file:sample01.tar.gz" ID="sampleTar01.gz"
+      <mets:FLocat LOCREF="file://sample01.tar.gz" ID="sampleTar01.gz"
         LOCTYPE="URL" />
       <mets:transformFile TRANSFORMORDER="1" TRANSFORMTYPE="decompression"
         TRANSFORMALGORITHM="gunzip">
@@ -863,12 +845,12 @@ image. To use the `<fileSec>` to describe these files, you could use the
       </mets:transformFile>
       <mets:file SEQ="1" MIMETYPE="image/tiff"
           CHECKSUM="c1b82611e48066016ceb8daa93d46de7"CHECKSUMTYPE="MD5">
-        <mets:FLocat xlink:href="file:sample01_image01.tiff" LOCTYPE="URL"
+        <mets:FLocat LOCREF="file://sample01_image01.tiff" LOCTYPE="URL"
           USE="Archival Master"/>
       </mets:file>
       <mets:file SEQ="2" MIMETYPE="image/jpeg"
           CHECKSUM="c3cb82611e48066016ceb8daa93d46df5" CHECKSUMTYPE="MD5">
-        <mets:FLocat xlink:href="file:sample01_image01jpeg"
+        <mets:FLocat LOCREF="file://sample01_image01jpeg"
           LOCTYPE="URL"USE="Display Derivative"/>
     </mets:file>
   </mets:fileGrp>
@@ -884,66 +866,64 @@ content files in the TIFF, JPEG and GIF formats.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<mets:mets xmlns:mets="http://www.loc.gov/METS/"
- xmlns:mods= "http://www.loc.gov/mods/v3"
- xmlns:xlink="http://www.w3.org/1999/xlink"
+<mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd
-    http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-1.xsd"
+ xsi:schemaLocation="http://www.loc.gov/METS/v2
+   http://www.loc.gov/standards/mets/mets.xsd"
  OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   ...
   <mets:fileSec>
     <mets:fileGrp USE="MASTER IMAGE">
       <mets:file ID="epi01m" MIMETYPE="image/tiff">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/full/01/tif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/full/01/tif"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi02m" MIMETYPE="image/tiff">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/full/02.tif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/full/02.tif"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi03m" MIMETYPE="image/tiff">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/full/03.tif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/full/03.tif"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi04m" MIMETYPE="image/tiff">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/full/04.tif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/full/04.tif"
           LOCTYPE="URL"/>
       </mets:file> ...
     </mets:fileGrp>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi01r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/01.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/01.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi02r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/02.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/02.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi03r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/03.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/03.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi04r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/04.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/04.jpg"
           LOCTYPE="URL"/>
       </mets:file> ...
     </mets:fileGrp>
     <mets:fileGrp USE="THUMBNAIL IMAGE">
       <mets:file ID="epi01t" MIMETYPE="image/gif">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/gif/01.gif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/gif/01.gif"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi02t" MIMETYPE="image/gif">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/gif/02.gif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/gif/02.gif"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi03t" MIMETYPE="image/gif">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/gif/03.gif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/gif/03.gif"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi04t" MIMETYPE="image/gif">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/gif/04.gif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/gif/04.gif"
           LOCTYPE="URL"/>
       </mets:file> ...
     </mets:fileGrp>
@@ -988,21 +968,19 @@ as follows:
   <mets:fileGrp ID="FORMAT1" USE="Transcription">
     <mets:file ID="FILE001" MIMETYPE="application/xml" SIZE="257537"
         CREATED="2001-06-10">
-      <mets:FLocat LOCTYPE="URL" http://dlib.nyu.edu/tamwag/beame.xml
-      </mets:FLocat>
+      <mets:FLocat LOCTYPE="URL" LOCREF="http://dlib.nyu.edu/tamwag/beame.xml"/>
     </mets:file>
   </mets:fileGrp>
   <mets:fileGrp ID="FORMAT2" USE="Master Audio">
-    <file ID="FILE002" MIMETYPE="audio/wav" SIZE="64232836" CREATED="2001-05-17"
+    <mets:file ID="FILE002" MIMETYPE="audio/wav" SIZE="64232836" CREATED="2001-05-17"
         GROUPID="AUDIO1">
-      <mets:FLocat LOCTYPE="URL" http://dlib.nyu.edu/tamwag/beame.wav
-      </mets:FLocat>
+      <mets:FLocat LOCTYPE="URL" LOCREF="http://dlib.nyu.edu/tamwag/beame.wav"/>
+    </mets:file>
   </mets:fileGrp>
   <mets:fileGrp ID="FORMAT3" VERSDATE="2001-05-18" USE="Derivative Audio">
     <mets:file ID="FILE003" MIMETYPE="audio/mpeg" SIZE="8238866"
         CREATED="2001-05-18" GROUPID="AUDIO1">
-      <mets:FLocat LOCTYPE="URL" http://dlib.nyu.edu/tamwag/beame.mp3
-      </mets:FLocat>
+      <mets:FLocat LOCTYPE="URL" LOCREF="http://dlib.nyu.edu/tamwag/beame.mp3"/>
     </mets:file>
   </mets:fileGrp>
 </mets:fileSec>
@@ -1119,44 +1097,47 @@ described thus far, including the TYPE, LABEL, and MDID attributes.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<mets:mets xmlns:mets="http://www.loc.gov/METS/"
+<mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
  xmlns:mods="http://www.loc.gov/mods/v3"
- xmlns:xlink="http://www.w3.org/1999/xlink"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/
+ xsi:schemaLocation="http://www.loc.gov/METS/v2
  http://www.loc.gov/standards/mets/mets.xsd
  http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-1.xsd"
  OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
-  <mets:dmdSec ID="DMD1">
-    <mets:mdWrap MDTYPE="MODS">
-      <mets:xmlData>
-        <mods:mods>
-          <mods:titleInfo>
-            <mods:title>Martial Epigrams</mods:title>
-          </mods:titleInfo>
-        </mods:mods>
-      </mets:xmlData>
-    </mets:mdWrap>
-  </mets:dmdSec>
+  <mets:mdSec>
+    <mets:md ID="DMD1" USE="DESCRIPTIVE">
+      <mets:mdWrap MDTYPE="MODS">
+        <mets:xmlData>
+          <mods:mods>
+            <mods:titleInfo>
+              <mods:title>Martial Epigrams</mods:title>
+            </mods:titleInfo>
+          </mods:mods>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:md>
+  </mets:mdSec>
   ...
-  <mets:structMap TYPE="physical">
-    <mets:div TYPE="book" LABEL="Martial Epigrams II" DMDID="DMD1">
-      <mets:div TYPE="page" LABEL="Blank page"/>
-      <mets:div TYPE="page" LABEL="Page i: Series title page"/>
-      <mets:div TYPE="page" LABEL="Page ii: Blank page"/>
-      <mets:div TYPE="page" LABEL="Page iii: Title page"/>
-      <mets:div TYPE="page" LABEL="Page iv: Publication info"/>
-      <mets:div TYPE="page" LABEL="Page v: Table of contents"/>
-      <mets:div TYPE="page" LABEL="Page vi: Blank page"/>
-      <mets:div TYPE="page" LABEL="Page 1: Half title page"/>
-      <mets:div TYPE="page" LABEL="Page 2 (Latin)"/>
-      <mets:div TYPE="page" LABEL="Page 3 (English)"/>
-      <mets:div TYPE="page" LABEL="Page 4 (Latin)">
-      <mets:div TYPE="page" LABEL="Page 5 (English)"/>
-      <mets:div TYPE="page" LABEL="Page 6 (Latin)"/>
-      <mets:div TYPE="page" LABEL="Page 7 (English)"/>
-    </mets:div>
-  </mets:structMap>
+  <mets:structSec>
+    <mets:structMap TYPE="physical">
+      <mets:div TYPE="book" LABEL="Martial Epigrams II" MDID="DMD1">
+        <mets:div TYPE="page" LABEL="Blank page"/>
+        <mets:div TYPE="page" LABEL="Page i: Series title page"/>
+        <mets:div TYPE="page" LABEL="Page ii: Blank page"/>
+        <mets:div TYPE="page" LABEL="Page iii: Title page"/>
+        <mets:div TYPE="page" LABEL="Page iv: Publication info"/>
+        <mets:div TYPE="page" LABEL="Page v: Table of contents"/>
+        <mets:div TYPE="page" LABEL="Page vi: Blank page"/>
+        <mets:div TYPE="page" LABEL="Page 1: Half title page"/>
+        <mets:div TYPE="page" LABEL="Page 2 (Latin)"/>
+        <mets:div TYPE="page" LABEL="Page 3 (English)"/>
+        <mets:div TYPE="page" LABEL="Page 4 (Latin)">
+        <mets:div TYPE="page" LABEL="Page 5 (English)"/>
+        <mets:div TYPE="page" LABEL="Page 6 (Latin)"/>
+        <mets:div TYPE="page" LABEL="Page 7 (English)"/>
+      </mets:div>
+    </mets:structMap>
+  </mets:structSec>
 </mets:mets>
 ```
 
@@ -1213,98 +1194,98 @@ associated content files, each of which represents a different image
 manifestation (TIFF, JPEG, or GIF) of the same content:
 
 ```xml
-<mets:mets xmlns:mets="http://www.loc.gov/METS/"
- xmlns:mods="http://www.loc.gov/mods/v3"
- xmlns:xlink="http://www.w3.org/1999/xlink"
+<mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/
- http://www.loc.gov/standards/mets/mets.xsd
- http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-1.xsd"
+ xsi:schemaLocation="http://www.loc.gov/METS/v2
+ http://www.loc.gov/standards/mets/mets.xsd"
  OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams II">
+  ...
   <mets:fileSec>
     <mets:fileGrp USE="MASTER IMAGE">
       <mets:file ID="epi01m" MIMETYPE="image/tiff">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/full01.tif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/full01.tif"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi02m" MIMETYPE="image/tiff">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/full/02.tif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/full/02.tif"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi03m" MIMETYPE="image/tiff">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/full/03.tif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/full/03.tif"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi04m" MIMETYPE="image/tiff">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/full/04.tif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/full/04.tif"
           LOCTYPE="URL"/>
       </mets:file>
       ...
     </mets:fileGrp>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi01r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/01.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/01.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi02r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/02.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/02.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi03r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/03.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/03.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi04r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/04.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/04.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       ...
     </mets:fileGrp>
     <mets:fileGrp USE="THUMBNAIL IMAGE">
       <mets:file ID="epi01t" MIMETYPE="image/gif">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/gif/01.gif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/gif/01.gif"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi02t" MIMETYPE="image/gif">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/gif/02.gif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/gif/02.gif"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi03t" MIMETYPE="image/gif">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/gif/03.gif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/gif/03.gif"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi04t" MIMETYPE="image/gif">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/gif/04.gif"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/gif/04.gif"
           LOCTYPE="URL"/>
       </mets:file>
       ...
     </mets:fileGrp>
   </mets:fileSec>
-  <mets:structMap TYPE="physical">
-    <mets:div TYPE="book" LABEL="Martial Epigrams II" DMDID="DMD1">
-      <mets:div TYPE="page" LABEL="Blank page">
-        <mets:fptr FILEID="epi01m"/>
-        <mets:fptr FILEID="epi01r"/>
-        <mets:fptr FILEID="epi01t"/>
+  <mets:structSec>
+    <mets:structMap TYPE="physical">
+      <mets:div TYPE="book" LABEL="Martial Epigrams II" MDID="DMD1">
+        <mets:div TYPE="page" LABEL="Blank page">
+          <mets:fptr FILEID="epi01m"/>
+          <mets:fptr FILEID="epi01r"/>
+          <mets:fptr FILEID="epi01t"/>
+        </mets:div>
+        <mets:div TYPE="page" LABEL="Page i: Half title page">
+          <mets:fptr FILEID="epi02m"/>
+          <mets:fptr FILEID="epi02r"/>
+          <mets:fptr FILEID="epi02t"/>
+        </mets:div>
+        <mets:div TYPE="page" LABEL="Page ii: Blank page">
+          <mets:fptr FILEID="epi03m"/>
+          <mets:fptr FILEID="epi03r"/>
+          <mets:fptr FILEID="epi03t"/>
+        </mets:div>
+        <mets:div TYPE="page" LABEL="Page iii: Title page">
+          <mets:fptr FILEID="epi04m"/>
+          <mets:fptr FILEID="epi04r"/>
+          <mets:fptr FILEID="epi04t"/>
+        </mets:div>
+        ...
       </mets:div>
-      <mets:div TYPE="page" LABEL="Page i: Half title page">
-        <mets:fptr FILEID="epi02m"/>
-        <mets:fptr FILEID="epi02r"/>
-        <mets:fptr FILEID="epi02t"/>
-      </mets:div>
-      <mets:div TYPE="page" LABEL="Page ii: Blank page">
-        <mets:fptr FILEID="epi03m"/>
-        <mets:fptr FILEID="epi03r"/>
-        <mets:fptr FILEID="epi03t"/>
-      </mets:div>
-      <mets:div TYPE="page" LABEL="Page iii: Title page">
-        <mets:fptr FILEID="epi04m"/>
-        <mets:fptr FILEID="epi04r"/>
-        <mets:fptr FILEID="epi04t"/>
-      </mets:div>
-      ...
-    </mets:div>
-  </mets:structMap>
+    </mets:structMap>
+  <mets:structSec>
 </mets:mets>
 ```
 
@@ -1342,40 +1323,46 @@ individual volumes together into a single METS document representing the
 entire two-volume set.
 
 ```xml 
-<mets:mets xmlns:mets="http://www.loc.gov/METS/"
+<mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
  xmlns:mods="http://www.loc.gov/mods/v3"
- xmlns:xlink="http://www.w3.org/1999/xlink"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd
-   http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-1.xsd"
+ xsi:schemaLocation="http://www.loc.gov/METS/v2
+   http://www.loc.gov/standards/mets/mets.xsd
+   http://www.loc.gov/mods/v3
+   http://www.loc.gov/mods/v3/mods-3-1.xsd"
  OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams I & II">
-  <mets:dmdSec ID="DMD1">
-    <mets:mdWrap MDTYPE="MODS">
-      <mets:xmlData>
-        <mods:mods>
-          <mods:titleInfo>
-            <mods:title>Epigrams / Martial ; with an English translation by
-              Walter C.A. Ker</mods:title>
-          </mods:titleInfo>
-          <mods:physicalDescription>
-            <mods:extent>2 v. ; 17 cm</mods:extent>
-          </mods:physicalDescription>
-        </mods:mods>
-      </mets:xmlData>
-    </mets:mdWrap>
-  </mets:dmdSec>
-  <mets:structMap TYPE="physical">
-    <mets:div TYPE="multivolume book" LABEL="Martial Epigrams I & II" DMDID="DMD1">
-      <mets:div TYPE="volume" LABEL="Volume I">
-        <mets:mptr LOCTYPE="URL"
-          xlink:href="http://www.loc.gov/standards/mets/documentation MatrialEpigrams.xml"/>
+  <mets:mdSec>
+    <mets:md ID="DMD1" USE="DESCRIPTIVE">
+      <mets:mdWrap MDTYPE="MODS">
+        <mets:xmlData>
+          <mods:mods>
+            <mods:titleInfo>
+              <mods:title>Epigrams / Martial ; with an English translation by
+                Walter C.A. Ker</mods:title>
+            </mods:titleInfo>
+            <mods:physicalDescription>
+              <mods:extent>2 v. ; 17 cm</mods:extent>
+            </mods:physicalDescription>
+          </mods:mods>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:md>
+  </mets:mdSec>
+  ...
+  <mets:structSec>
+    <mets:structMap TYPE="physical">
+      <mets:div TYPE="multivolume book" LABEL="Martial Epigrams I & II" MDID="DMD1">
+        <mets:div TYPE="volume" LABEL="Volume I">
+          <mets:mptr LOCTYPE="URL"
+            LOCREF="http://www.loc.gov/standards/mets/documentation MatrialEpigrams.xml"/>
+        </mets:div>
+        <mets:div TYPE="volume" LABEL="Volume II">
+          <mets:mptr LOCTYPE="URL"
+            LOCREF="http://www.loc.gov/standards/mets/documentation/MatialEpigramsII.xml"/>
+        </mets:div>
       </mets:div>
-      <mets:div TYPE="volume" LABEL="Volume II">
-        <mets:mptr LOCTYPE="URL"
-          xlink:href="http://www.loc.gov/standards/mets/documentation/MatialEpigramsII.xml"/>
-      </mets:div>
-    </mets:div>
-  </mets:structMap>
+    </mets:structMap>
+  </mets:structSec>
 </mets:mets>
 ```
 
@@ -1422,65 +1409,66 @@ sequence to fully manifest the parent division.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
- xmlns:xlink="http://www.w3.org/1999/xlink"
+<mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/
+ xsi:schemaLocation="http://www.loc.gov/METS/v2
  http://www.loc.gov/standards/mets/mets.xsd"
  OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:fileSec>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi09r" MIMETYPE="image/jpeg">
-        <mets:FLocat
-          xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/09.jpg"
-            LOCTYPE="URL"/>
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/09.jpg"
+          LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi11r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/11.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/11.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi13r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpeg/13.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpeg/13.jpg"
           LOCTYPE="URL"/>
       </mets:file>
     </mets:fileGrp>
   </mets:fileSec>
-  <mets:structMap TYPE="logical">
-    <mets:div TYPE="volume" LABEL="Martial Epigrams II">
-      <mets:div TYPE="section" LABEL="Book VIII">
-        <mets:div TYPE="introduction" LABEL="Introduction: Latin">
-          <mets:fptr>
-            <mets:seq>
-              <mets:area FILEID="epi09r" SHAPE="RECT" COORDS="0,1150,2500,3150"/>
-              <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,600,2500,900"/>
-            </mets:seq>
-          </mets:fptr>
-        </mets:div>
-        <mets:div TYPE="epigram" LABEL="Epigram I: Latin">
-          <mets:fptr>
-            <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,1000,2500,1500"/>
-          </mets:fptr>
-        </mets:div>
-        <mets:div TYPE="epigram" LABEL="Epigram II: Latin">
-          <mets:fptr>
-            <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,1500,2500,2350"/>
-          </mets:fptr>
-        </mets:div>
-        <mets:div TYPE="epigram" LABEL="Epigram III: Latin">
-          <mets:fptr>
-            <mets:seq>
-              <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,2350,2500,3050"/>
-              <mets:area FILEID="epi13r" SHAPE="RECT" COORDS="0,500,2500,2100"/>
-            </mets:seq>
-          </mets:fptr>
-        </mets:div>
-        <mets:div TYPE="epigram" LABEL="Epigram IV: Latin">
-          <mets:fptr>
-            <mets:area FILEID="epi13r" SHAPE="RECT" COORDS="0,2100,2500,2700"/>
-          </mets:fptr>
+  <mets:structSec>
+    <mets:structMap TYPE="logical">
+      <mets:div TYPE="volume" LABEL="Martial Epigrams II">
+        <mets:div TYPE="section" LABEL="Book VIII">
+          <mets:div TYPE="introduction" LABEL="Introduction: Latin">
+            <mets:fptr>
+              <mets:seq>
+                <mets:area FILEID="epi09r" SHAPE="RECT" COORDS="0,1150,2500,3150"/>
+                <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,600,2500,900"/>
+              </mets:seq>
+            </mets:fptr>
+          </mets:div>
+          <mets:div TYPE="epigram" LABEL="Epigram I: Latin">
+            <mets:fptr>
+              <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,1000,2500,1500"/>
+            </mets:fptr>
+          </mets:div>
+          <mets:div TYPE="epigram" LABEL="Epigram II: Latin">
+            <mets:fptr>
+              <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,1500,2500,2350"/>
+            </mets:fptr>
+          </mets:div>
+          <mets:div TYPE="epigram" LABEL="Epigram III: Latin">
+            <mets:fptr>
+              <mets:seq>
+                <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,2350,2500,3050"/>
+                <mets:area FILEID="epi13r" SHAPE="RECT" COORDS="0,500,2500,2100"/>
+              </mets:seq>
+            </mets:fptr>
+          </mets:div>
+          <mets:div TYPE="epigram" LABEL="Epigram IV: Latin">
+            <mets:fptr>
+              <mets:area FILEID="epi13r" SHAPE="RECT" COORDS="0,2100,2500,2700"/>
+            </mets:fptr>
+          </mets:div>
         </mets:div>
       </mets:div>
-    </mets:div>
-  </mets:structMap>
+    </mets:structMap>
+  <mets:structSec>
 </mets:mets>
 ```
 
@@ -1515,69 +1503,68 @@ versions, each of which is manifested by the sequences of files
 comprising the version.
 
 ```xml
-<mets:mets xmlns:mets="http://www.loc.gov/METS/"
- xmlns:mods="http://www.loc.gov/mods/v3"
- xmlns:xlink="http://www.w3.org/1999/xlink"
+<mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/
- http://www.loc.gov/standards/mets/mets.xsd
- http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-1.xsd"
+ xsi:schemaLocation="http://www.loc.gov/METS/v2
+ http://www.loc.gov/standards/mets/mets.xsd"
  OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:fileSec>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi09r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/09.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/09.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi10r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/pjg/10/jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/pjg/10/jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi11r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/11.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/11.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi12r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/12.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/12.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi13r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href='http://www.loc.gov/standards/mets/docgroup/jpg/13.jpg"
+        <mets:FLocat LOCREF='http://www.loc.gov/standards/mets/docgroup/jpg/13.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi14r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/14.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/14.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       ...
     </mets:fileGrp>
   </mets:fileSec>
-  <mets:structMap TYPE="logical">
-    <mets:div TYPE="volume" LABEL="Martial Epigrams II">
-      <mets:div TYPE="section" LABEL="Book VIII">
-        <mets:div TYPE="subsection" LABEL="Latin version">
-          <mets:fptr>
-            <mets:seq>
-              <mets:area FILEID="epi09r"/>
-              <mets:area FILEID="epi11r"/>
-              <mets:area FILEID="epi13r"/>
-              ...
-            </mets:seq>
-          </mets:fptr>
+  <mets:structSec>
+    <mets:structMap TYPE="logical">
+      <mets:div TYPE="volume" LABEL="Martial Epigrams II">
+        <mets:div TYPE="section" LABEL="Book VIII">
+          <mets:div TYPE="subsection" LABEL="Latin version">
+            <mets:fptr>
+              <mets:seq>
+                <mets:area FILEID="epi09r"/>
+                <mets:area FILEID="epi11r"/>
+                <mets:area FILEID="epi13r"/>
+                ...
+              </mets:seq>
+            </mets:fptr>
+          </mets:div>
+          <mets:div TYPE="subsection" LABEL="English version">
+            <mets:fptr>
+              <mets:seq>
+                <mets:area FILEID="epi10r"/>
+                <mets:area FILEID="epi12r"/>
+                <mets:area FILEID="epi14r"/>
+                ...
+              </mets:seq>
+            </mets:fptr>
+          </mets:div>
         </mets:div>
-        <mets:div TYPE="subsection" LABEL="English version">
-        <mets:fptr>
-          <mets:seq>
-            <mets:area FILEID="epi10r"/>
-            <mets:area FILEID="epi12r"/>
-            <mets:area FILEID="epi14r"/>
-            ...
-          </mets:seq>
-        </mets:fptr>
       </mets:div>
-    </mets:div>
-    </mets:div>
-  </mets:structMap>
+    </mets:structMap>
+  </mets:structSec>
 </mets:mets>
 ```
 
@@ -1616,73 +1603,73 @@ the images that represent the pairs of pages that must be displayed
 together to recreate this experience.
 
 ```xml
-<mets:mets xmlns:mets="http://www.loc.gov/METS/"
- xmlns:mods="http://www.loc.gov/mods/v3"
- xmlns:xlink="http://www.w3.org/1999/xlink"
+<mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd
-   http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-1.xsd"
+ xsi:schemaLocation="http://www.loc.gov/METS/v2
+   http://www.loc.gov/standards/mets/mets.xsd"
  OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:fileSec>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi09r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/09/jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/09/jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi10r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/10.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/10.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi11r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href=http://www.loc.gov/standards/mets/docgroup/jpg/11.jpg"
+        <mets:FLocat LOCREF=http://www.loc.gov/standards/mets/docgroup/jpg/11.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi12r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/12.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/12.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi13r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/13.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/13.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi14r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/14.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/14.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       ...
     </mets:fileGrp>
   </mets:fileSec>
-  <mets:structMap TYPE="logical">
-    <mets:div TYPE="volume" LABEL="Martial Epigrams II">
-      <mets:div TYPE="section" LABEL="Book VIII">
-        <mets:div TYPE="paired pages" LABEL="page 1: Latin & English">
-          <mets:fptr>
-            <mets:par>
-              <mets:area FILEID="epi09r"/>
-              <mets:area FILEID="epi10r"/>
-            </mets:par>
-          </mets:fptr>
+  <mets:structSec>
+    <mets:structMap TYPE="logical">
+      <mets:div TYPE="volume" LABEL="Martial Epigrams II">
+        <mets:div TYPE="section" LABEL="Book VIII">
+          <mets:div TYPE="paired pages" LABEL="page 1: Latin & English">
+            <mets:fptr>
+              <mets:par>
+                <mets:area FILEID="epi09r"/>
+                <mets:area FILEID="epi10r"/>
+              </mets:par>
+            </mets:fptr>
+          </mets:div>
+          <mets:div TYPE="paired pages" LABEL="page 2: Latin & English">
+            <mets:fptr>
+              <mets:par>
+                <mets:area FILEID="epi11r"/>
+                <mets:area FILEID="epi12r"/>
+              </mets:par>
+            </mets:fptr>
+          </mets:div>
+          <mets:div TYPE="paired pages" LABEL="page 3: Latin & English">
+            <mets:fptr>
+              <mets:par>
+                <mets:area FILEID="epi13r"/>
+                <mets:area FILEID="epi14r"/>
+              </mets:par>
+            </mets:fptr>
+          </mets:div>
+          ...
         </mets:div>
-        <mets:div TYPE="paired pages" LABEL="page 2: Latin & English">
-          <mets:fptr>
-            <mets:par>
-              <mets:area FILEID="epi11r"/>
-              <mets:area FILEID="epi12r"/>
-            </mets:par>
-          </mets:fptr>
-        </mets:div>
-        <mets:div TYPE="paired pages" LABEL="page 3: Latin & English">
-          <mets:fptr>
-            <mets:par>
-              <mets:area FILEID="epi13r"/>
-              <mets:area FILEID="epi14r"/>
-            </mets:par>
-          </mets:fptr>
-        </mets:div>
-        ...
       </mets:div>
-    </mets:div>
-  </mets:structMap>
+    </mets:structMap>
+  </mets:structSec>
 </mets:mets>
 ```
 
@@ -1721,97 +1708,99 @@ English versions simultaneously.
 #### Parallel Files -- example 2
 
 ```xml
-<mets:mets xmlns:mets="http://www.loc.gov/METS/"
- xmlns:xlink="http://www.w3.org/1999/xlink"
+<mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd"
+ xsi:schemaLocation="http://www.loc.gov/METS/v2
+   http://www.loc.gov/standards/mets/mets.xsd"
  OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:fileSec>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi09r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/09.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/09.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi10r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards.mets/docgroup/jpg/10.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards.mets/docgroup/jpg/10.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi11r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/11.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/11.jpg"
           LOCTYPE="URL"/>
         </mets:file>
       <mets:file ID="epi12r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/12.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/12.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi13r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/13.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/13.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi14r" MIMETYPE="image/jpeg">
-        <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/14.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/14.jpg"
           LOCTYPE="URL"/>
       </mets:file>
     </mets:fileGrp>
   </mets:fileSec>
-  <mets:structMap TYPE="logical">
-  <mets:div TYPE="volume" LABEL="Martial Epigrams II">
-    <mets:div TYPE="section" LABEL="Book VIII">
-      <mets:div TYPE="epigram" LABEL="Introduction: Latin & English">
-        <mets:fptr>
-          <mets:par>
-            <mets:seq>
-              <mets:area FILEID="epi09r" SHAPE="RECT" COORDS="0,1150,2500,3150"/>
-              <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,600,2500,900"/>
-            </mets:seq>
-            <mets:seq>
-              <mets:area FILEID="epi10r" SHAPE="RECT" COORDS="0,1100,2500,3300"/>
-              <mets:area FILEID="epi12r" SHAPE="RECT" COORDS="0,650,2500,950"/>
-            </mets:seq>
-          </mets:par>
-        </mets:fptr>
+  <mets:structSec>
+    <mets:structMap TYPE="logical">
+      <mets:div TYPE="volume" LABEL="Martial Epigrams II">
+        <mets:div TYPE="section" LABEL="Book VIII">
+          <mets:div TYPE="epigram" LABEL="Introduction: Latin & English">
+            <mets:fptr>
+              <mets:par>
+                <mets:seq>
+                  <mets:area FILEID="epi09r" SHAPE="RECT" COORDS="0,1150,2500,3150"/>
+                  <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,600,2500,900"/>
+                </mets:seq>
+                <mets:seq>
+                  <mets:area FILEID="epi10r" SHAPE="RECT" COORDS="0,1100,2500,3300"/>
+                  <mets:area FILEID="epi12r" SHAPE="RECT" COORDS="0,650,2500,950"/>
+                </mets:seq>
+              </mets:par>
+            </mets:fptr>
+          </mets:div>
+          <mets:div TYPE="epigram" LABEL="Epigram I: Latin & English">
+            <mets:fptr>
+              <mets:par>
+                <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,1000,2500,1500"/>
+                <mets:area FILEID="epi12r" SHAPE="RECT" COORDS="0,950,2500,1600"/>
+              </mets:par>
+            </mets:fptr>
+          </mets:div>
+          <mets:div TYPE="epigram" LABEL="Epigram II: Latin & English">
+            <mets:fptr>
+              <mets:par>
+                <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,1500,2500,2350"/>
+                <mets:area FILEID="epi12r" SHAPE="RECT" COORDS="0,1600,2500,2350"/>
+              </mets:par>
+            </mets:fptr>
+          </mets:div>
+          <mets:div TYPE="epigram" LABEL="Epigram III: Latin & English">
+            <mets:fptr>
+              <mets:par>
+                <mets:seq>
+                  <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,2350,2500,3050"/>
+                  <mets:area FILEID="epi13r" SHAPE="RECT" COORDS="0,500,2500,2100"/>
+                </mets:seq>
+                <mets:seq>
+                  <mets:area FILEID="epi12r" SHAPE="RECT" COORDS="0,2350,2500,3050"/>
+                  <mets:area FILEID="epi14r" SHAPE="RECT" COORDS="0,600,2500,2100"/>
+                </mets:seq>
+              </mets:par>
+            </mets:fptr>
+          </mets:div>
+          <mets:div TYPE="epigram" LABEL="Epigram IV: Latin & English">
+            <mets:fptr>
+              <mets:par>
+                <mets:area FILEID="epi13r" SHAPE="RECT" COORDS="0,2100,2500,2700"/>
+                <mets:area FILEID="epi14r" SHAPE="RECT" COORDS="0,2100,2500,2700"/>
+              </mets:par>
+            </mets:fptr>
+          </mets:div>
+        </mets:div>
       </mets:div>
-      <mets:div TYPE="epigram" LABEL="Epigram I: Latin & English">
-        <mets:fptr>
-          <mets:par>
-            <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,1000,2500,1500"/>
-            <mets:area FILEID="epi12r" SHAPE="RECT" COORDS="0,950,2500,1600"/>
-          </mets:par>
-        </mets:fptr>
-      </mets:div>
-      <mets:div TYPE="epigram" LABEL="Epigram II: Latin & English">
-        <mets:fptr>
-          <mets:par>
-            <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,1500,2500,2350"/>
-            <mets:area FILEID="epi12r" SHAPE="RECT" COORDS="0,1600,2500,2350"/>
-          </mets:par>
-        </mets:fptr>
-      </mets:div>
-      <mets:div TYPE="epigram" LABEL="Epigram III: Latin & English">
-        <mets:fptr>
-          <mets:par>
-            <mets:seq>
-              <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,2350,2500,3050"/>
-              <mets:area FILEID="epi13r" SHAPE="RECT" COORDS="0,500,2500,2100"/>
-            </mets:seq>
-            <mets:seq>
-              <mets:area FILEID="epi12r" SHAPE="RECT" COORDS="0,2350,2500,3050"/>
-              <mets:area FILEID="epi14r" SHAPE="RECT" COORDS="0,600,2500,2100"/>
-            </mets:seq>
-          </mets:par>
-        </mets:fptr>
-      </mets:div>
-      <mets:div TYPE="epigram" LABEL="Epigram IV: Latin & English">
-        <mets:fptr>
-          <mets:par>
-            <mets:area FILEID="epi13r" SHAPE="RECT" COORDS="0,2100,2500,2700"/>
-            <mets:area FILEID="epi14r" SHAPE="RECT" COORDS="0,2100,2500,2700"/>
-          </mets:par>
-        </mets:fptr>
-      </mets:div>
-    </mets:div>
-    </mets:div>
-  </mets:structMap>
+    </mets:structMap>
+  </mets:stuctSec>
 </mets:mets>
 ```
 

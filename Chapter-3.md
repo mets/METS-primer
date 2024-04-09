@@ -173,7 +173,7 @@ California, San Diego's internal identification code for the object;
 this example also reflects various uses of the role attribute on agent.
 
 ```xml
-<metsHdr CREATEDATE="2004-02-22T00:00:00">
+<metsHdr CREATEDATE="2004-02-22T00:00:00"
     LASTMODDATE="2004-03-16T00:00:00" RECORDSTATUS="production">
   <mets:agent ROLE="CREATOR" TYPE="ORGANIZATION">
     <mets:name>UCSD</mets:name>
@@ -632,11 +632,12 @@ book:
  xsi:schemaLocation="http://www.loc.gov/METS/v2
  http://www.loc.gov/standards/mets/mets.xsd" OBJID="ark:/13010/kt9s2009hz"
  LABEL="Martial Epigrams">
-    ...
+  ...
   <mets:fileSec>
     <mets:fileGrp ID="TIFF_GRP01" USE="MASTER IMAGE">
       ...
   </mets:fileSec>
+  ...
 ```
 
 There may be other `<fileGrp>`s in this situation that pull together
@@ -685,6 +686,7 @@ in the following example as a single file within that group.
       </mets:file>
     </mets:fileGrp>
   </mets:fileSec>
+  ...
 ```
 
 #### File location
@@ -719,6 +721,7 @@ location:
       </mets:file>
     </mets:fileGrp>
   </mets:fileSec>
+  ...
 ```
 
 #### File content
@@ -760,6 +763,7 @@ scheme is UTF-8 Unicode.
       </mets:file>
     </mets:fileGrp>
   <mets:fileSec>
+  ...
 ```
 
 #### Component byte stream
@@ -856,8 +860,6 @@ image. To use the `<fileSec>` to describe these files, you could use the
   </mets:fileGrp>
 </mets:fileSec>
 ```
-
-### Complete file section -- examples 
 
 #### Complete file section -- example 1
 
@@ -1527,7 +1529,7 @@ comprising the version.
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi13r" MIMETYPE="image/jpeg">
-        <mets:FLocat LOCREF='http://www.loc.gov/standards/mets/docgroup/jpg/13.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/13.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi14r" MIMETYPE="image/jpeg">
@@ -1619,7 +1621,7 @@ together to recreate this experience.
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi11r" MIMETYPE="image/jpeg">
-        <mets:FLocat LOCREF=http://www.loc.gov/standards/mets/docgroup/jpg/11.jpg"
+        <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/11.jpg"
           LOCTYPE="URL"/>
       </mets:file>
       <mets:file ID="epi12r" MIMETYPE="image/jpeg">

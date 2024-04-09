@@ -85,9 +85,10 @@ up the electronic versions of the digital object. File elements may be
 grouped within File Group elements, to provide for subdividing the files
 by object version or other criteria such as file type, size etc.
 
-**Structural Section** -- Structural Section outlines a hierarchical
-structure for the digital object, and links the elements of that
-structure to content files and metadata that pertain to each element.
+**Structural Map Section** -- Structural Map Section outlines a
+hierarchical structure for the digital object, and links the elements
+of that structure to content files and metadata that pertain to each
+element.
 
 ### METS root element example
 

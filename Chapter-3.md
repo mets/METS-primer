@@ -1330,7 +1330,7 @@ entire two-volume set.
    http://www.loc.gov/standards/mets/mets.xsd
    http://www.loc.gov/mods/v3
    http://www.loc.gov/mods/v3/mods-3-1.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams I & II">
+ OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams I &amp; II">
   <mets:mdSec>
     <mets:md ID="DMD1" USE="DESCRIPTIVE">
       <mets:mdWrap MDTYPE="MODS">
@@ -1351,7 +1351,7 @@ entire two-volume set.
   ...
   <mets:structSec>
     <mets:structMap TYPE="physical">
-      <mets:div TYPE="multivolume book" LABEL="Martial Epigrams I & II" MDID="DMD1">
+      <mets:div TYPE="multivolume book" LABEL="Martial Epigrams I &amp; II" MDID="DMD1">
         <mets:div TYPE="volume" LABEL="Volume I">
           <mets:mptr LOCTYPE="URL"
             LOCREF="http://www.loc.gov/standards/mets/documentation MatrialEpigrams.xml"/>
@@ -1641,7 +1641,7 @@ together to recreate this experience.
     <mets:structMap TYPE="logical">
       <mets:div TYPE="volume" LABEL="Martial Epigrams II">
         <mets:div TYPE="section" LABEL="Book VIII">
-          <mets:div TYPE="paired pages" LABEL="page 1: Latin & English">
+          <mets:div TYPE="paired pages" LABEL="page 1: Latin &amp; English">
             <mets:fptr>
               <mets:par>
                 <mets:area FILEID="epi09r"/>
@@ -1649,7 +1649,7 @@ together to recreate this experience.
               </mets:par>
             </mets:fptr>
           </mets:div>
-          <mets:div TYPE="paired pages" LABEL="page 2: Latin & English">
+          <mets:div TYPE="paired pages" LABEL="page 2: Latin &amp; English">
             <mets:fptr>
               <mets:par>
                 <mets:area FILEID="epi11r"/>
@@ -1657,7 +1657,7 @@ together to recreate this experience.
               </mets:par>
             </mets:fptr>
           </mets:div>
-          <mets:div TYPE="paired pages" LABEL="page 3: Latin & English">
+          <mets:div TYPE="paired pages" LABEL="page 3: Latin &amp; English">
             <mets:fptr>
               <mets:par>
                 <mets:area FILEID="epi13r"/>
@@ -1745,7 +1745,7 @@ English versions simultaneously.
     <mets:structMap TYPE="logical">
       <mets:div TYPE="volume" LABEL="Martial Epigrams II">
         <mets:div TYPE="section" LABEL="Book VIII">
-          <mets:div TYPE="epigram" LABEL="Introduction: Latin & English">
+          <mets:div TYPE="epigram" LABEL="Introduction: Latin &amp; English">
             <mets:fptr>
               <mets:par>
                 <mets:seq>
@@ -1759,7 +1759,7 @@ English versions simultaneously.
               </mets:par>
             </mets:fptr>
           </mets:div>
-          <mets:div TYPE="epigram" LABEL="Epigram I: Latin & English">
+          <mets:div TYPE="epigram" LABEL="Epigram I: Latin &amp; English">
             <mets:fptr>
               <mets:par>
                 <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,1000,2500,1500"/>
@@ -1767,7 +1767,7 @@ English versions simultaneously.
               </mets:par>
             </mets:fptr>
           </mets:div>
-          <mets:div TYPE="epigram" LABEL="Epigram II: Latin & English">
+          <mets:div TYPE="epigram" LABEL="Epigram II: Latin &amp; English">
             <mets:fptr>
               <mets:par>
                 <mets:area FILEID="epi11r" SHAPE="RECT" COORDS="0,1500,2500,2350"/>
@@ -1775,7 +1775,7 @@ English versions simultaneously.
               </mets:par>
             </mets:fptr>
           </mets:div>
-          <mets:div TYPE="epigram" LABEL="Epigram III: Latin & English">
+          <mets:div TYPE="epigram" LABEL="Epigram III: Latin &amp; English">
             <mets:fptr>
               <mets:par>
                 <mets:seq>
@@ -1789,7 +1789,7 @@ English versions simultaneously.
               </mets:par>
             </mets:fptr>
           </mets:div>
-          <mets:div TYPE="epigram" LABEL="Epigram IV: Latin & English">
+          <mets:div TYPE="epigram" LABEL="Epigram IV: Latin &amp; English">
             <mets:fptr>
               <mets:par>
                 <mets:area FILEID="epi13r" SHAPE="RECT" COORDS="0,2100,2500,2700"/>

@@ -51,29 +51,6 @@ vary depending upon the situation.
 The root element `<mets>` establishes the container for the information
 being stored and/or transmitted by the standard.
 
-### Attributes of the METS root element
-
-ID (*ID/O*): This attribute uniquely identifies the root element of the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-OBJID (*string/O*): Is the primary identifier assigned to the METS
-object as a whole. Although this attribute is not required, it is
-strongly recommended. This identifier is used to tag the entire METS
-object to external systems, in contrast with the ID identifier.
-
-LABEL (*string/O*): Is a simple a title string used to identify the
-object/entity being described in the METS document for the user.
-
-TYPE (*string/O*): Specifies the class or type of the object, e.g.:
-book, journal, stereograph, dataset, video, etc.
-
-PROFILE (*string/O*): Indicates to which of the registered profile(s)
-the METS document conforms. For additional information about PROFILES
-see Chapter 5.
-
 ```xml
 <mets:mets OBJID="loc.natlib.ihas.200003790"
  PROFILE="http://www.loc.gov/mets/profiles/00000007.xml"
@@ -123,19 +100,6 @@ elements of that structure to content files and metadata that pertain to
 each element. The structural map is the one mandatory section in a METS
 document.
 
-**Structural Links** -- Allows the creator of the METS document to
-record the existence of hyperlinks between nodes in the hierarchy
-outlined in the Structural Map. This is of particular value in using
-METS to archive Websites or other hypermedia.
-
-**Behavior Section** -- A behavior section can be used to associate
-executable behaviors with the content of the object encoded using METS.
-Each behavior within a behavior section has an interface definition
-element that represents an abstract definition of behaviors represented
-by a particular behavior section. Each behavior also has a mechanism
-element that identifies a module of executable code that implements and
-runs the behaviors defined by the interface definition.
-
 ### METS root element example
 
 This example uses: XML version 1.0 with UTF-8 encoding, an enumerated
@@ -167,30 +131,6 @@ in function and purpose to the headers employed in other schema such as
 the Text Encoding Initiative (TEI) or in the Encoded Archival
 Description (EAD).
 
-### Attributes of the METS header {#attributes-of-the-mets-header .unnumbered}
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-ADMID (IDREFS/O): Contains the ID attribute values of the `<techMD>`,
-`<sourceMD>`, `<rightsMD>` and/or `<digiprovMD>` elements within the
-`<amdSec>` of the METS document that contain administrative metadata
-pertaining to the METS document itself. For more information on using
-METS IDREFS and IDREF type attributes for internal linking, see Chapter
-4 of the METS Primer.
-
-CREATEDATE (*dateTime/O*): Records the date/time the METS document was
-created.
-
-LASTMODDATE (*dateTime/O*): Is used to indicate the date/time the METS
-document was last modified.
-
-RECORDSTATUS (*string/O*): Specifies the status of the METS document. It
-is used for internal processing purposes.
-
 ### Elements contained in the METS header
 
 The `<metsHdr>` may include: document author or agent, any alternative
@@ -201,45 +141,6 @@ and the status of the METS document.
 
 The **agent** element `<agent>` provides for various parties and their
 roles with respect to the METS record to be documented.
-
-#### Agent -- attributes
-
-1.  ID (*ID/O*): This attribute uniquely identifies the element within
-    the METS document, and allows the element to be referenced
-    unambiguously from another element or document via an IDREF or an
-    XPTR. For more information on using ID attributes for internal and
-    external linking see Chapter 4.
-
-ROLE (string/R): Specifies the function of the agent with respect to the
-METS record. The allowed values are:
-
-  - *CREATOR*: The person(s) or institution(s) responsible for the METS document.
-  - *EDITOR*: The person(s) or institution(s) that prepares the metadata for encoding.
-  - *ARCHIVIST*: The person(s) or institution(s) responsible for the document/collection.
-  - *PRESERVATION*: The person(s) or institution(s) responsible for preservation functions.
-  - *DISSEMINATOR*: The person(s) or institution(s) responsible for dissemination functions.
-  - *CUSTODIAN*: The person(s) or institution(s) charged with the oversight of a document/collection.
-  - *IPOWNER*: Intellectual Property Owner: The person(s) or institution
-    holding copyright, trade or service marks or other intellectual
-    property rights for the object.
-  - *OTHER*: Use OTHER if none of the preceding values pertains and
-    clarify the type and location specifier being used in the OTHERROLE
-    attribute (see below).
-
-OTHERROLE (*string/O*): Denotes a role not contained in the allowed
-values set if OTHER is indicated in the ROLE attribute.
-
-TYPE (*string/O*): is used to specify the type of AGENT. It must be one
-of the following values:
-
-  - *INDIVIDUAL*: Use if an individual has served as the agent.
-  - *ORGANIZATION*: Use if an institution, corporate body, association,
-    non-profit enterprise, government, religious body, etc. has served as the agent.
-  - *OTHER*: Use OTHER if none of the preceding values pertain and clarify
-  - the type of agent specifier being used in the OTHERTYPE attribute (see below).
-
-OTHERTYPE (*string/O*): Specifies the type of agent when the value OTHER
-is indicated in the TYPE attribute.
 
 #### Agent -- elements
 
@@ -268,17 +169,6 @@ The **alternative identifier** element `<altRecordID>` allows one to use
 alternative record identifier values for the digital object represented
 by the METS document; the primary record identifier is stored in the
 OBJID attribute in the root `<mets>` element.
-
-#### Alternative identifiers -- attributes
-
-1.  ID (*ID/O*): This attribute uniquely identifies the element within
-    the METS document, and allows the element to be referenced
-    unambiguously from another element or document via an IDREF or an
-    XPTR. For more information on using ID attributes for internal and
-    external linking see Chapter 4.
-
-TYPE (*string/O*): A description of the identifier type (e.g., OCLC
-record number, LCCN, etc.)
 
 #### Alternative identifiers -- examples
 
@@ -358,40 +248,6 @@ metadata to the digital content of the entity and to other types of
 metadata related to the object, such as structural and administrative
 metadata.
 
-### Attributes of the descriptive metadata section
-
-ID (*ID/R*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. The ID
-attribute on the `<dmdSec>` is required, and its value should be
-referenced from one or more DMDID attributes that are associated with
-other elements in the METS document. The following elements support
-references to a `<dmdSec>` via a DMDID attribute: `<file>`, `<stream>`,
-`<div>`. For more information on using ID attributes for internal and
-external linking see Chapter 4.
-
-GROUPID (*string/O*): This identifier is used to indicate that different
-metadata sections may be considered as part of a group. Two metadata
-sections with the same GROUPID value are to be considered part of the
-same group. For example this facility might be used to group changed
-versions of the same metadata if previous versions are maintained in a
-file for tracking purposes.
-
-ADMID (*IDREFS/O*): Contains the ID attribute values of the
-`<digiprovMD>`, `<techMD>`, `<sourceMD>` and/or `<rightsMD>` elements
-within the `<amdSec>` of the METS document that contain administrative
-metadata pertaining to the current `<dmdSec>` element. Typically used in
-this context to reference preservation metadata (digiprovMD) which
-applies to the current metadata element. For more information on using
-METS IDREFS and IDREF type attributes for internal linking, see Chapter
-4.
-
-CREATED (*dateTime/O*): Specifies the date and time of creation for the
-metadata.
-
-STATUS (*string/O*): Indicates the status of this metadata (e.g.,
-superseded, current, etc.).
-
 ### Descriptive metadata elements
 
 A descriptive metadata element can either wrap the metadata (mdWrap) or
@@ -412,80 +268,6 @@ a pointer to metadata which resides outside the METS document.
 NOTE: `<mdRef>` is an empty element; the location of the external
 metadata must be recorded in the xlink:href attribute, and can be
 supplemented by the XPTR attribute as needed.
-
-#### Metadata reference -- attributes
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-MIMETYPE (*string/O*): The IANA MIME media type for the associated file.
-Some values for this attribute can be found on the IANA website.
-
-LABEL (*string/O*): Provides a label, for display to the viewer of the
-METS document, which identifies the referenced metadata.
-
-XPTR (*string/O*): Locates the point within a file to which the
-`<mdRef>` element refers, if applicable, using any valid XPointer
-scheme.
-
-LOCTYPE (*string/R*): Specifies the locator type used in the xlink:href
-attribute. Valid values for LOCTYPE are: *ARK, URN, URL, PURL, HANDLE,
-DOI*, and *OTHER*.
-
-OTHERLOCTYPE (*string/O*): Specifies the locator type when the value
-*OTHER* is used in the LOCTYPE attribute. Although optional, it is
-strongly recommended when OTHER is used.
-
-MDTYPE (*string/R*): Is used to indicate the type of the associated
-metadata. Valid values for the MDTYPE element include:
-
-MARC: any form of MARC record
-MODS: metadata in the Library of Congress MODS format
-EAD: Encoded Archival Description finding aid
-DC: Dublin Core
-NISOIMG: NISO Technical Metadata for Digital Still Images
-LC-AV: technical metadata specified in the Library of Congress A/V
-prototyping project
-VRA: Visual Resources Association Core
-TEIHDR: Text Encoding Initiative Header
-DDI: Data Documentation Initiative
-FGDC: Federal Geographic Data Committee metadata
-LOM: Learning Object Model
-PREMIS: PREservation Metadata: Implementation Strategies
-PREMIS:OBJECT: PREMIS Object entiry
-PREMIS:AGENT: PREMIS Agent entity
-PREMIS:RIGHTS: PREMIS Rights entity
-PREMIS:EVENT: PREMIS Event entity
-TEXTMD: textMD Technical metadata for text
-METSRIGHTS: Rights Declaration Schema
-OTHER: metadata in a format not specified above
-
-MDTYPEVERSION(*string/O*): Provides a means for recording the version of
-the type of metadata (as recorded in the MDTYPE or OTHERMDTYPE
-attribute) that is being used. This may represent the version of the
-underlying data dictionary or metadata model rather than a schema
-version.
-
-OTHERMDTYPE (*string/O*): Specifies the form of metadata in use when the
-value OTHER is indicated in the MDTYPE attribute.
-
-SIZE (*long/O*): Specifies the size in bytes of the associated file or
-wrapped content.
-
-CREATED (*dateTime/O*): Specifies the date and time of creation for the
-associated file or wrapped content.
-
-CHECKSUM (*string/O*): Provides a checksum value for the associated file
-or wrapped content.
-
-CHECKSUMTYPE (*enumerated string/O*): Specifies the checksum algorithm
-used to produce the value contained in the CHECKSUM attribute.
-CHECKSUMTYPE must contain one of the following values: *Adler-32, CRC32,
-HAVAL, MD5, MNP, SHA-1, SHA-256, SHA-384, SHA-512, TIGER* and
-*WHIRLPOOL.*
 
 #### Metadata reference-- example
 
@@ -510,68 +292,6 @@ Such metadata can be in one of two forms:
 2.  Any arbitrary binary or textual form, PROVIDED that the metadata is
     Base64 encoded and wrapped in a `<binData>` element within the
     internal descriptive metadata element.
-
-#### Internal descriptive metadata -- attributes
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-MIMETYPE (*string/O*): Provides the MIME type for the metadata being
-wrapped.
-
-LABEL (*string/O*): Provides a label, for display to the viewer of the
-METS document, that identifies the associated metadata.
-
-MDTYPE (*string/R*): Allows for the recording of the type the metadata
-being wrapped. Valid values for the MDTYPE element include:
-
-  - MARC: any form of MARC record
-  - MODS: metadata in the Library of Congress MODS format
-  - EAD: Encoded Archival Description finding aid
-  - DC: Dublin Core
-  - NISOIMG: NISO Technical Metadata for Digital Still Images
-  - LC-AV: technical metadata specified in the Library of Congress A/V
-    prototyping project
-  - VRA: Visual Resources Association Core
-  - TEIHDR: Text Encoding Initiative Header
-  - DDI: Data Documentation Initiative
-  - FGDC: Federal Geographic Data Committee metadata
-  - LOM: Learning Object Model
-  - PREMIS: PREservation Metadata: Implementation Strategies
-  - PREMIS:OBJECT: PREMIS Object entiry
-  - PREMIS:AGENT: PREMIS Agent entity
-  - PREMIS:RIGHTS: PREMIS Rights entity
-  - PREMIS:EVENT: PREMIS Event entity
-  - TEXTMD: textMD Technical metadata for text
-  - METSRIGHTS: Rights Declaration Schema
-  - OTHER: metadata in a format not specified above
-
-MDTYPEVERSION(*string/O*): Provides a means for recording the version of
-the type of metadata (as recorded in the MDTYPE or OTHERMDTYPE
-attribute) that is being used. This may represent the version of the
-underlying data dictionary or metadata model rather than a schema
-version.
-
-OTHERMDTYPE (*string/O*): Specifies the form of metadata in use when the
-value *OTHER* is indicated in the MDTYPE attribute.
-
-SIZE (*long/O*): Specifies the size in bytes of the associated file or
-wrapped content.
-
-CREATED (*dateTime/O*): Specifies the date and time of creation for the
-associated file or wrapped content.
-
-CHECKSUM (*string/O*): Provides a checksum value for the associated file
-or wrapped content.
-
-CHECKSUMTYPE (*enumerated string/O*): Specifies the checksum algorithm
-used to produce the value contained in the CHECKSUM attribute.
-CHECKSUMTYPE must contain one of the following values: *Adler-32, CRC32,
-HAVAL, MD5, MNP, SHA-1, SHA-256, SHA-384, SHA-512, TIGER* and
-*WHIRLPOOL.*
 
 #### Internal descriptive metadata -- elements
 
@@ -690,14 +410,6 @@ The sub-sections of the `<amdSec>` follow the same content model as the
 document as an `<mdWrap>` element or reference it via an `<mdRef>`
 element.
 
-### Attributes of the administrative metadata section
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
 ### Elements contained in the administrative metadata section
 
 The `<amdSec>` is partitioned into four major areas for the collocation
@@ -708,43 +420,6 @@ notices and use restrictions. Information about the materials used to
 generate the digital object is stored in `<sourceMD>` The history of
 the digital object is recorded in the provenance element `<digiprovMD>`
 All of these elements use the same attributes.
-
-#### Attributes shared by the administrative metadata elements
-
-ID (*ID/R*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. The ID
-attribute on the `<techMD>`, `<sourceMD>`, `<rightsMD>` and
-`<digiprovMD>` elements (which are all of mdSecType) is required, and
-its value should be referenced from one or more ADMID attributes that
-are associated with other elements in the METS document. The following
-elements support references to `<techMD>`, `<sourceMD>`, `<rightsMD>`
-and `<digiprovMD>` elements via an ADMID attribute: `<metsHdr>`,
-`<dmdSec>`, `<techMD>`, `<sourceMD>`, `<rightsMD>`, `<digiprovMD>`,
-`<fileGrp>`, `<file>`, `<stream>`, `<div>`, `<area>`, `<behavior>` For
-more information on using ID attributes for internal and external
-linking see Chapter 4.
-
-GROUPID (*ID/O*): An identifier used to denote that different metadata
-sections may be considered as part of a single group. Two metadata
-sections with the same GROUPID value are to be considered part of the
-same group. This facility might be used, for example, to group changed
-versions of the same metadata if previous versions are maintained in a
-file for tracking purposes.
-
-ADMID (IDREFS/O): Contains the ID attribute values of the
-`<digiprovMD>`, `<techMD>`, `<sourceMD>` and/or `<rightsMD>` elements
-within the `<amdSec>` of the METS document that contain administrative
-metadata pertaining to the current element. Typically used in this
-context to reference preservation metadata (digiprovMD) which applies to
-the current metadata element. For more information on using METS IDREFS
-and IDREF type attributes for internal linking, see Chapter 4.
-
-CREATED (*dateTime/O*): An attribute that specifies the date and time of
-creation the metadata.
-
-STATUS (*string/O*): Use to indicate the status of this metadata (e.g.,
-superseded, current, etc.)
 
 #### Technical metadata
 
@@ -1039,14 +714,6 @@ Similarly, `<file>`s within a `<fileGrp>` may point to administrative
 information using an ADMID attribute, and also descriptive information
 using the DMDID attribute. See `<fileGrp>` discussion below.
 
-### Attributes of the file section
-
-[ID (*ID/O*):]{.underline} This attribute uniquely identifies the
-element within the METS document, and allows the element to be
-referenced unambiguously from another element or document via an IDREF
-or an XPTR. For more information on using ID attributes for internal and
-external linking see Chapter 4.Elements contained in the file section
-
 ### Elements Contained in the File Section
 
 #### File group
@@ -1080,33 +747,6 @@ A `<fileGrp>` may contain zero or more `<fileGrp>` elements and or
 `<FLocat>` pointers to one or more external content files via a URI
 and/or may itself contain the file content as XML or binary data using
 the `<FContent>` element.
-
-#### File group -- attributes
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-VERSDATE (*dateTime/O*): The version date for the file grouping.
-
-ADMID (*IDREFS/O*): Contains the ID attribute values of the `<techMD>`,
-`<sourceMD>`, `<rightsMD>` and/or `<digiprovMD>` elements within the
-`<amdSec>` of the METS document applicable to all of the files in a
-particular file group. For more information on using METS IDREFS and
-IDREF type attributes for internal linking, see Chapter 4.
-
-USE (*string/O*): A tagging attribute to indicate the intended use of
-files within this file group (e.g., master, reference, thumbnails for
-image files). A USE attribute can be expressed at the `<fileGrp>` level,
-the `<file>` level, the `<FLocat>` level and/or the `<FContent>` level.
-A USE attribute value at the `<fileGrp>` level should pertain to all of
-the files in the `<fileGrp>` A USE attribute at the `<file>` level
-should pertain to all copies of the file as represented by subsidiary
-`<FLocat>` and/or `<FContent>` elements. A USE attribute at the
-`<FLocat>` or `<FContent>` level pertains to the particular copy of the
-file that is either referenced (`<FLocat>`) or wrapped (`<FContent>`).
 
 #### File group -- example
 
@@ -1155,67 +795,6 @@ can be placed within a `<file>` element. Finally, by using the
 element a different version of a file that has undergone a
 transformation for some reason, such as format migration.
 
-#### File (element) -- Attributes
-
-ID (*ID/R*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. Typically, the
-ID attribute value on a `<file>` element would be referenced from one or
-more FILEID attributes (which are of type IDREF) on `<fptr>`nd/or
-`<area>` elements within the `<structMap>` Such references establish
-links between structural divisions (`<div>` elements) and the specific
-content files or parts of content files that manifest them. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-MIMETYPE (*string/O*): The IANA MIME media type for the file. Some
-values for this attribute can be found on the IANA website.
-
-SEQ (*integer/O*): Indicates the sequence of this `<file>` relative to
-the others in its `<fileGrp>`
-
-SIZE (*integer/O*): The size of the file in bytes.
-
-CREATED (*dateTime/O*): The date of creation for the file.
-
-CHECKSUM (*string/O*): The checksum value for this file.
-
-CHECKSUMTYPE (*string/O*): The type of checksum in the CHECKSUM
-attribute. When used it must be one of the following: *HAVAL, MD5,
-SHA-256, SHA-384, SHA-512, TIGER, WHIRLPOOL*
-
-OWNERID (*string/O*): A unique identifier assigned to file by its owner.
-This may be a URI which differs from the URI used to retrieve the file.
-
-ADMID (*IDREFS/O*): Contains the ID attribute values of the `<techMD>`,
-`<sourceMD>`, `<rightsMD>` and/or `<digiprovMD>` elements within the
-`<amdSec>` of the METS document that contain administrative metadata
-pertaining to the file. For more information on using METS IDREFS and
-IDREF type attributes for internal linking, see Chapter 4.
-
-DMDID (*IDREFS/O*): Contains the ID attribute values identifying the
-`<dmdSec>`, elements in the METS document that contain or link to
-descriptive metadata pertaining to the content file represented by the
-current `<file>` element. For more information on using METS IDREFS and
-IDREF type attributes for internal linking, see Chapter 4.
-
-GROUPID (*string/O*): An identifier that establishes a correspondence
-between this file and files in other file groups. Typically, this will
-be used to associate a master file in one file group with derivative
-files made from it in other file groups.
-
-USE (*string/O*): A tagging attribute to indicate the intended use of
-all copies of the file aggregated by the `<file>` element (e.g., master,
-reference, thumbnails for image files). A USE attribute can be expressed
-at the `<fileGrp>` level, the `<file>` level, the `<FLocat>` level and/or
-the `<FContent>` level. A USE attribute value at the `<fileGrp>` level
-should pertain to all of the files in the `<fileGrp>` A USE attribute
-at the `<file>` level should pertain to all copies of the file as
-represented by subsidiary `<FLocat>` and/or `<FContent>` elements. A USE
-attribute at the `<FLocat>` or `<FContent>` level pertains to the
-particular copy of the file that is either referenced (`<FLocat>`) or
-wrapped (`<FContent>`).
-
 #### File (element) -- example
 
 The physical book example that we have been using represents each page
@@ -1254,72 +833,6 @@ information.
 
 NOTE: `<FLocat>` is an empty element. The location of the resource
 pointed to MUST be stored in the xlink:href attribute.
-
-#### File location -- attributes
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-LOCTYPE (*string/R*): Specifies the locator type used in the xlink:href
-attribute. Valid values for LOCTYPE are: *ARK, URN, URL, PURL, HANDLE,
-DOI, OTHER*.
-
-OTHERLOCTYPE (*string/O*): Specifies the locator type when the value
-OTHER is used in the LOCTYPE attribute. Although optional, it is
-strongly recommended when OTHER is used.
-
-USE (*string/O*): A tagging attribute to indicate the intended use of
-the specific copy of the file element represented by the `<FLocat>`
-element (e.g., service master, archive master). A USE attribute can be
-expressed at the `<fileGrp>` level, the `<file>` level, the `<FLocat>`
-level and/or the `<FContent>` level. A USE attribute value at the
-`<fileGrp>` level should pertain to all of the files in the `<fileGrp>`
-A USE attribute at the `<file>` level should pertain to all copies of
-the file as represented by subsidiary `<FLocat>` and/or `<FContent>`
-elements. A USE attribute at the `<FLocat>` or `<FContent>` level
-pertains to the particular copy of the file that is either referenced
-(`<FLocat>`) or wrapped (`<FContent>`).
-
-Additional information on the following XLink attributes can be found on
-the W3C website.
-
-xlink:href (*URI/O*): Technically optional, this attribute provides the
-URI indicating where the content file represented by the parent file can
-be located. The xlink:href should always be present in this context if
-the `<FLocat>` is to have any meaning or use. This attribute is defined
-as part of the xlink:simpleLink attribute group.
-
-xlink:role (*URI/O*): This attribute serves a semantic purpose. If
-present, it specifies the URI of a resource that describes the role or
-function of the xlink:href link. This attribute is defined as part of
-the xlink:simpleLink attribute group. It must be a URI reference as
-defined in IETF RFC 2396, except that, if the URI scheme used allows for
-absolute and relative forms, the URI portion must be absolute.
-
-xlink:arcrole (*URI/O*): If present this attribute serves a semantic
-purpose. It specifies the URI of a resource that describes the pertinent
-arc or pointer to the remote resource. While more likely to be used in
-arcLinks than simpleLinks, this attribute nonetheless is defined as part
-of the xlink:simpleLink attribute group. This must be a URI reference as
-defined in IETF RFC 2396 and, if the URI scheme used allows for an
-absolute or a relative form, the URI portion must be absolute.
-
-xlink:title (*string/O*): Used to describe the meaning of a link or
-resource in a human-readable fashion, this attribute serves a semantic
-purpose.
-
-xlink:show (*string/O*): Within a simpleLink this attribute signals
-behavior intended to traverse to the simpleLink's single remote ending
-resource. It must contain one of the following values: *new, replace,
-embed, other, none*.
-
-xlink:actuate (*string/O*): Specifies behavior within a simpleLink,
-signaling behavioral intentions for the traversal to simpleLink's single
-remote ending resource. It must contain one of the following values:
-*onLoad, onRequest, other, none*.
 
 #### File Location -- example
 
@@ -1369,26 +882,6 @@ an XML validator will check for well-formedness, but otherwise skip over
 the elements appearing in the `<xmlData>` element. METS default encoding
 scheme is UTF-8 Unicode.
 
-#### File content -- attributes
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-USE (*ID:O*): A tagging attribute to indicate the intended use of the
-specific copy of the file represented by the `<FContent>` element (e.g.,
-service master, archive master). A USE attribute can be expressed at
-the `<fileGrp>` level, the `<file>` level, the `<FLocat>` level and/or
-the `<FContent>` level. A USE attribute value at the `<fileGrp>` level
-should pertain to all of the files in the `<fileGrp>` A USE attribute
-at the `<file>` level should pertain to all copies of the file as
-represented by subsidiary `<FLocat>` and/or `<FContent>` elements. A USE
-attribute at the `<FLocat>` or `<FContent>` level pertains that the
-particular copy of the file that is either referenced (`<FLocat>`) or
-wrapped (`<FContent>`).
-
 #### File content -- example
 
 ```xml
@@ -1422,33 +915,6 @@ technical metadata. The repeatable `<stream>` element provides a
 mechanism to record the existence of separate data streams within a
 particular file, and the opportunity to associate `<dmdSec>` and
 `<amdSec>` with those subsidiary data streams if desired.
-
-#### Component byte stream -- attributes
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-streamType (*string/O*): The IANA MIME media type for the bytestream.
-
-OWNERID (*string/O*): Used to provide a unique identifier (which could
-include a URI) assigned to the file. This identifier may differ from the
-URI used to retrieve the file.
-
-AMDMDID (*IDREFS/O*): Contains the ID attribute values of the
-`<techMD>`, `<sourceMD>`, `<rightsMD>` and/or `<digiprovMD>` elements
-within the `<amdSec>` of the METS document that contain administrative
-metadata pertaining to the bytestream. For more information on using
-METS IDREFS and IDREF type attributes for internal linking, see Chapter
-4.
-
-DMDID (*IDREFS/O*): Contains the ID attribute values identifying the
-`<dmdSec>`, elements in the METS document that contain or link to
-descriptive metadata pertaining to the content file stream represented
-by the current `<stream>` element. For more information on using METS
-IDREFS and IDREF type attributes for internal linking, see Chapter 4.
 
 #### Component byte stream -- example
 
@@ -1503,39 +969,6 @@ access any subsidiary files listed below a `<file>` element by
 indicating the steps required to "unpack" or transform the subsidiary
 files. This element is repeatable and might provide a link to a
 `<behavior>` in the `<behaviorSec>` that performs the transformation.
-
-#### Transform file -- attributes
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-TRANSFORMTYPE (*string/R*): Is used to indicate the type of
-transformation needed to render content of a file accessible. This may
-include unpacking a file into subsidiary files/streams. The controlled
-value constraints for this XML string include "decompression" and
-"decryption". Decompression is defined as the action of reversing data
-compression, i.e., the process of encoding information using fewer bits
-than an unencoded representation would use by means of specific encoding
-schemas. Decryption is defined as the process of restoring data that has
-been obscured to make it unreadable without special knowledge (encrypted
-data) to its original form.
-
-TRANSFORM-ALGORITHM (*string/R*): Specifies the decompression or
-decryption routine used to access the contents of the file. Algorithms
-for compression can be either loss-less or lossy.
-
-TRANSFORMKEY (*string/O*): A key to be used with the transform algorithm
-for accessing the file's contents.
-
-TRANSFORM-BEHAVIOR (*string/O*): An IDREF to a behavior element for this
-transformation.
-
-TRANSFORMORDER (*postive-integer/R*): The order in which the
-instructions must be followed in order to unpack or transform the
-container file.
 
 #### Transform file -- example 
 
@@ -1769,29 +1202,6 @@ anticipated users of the digital version, the kind or kinds of
 presentation desired, the capabilities of the available presentation
 programs, etc.
 
-### Attributes of the structural map section
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-TYPE (*string/O*): Identifies the type of structure represented by the
-`<structMap>` For example, a `<structMap>` that represented a purely
-logical or intellectual structure could be assigned a TYPE value of
-"logical" whereas a `<structMap>` that represented a purely physical
-structure could be assigned a TYPE value of "physical". However, the
-METS schema neither defines nor requires a common vocabulary for this
-attribute. A METS profile, however, may well constrain the values for
-the `<structMap>` TYPE.
-
-LABEL (*string/O*): Describes the `<structMap>` to viewers of the METS
-document. This would be useful primarily where more than one
-`<structMap>` is provided for a single object. A descriptive LABEL
-value, in that case, could clarify to users the purpose of each of the
-available `<structMap>`s.
-
 ### Elements contained in the structural map section
 
 #### Division
@@ -1828,76 +1238,6 @@ its use. For example: the root `<div>` in a digital object encoded using
 METS that represents a video might point to a `<rightsMD>` element that
 expresses the copyright and access restriction information for the
 entire video. See the description of the ADMID below.
-
-#### Division -- attributes
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-TYPE (*string/O*): An attribute that specifies the type of structural
-division that the `<div>` element represents. Possible `<div>` TYPE
-attribute values include: chapter, article, page, track, segment,
-section etc. METS places no constraints on the possible TYPE values.
-Suggestions for controlled vocabularies for TYPE may be found on the
-METS website.
-
-LABEL (*string/O*): An attribute used, for example, to identify a
-`<div>` to an end user viewing the document. Thus a hierarchical
-arrangement of the `<div>` LABEL values could provide a table of
-contents to the digital content represented by a METS document and
-facilitate the users' navigation of the digital object. Note that a
-`<div>` LABEL should be specific to its level in the structural map. In
-the case of a book with chapters, the book `<div>` LABEL should have the
-book title and the chapter `<div>` LABELs should have the individual
-chapter titles, rather than having the chapter `<div>` LABELs combine
-both book title and chapter title. For clarification of the distinction
-between LABEL and ORDERLABEL see the description of the ORDERLABEL
-attribute.
-
-DMDID (*IDREFS/O*): Contains the ID attribute values identifying the
-`<dmdSec>`, elements in the METS document that contain or link to
-descriptive metadata pertaining to the structural division represented
-by the current `<div>` element. For more information on using METS
-IDREFS and IDREF type attributes for internal linking, see Chapter 4.
-
-ADMID (*IDREFS/O*): Contains the ID attribute values identifying the
-`<rightsMD>`, `<sourceMD>`, `<techMD>` and/or `<digiprovMD>` elements
-within the `<amdSec>` of the METS document that contain or link to
-administrative metadata pertaining to the structural division
-represented by the `<div>` element. Typically the `<div>` ADMID
-attribute would be used to identify the `<rightsMD>` element or elements
-that pertain to the `<div>`, but it could be used anytime there was a
-need to link a `<div>` with pertinent administrative metadata. For more
-information on using METS IDREFS and IDREF type attributes for internal
-linking, see Chapter 4.
-
-ORDER (*integer/O*): A representation of the `<div>`s order among its
-siblings (e.g., its absolute, numeric sequence). For an example, and
-clarification of the distinction between ORDER and ORDERLABEL, see the
-description of the ORDERLABEL attribute below.
-
-ORDERLABEL (*string/O*): A representation of the `<div>`s order among
-its siblings (e.g., "xii"), or of any non-integer native numbering
-system. It is presumed that this value will still be machine actionable
-(e.g., it would support 'go to page ___' function), and it should not
-be used as a replacement/substitute for the LABEL attribute. To
-understand the differences between ORDER, ORDERLABEL and LABEL, imagine
-a text with 10 roman numbered pages followed by 10 arabic numbered
-pages. Page iii would have an ORDER of "3", an ORDERLABEL of "iii" and a
-LABEL of "Page iii", while page 3 would have an ORDER of "13", an
-ORDERLABEL of "3" and a LABEL of "Page 3".
-
-CONTENTIDS (*URI/O*): Content IDs for this division (equivalent to DIDL
-DII or Digital Item Identifier, a unique external ID).
-
-xlink:label (*string/O*): An XLink label that can be referred to in the
-xlink:to and/or xlink:from attributes associated with `<smlink>`
-elements in the optional `<structLink>` section of a METS document.
-Provides the basis for the association of non-hierarchical `<div>`
-elements.
 
 #### Division -- example
 
@@ -1993,26 +1333,6 @@ manifestations, of the same content. Additional attributes associated
 with the `<fptr>` element include ID and CONTENTIDS. Descriptions of all
 of the attributes associated with the `<fptr>` element appear in the
 table below.
-
-#### File pointer -- attributes:
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-FILEID (*IDREF/O*): An optional attribute that provides the XML ID
-identifying the `<file>` element that links to and/or contains the
-digital content represented by the `<fptr>` A `<fptr>` element should
-only have a FILEID attribute value if it does not have a child `<area>`,
-`<par>` or `<seq>` element. If it has a child element, then the
-responsibility for pointing to the relevant content falls to this child
-element or its descendants.
-
-CONTENTIDS (*URI/O*): Content IDs for the content represented by the
-`<fptr>` (equivalent to DIDL DII or Digital Item Identifier, a unique
-external ID).
 
 #### File pointer -- example
 
@@ -2144,59 +1464,6 @@ section on external linking. (See Chapter 4). This is the same mechanism
 used for associating `<file>` elements with external content files in
 the FLocat element.
 
-#### METS pointer -- attributes
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-LOCTYPE (*string/R*): Specifies the locator type used in the xlink:href
-attribute. Valid values for LOCTYPE are: *ARK, URN, URL, PURL,*
-*HANDLE*, *DOI*, or *OTHER*.
-
-OTHERLOCTYPE (*string/O*): Specifies the type of locator used when the
-value OTHER is indicated in the LOCTYPE attribute. Although optional its
-use is strongly recommended.
-
-CONTENTIDS (*URI/O*): The content ID for the content represented by the
-`<mptr>` type.
-
-xlink:href (*URI/O*): This attribute gives the URI of where the METS
-document represented by the `<mptr>` is located. The xlink:href should
-always be present in this context if the `<mptr>` is to have any meaning
-or use.
-
-xlink:role (*URI/O*): An attribute that serves a semantic purpose. If
-present, it specifies the URI of a resource that describes the role or
-function of the xlink:href link. This attribute is defined as part of
-the xlink:simpleLink attribute group. It must be referenced as defined
-in IETF RFC 2396, except that, if the URI scheme used is allowed to have
-absolute and relative forms, the URI portion must be absolute.
-
-xlink:arcrole (*URI/O*): An attribute that serves a semantic purpose. If
-present it specifies the URI of a resource that describes the pertinent
-arcrole. While more likely to be used in arcLinks than simpleLinks, this
-attribute is nonetheless defined as part of the xlink:simpleLink
-attribute group. This URI reference is defined in IETF-RFC-2396, except
-if the URI scheme used is allowed to have absolute and relative forms,
-the URI portion must be absolute.
-
-xlink:title (*string/O*): An attribute that serves a semantic purpose.
-It is used to describe the meaning of a link or resource in a human
-readable fashion.
-
-xlink:show (*string/O*): An attribute that specifies behavior within a
-simpleLink. It signals behavior intentions for traversal to the
-simpleLink's single remote ending resource. It must contain one of the
-following values: *new, replace, embed, other, none*.
-
-xlink:actuate (*string/O*): An attribute that specifies behavior. Within
-a simpleLink it signals behavior intentions for traversal to the
-simpleLink's single remote ending resource. It must contain one of the
-following values: *onLoad, onRequest, other, or none*.
-
 #### Mets pointer -- example
 
 The example below illustrates the application of the `<mptr>` element to
@@ -2274,98 +1541,6 @@ paragraph above, the `<area>` element typically points to just an area
 or segment of an integral file. When used in the context of a `<par>` or
 `<seq>` element, however, an area element can point either to an
 integral file or to a segment of a file as necessary.
-
-#### Area -- attributes
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-FILEID (*IDREF/R*): An attribute which provides the XML ID value that
-identifies the `<file>` element in the `<fileSec>` that then points to
-and/or contains the digital content represented by the `<area>` element.
-It must contain an ID value represented in an ID attribute associated
-with a `<file>` element in the `<fileSec>` element in the same METS
-document.
-
-SHAPE (*string/O*): An attribute that can be used as in HTML to define
-the shape of the relevant area within the content file pointed to by the
-`<area>` element. Typically this would be used with image content (still
-image or video frame) when only a portion of an integral image map
-pertains. If SHAPE is specified then COORDS must also be present (see
-below). SHAPE should be used in conjunction with COORDS in the manner
-defined for the shape and coords attributes on an HTML4 `<area>`
-element. SHAPE must contain one of the following values: *RECT, CIRCLE,
-POLY*.
-
-COORDS (*string/O*): Specifies the coordinates in an image map for the
-shape of the pertinent area as specified in the SHAPE attribute. While
-technically optional, SHAPE and COORDS must both appear together to
-define the relevant area of image content. COORDS should be used in
-conjunction with SHAPE in the manner defined for the COORDs and SHAPE
-attributes on an HTML4 `<area>` element. COORDS must be a comma
-delimited string of integer value pairs representing coordinates (plus
-radius in the case of CIRCLE) within an image map. Number of coordinates
-pairs depends on shape: RECT: x1, y1, x2, y2; CIRC: x1, y1; POLY: x1,
-y1, x2, y2, x3, y3 . . .
-
-BEGIN (*string/O*): An attribute that specifies the point in the content
-file where the relevant section of content begins. It can be used in
-conjunction with either the END attribute or the EXTENT attribute as a
-means of defining the relevant portion of the referenced file precisely.
-It can only be interpreted meaningfully in conjunction with the BETYPE
-or EXTTYPE, which specify the kind of beginning/ending point values or
-beginning/extent values that are being used. The BEGIN attribute can be
-used with or without a companion END or EXTENT element. In this case,
-the end of the content file is assumed to be the end point.
-
-END (*string/O*): An attribute that specifies the point in the content
-file where the relevant section of content ends. It can only be
-interpreted meaningfully in conjunction with the BETYPE, which specifies
-the kind of ending point values being used. Typically the END attribute
-would only appear in conjunction with a BEGIN element.
-
-BETYPE (*string/O*): An attribute that specifies the kind of BEGIN
-and/or END values that are being used. For example, if BYTE is
-specified, then the BEGIN and END point values represent the byte
-offsets into a file. If IDREF is specified, then the BEGIN element
-specifies the ID value that identifies the element in a structured text
-file where the relevant section of the file begins; and the END value
-(if present) would specify the ID value that identifies the element with
-which the relevant section of the file ends. Must be one of the
-following values*: BYTE, IDREF, SMIL, MIDI, SMPTE-25, SMPTE-24,
-SMPTE-DF30, SMPTE-NDF30, SMPTE-DF29.97, SMPTE-NDF29.97, TIME, TCF.*
-
-EXTENT (*string/O*): An attribute that specifies the extent of the
-relevant section of the content file. Can only be interpreted
-meaningfully in conjunction with the EXTTYPE which specifies the kind of
-value that is being used. Typically the EXTENT attribute would only
-appear in conjunction with a BEGIN element and would not be used if the
-BEGIN point represents an IDREF.
-
-EXTTYPE (*string/O*): An attribute that specifies the kind of EXTENT
-values that are being used. For example if BYTE is specified then EXTENT
-would represent a byte count. If TIME is specified the EXTENT would
-represent a duration of time. EXTTYPE must be one of the following
-values: *BYTE, SMIL, MIDI, SMPTE-25, SMPTE-24, SMPTE-DF30, SMPTE-NDF30,
-SMPTE-DF29.97, SMPTE-NDF29.97, TIME, TCF*.
-
-ADMID (*IDREFS/O*): Contains the ID attribute values identifying the
-`<rightsMD>`, `<sourceMD>`, `<techMD>` and/or `<digiprovMD>` elements
-within the `<amdSec>` of the METS document that contain or link to
-administrative metadata pertaining to the content represented by the
-`<area>` element. Typically the `<area>` ADMID attribute would be used
-to identify the `<rightsMD>` element or elements that pertain to the
-`<area>` but it could be used anytime there is a need to link an
-`<area>` element with pertinent administrative metadata. For more
-information on using METS IDREFS and IDREF type attributes for internal
-linking, see Chapter 4.
-
-CONTENTIDS (*URI/O*): Content IDs for the content represented by the
-`<mptr>` (equivalent to DIDL DII or Digital Item Identifier, a unique
-external ID).
 
 #### Area -- example
 
@@ -2461,14 +1636,6 @@ entry. If the diary entry started in the middle of a page, then the
 first `<area>` element (representing the page on which the diary entry
 starts) might be further qualified, via its SHAPE and COORDS attributes,
 to specify the specific, pertinent area of the associated image file.
-
-#### Sequence of files -- attribute
-
-[ID (*ID/O*):]{.underline} This attribute uniquely identifies the
-element within the METS document, and allows the element to be
-referenced unambiguously from another element or document via an IDREF
-or an XPTR. For more information on using ID attributes for internal and
-external linking see Chapter 4.
 
 #### Sequence of files -- example 
 
@@ -2571,14 +1738,6 @@ the image file was pertinent and the `<area>` element associated with
 the audio file could be further qualified with BETYPE, BEGIN, EXTTYPE,
 and EXTENT attributes if only a portion of the associated audio file
 should be played in conjunction with the image.
-
-#### Parallel files -- attributes
-
-[ID (*ID/O*):]{.underline} This attribute uniquely identifies the
-element within the METS document, and allows the element to be
-referenced unambiguously from another element or document via an IDREF
-or an XPTR. For more information on using ID attributes for internal and
-external linking see Chapter 4.
 
 #### Parallel files -- example 1
 
@@ -2786,528 +1945,6 @@ English versions simultaneously.
     </mets:div>
     </mets:div>
   </mets:structMap>
-</mets:mets>
-```
-
-[Image]
-
-## `<structLink>` Structural link Section
-
-The **Structural Link Section** element `<structLink>` allows for the
-specification of hyperlinks between the different components of a METS
-structure that are delineated in a structural map. This element is a
-container for a single, repeatable element, `<smLink>` which indicates a
-hyperlink between two nodes in the structural map. The `<structLink>`
-section in the METS document is identified using its XML ID attributes.
-
-### Structural link - attribute
-
-[ID (*ID/O*):]{.underline} This attribute uniquely identifies the
-element within the METS document, and allows the element to be
-referenced unambiguously from another element or document via an IDREF
-or an XPTR. For more information on using ID attributes for internal and
-external linking see Chapter 4.
-
-### Elements contained in the structural link section
-
-#### Structural map link
-
-The **Structural Map Link** element `<smLink>` identifies a hyperlink
-between two nodes in the structural map. You would use `<smLink>`, for
-instance, to note the existence of hypertext links between web pages, if
-you wished to record those links within METS. The `<smLink>` element
-uses nine attributes.
-
-NOTE: `<smLink>` is an empty element. The location of the `<smLink>`
-element to which the `<smLink>` element is pointing MUST be stored in
-the xlink:href attribute.
-
-#### Structural map link -- attributes
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-xlink:arcrole (*URI/O*): This attribute serves a semantic purpose. If
-present it specifies the URI of a resource that describes the pertinent
-arcrole. While it is more likely to be used in arcLinks than
-simpleLinks, this attribute is nonetheless defined as part of the
-xlink:simpleLink attribute group. It must be a URI reference as defined
-in IETF RFC 2396, except that, if the URI scheme used allows absolute
-and relative forms, the URI portion must be absolute.
-
-xlink:title (*string/O*): This attribute serves a semantic purpose. It
-is used to describe the meaning of a link or resource in a
-human-readable fashion. This attribute is defined as part of the
-xlink:simpleLink attribute group.
-
-xlink:show (*string/O*): Must contain one of the following values: *new,
-replace, embed, other, none*. This attribute specifies behavior. Within
-a simpleLink it signals behavior intentions for traversal to the
-simpleLink's single remote ending resource. xlink:show generally refers
-to whether a browser should show the resource in a new window or replace
-the current one, etc.
-
-xlink:actuate (*string/O*): Must contain one of the following values:
-*onLoad, onRequest, other, none*. This optional XLink attribute
-specifies behavior. Within a simpleLink it signals behavior intentions
-for traversal to the simpleLink's single remote ending resource.
-
-xlink:to (*string/O*): A required attribute that identifies the `<div>`
-element that represents the target node of the link defined by the
-`<smLink>` element by referencing the `<div>` element's xlink:label
-attribute value.
-
-xlink:from (*string/O*): An attribute that identifies the `<div>`
-element that represents the source node of the link defined by the
-`<smLink>` element by referencing the `<div>` element's xlink:label
-attribute value.
-
-### Structural links section -- examples
-
-#### Structral links section -- example 1 
-
-In the following example, a METS document for a web page contains an
-image which is hyperlinked to another page. The `<structMap>` element
-might contain `<div>` notation as follows for the two pages:
-
-```xml
-<mets:div ID="P1" TYPE="page" LABEL="Page 1">
-  <mets:fptr FILEID="HTMLF1"/>
-  <mets:div xlink:labelxlink:label="IMG1" TYPE="image"
-      LABEL="Image Hyperlink to Page 2">
-    <mets:fptr FILEID="JPGF1"/>
-  </div>
-</mets:div>
-<mets:div xlink:labelxlink:label="P2" TYPE="page" LABEL="Page 2">
-  <mets:fptr FILEID="HTMLF2"/>
-</mets:div>
-```
-
-If you wished to indicate that the image file in the `<div>` contained
-with the first page `<div>` is hyperlinked to the HTML file in the
-second page `<div>`, you would have a `<smLink>` element within the
-`<structLink>` section of the METS document as follows:
-
-```xml
-<mets:structLink>
-  <mets:smLink xlink:from="IMG1" xlink:to="P2"
-    xlink:title="Hyperlink from JPEG Image on Page 1 to Page 2"
-    xlink:show="new" xlink:actuate="onRequest"/>
-</structLink>
-```
-
-#### Structural links section -- example 2
-
-In a more complex example, a complete METS document describes a web site
-with particular pages selected for description within it using the
-`<structLink>` element to point to specific parts of the web site's
-structural map. In the following excerpt, a single page of the web site
-is illustrated including the `<fileSec>`, relevant portions of the
-`<structMap>`, and the `<smLink>` elements associated with that page.
-
-Specifically, the "Projects" page (PAGE 1145) links to the following
-pages in the `<structMap>` of the web site:
-
-  - Officers (Link 36) to Page 113
-  - Calendar (Link 37) to Page 120
-
-As the "Projects" page for the website, PAGE 1145 also has links to it
-from other pages in the web site, for example:
-
-  - Link 7
-  - Link 13
-
-In another view,
-
-+----------------------+----------------------+-----------------------+
-| From reference to    | Page 1145.           | Officers, Link 36, p. |
-| Projects in Link 7,  |                      | 113                   |
-| p. 113 to ->         | Contains references  |                       |
-|                      | to ->                |                       |
-+----------------------+----------------------+-----------------------+
-| From reference to    | Page 1145.           | Calendar, Link 37, p. |
-| Projects in Link 13, |                      | 120                   |
-| p. 120 to ->         | Contains references  |                       |
-|                      | to ->                |                       |
-+----------------------+----------------------+-----------------------+
-
-The following XML fragment illustrates how the linking might be done:
-
-```xml
-<mets:fileSec>
-  <mets:fileGrp>
-    <mets:file ID="FID1145" MIMETYPE="text/html">
-      <mets:FLocat LOCTYPE="URL"
-        xlink:href="dlibdev.nyu.edu/webarchive/metstest/www.apgawomen.org/projects.htm">
-      </mets:FLocat>
-    <mets:file>
-    ...
-<mets:structMap TYPE="logical">
-  ...
-  <!--Within the <div> for page 113, LINK7 is described by the following <div> -->
-    <mets:div DMDID="DM8" TYPE="web page" xlink:label="page113" LABEL="Officers page">
-      <mets:fptr>
-        <mets:par>
-          <mets:area FILEID="FID113"></mets:area>
-        </mets:par>
-      </mets:fptr>
-      <mets:div TYPE="hyperlink" xlink:label ="LINK7" LABEL="projects">
-        <mets:fptr>
-          <mets:area BEGIN="000" BETYPE="BYTE" END="111" FILEID="FID1145"></mets:area>
-        </mets:fptr>
-      </mets:div>
-    </mets:div>
-    ...
-    <!--Within the <di> for page 120, LINK13 is described by the following <div> -->
-    <mets:div DMDID="DM8" TYPE="web page" xlink:label ="page120" LABEL="Calendar page">
-      <mets:fptr>
-        <mets:par>
-          <mets:area FILEID="FID120"></mets:area>
-        </mets:par>
-      </mets:fptr>
-      <mets:div TYPE="hyperlink" xlink:label="LINK13" LABEL="projects">
-        <mets:fptr>
-          <mets:area BEGIN="000" BETYPE="BYTE" END="111" FILEID="FID1145">
-          </mets:area>
-        </mets:fptr>
-      </mets:div>
-    </mets:div>
-    <!--The following <div> represents Page 1145, the Projects page, and the
-        pertinent <div>s for LINK36 and LINK37. -->
-    <mets:div DMDID="DM8" TYPE="web page" xlink:label ="page1145"
-        LABEL="http://dlibdev.nyu.edu/webarchive/metstest/www.apgawomen.org/projects.htm">
-      <mets:fptr>
-        <mets:par>
-          <mets:area FILEID="FID1145"></mets:area>
-        </mets:par>
-      </mets:fptr>
-      <mets:div TYPE="hyperlink" xlink:label ="LINK36" LABEL="officers">
-        <mets:fptr>
-          <mets:area BEGIN="000" BETYPE="BYTE" END="111" FILEID="FID1145"></mets:area>
-        </mets:fptr>
-      </mets:div>
-      <mets:div TYPE="hyperlink" xlink:label ="LINK37" LABEL="calender">
-        <mets:fptr>
-          <mets:area BEGIN="000" BETYPE="BYTE" END="111" FILEID="FID1145"></mets:area>
-        </mets:fptr>
-      </mets:div>
-    </mets:div>
-</mets:structMap>
-<--The following <structLink> shows the pertinent references to and from page 1145. >
-<mets:structLink>
-  <mets:smLink xlink:from="LINK7" xlink:to="page1145" xlink:title="projects">
-  </mets:smLink>
-  <mets:smLink xlink:from="LINK13" xlink:to="page1145" xlink:title="projects">
-  </mets:smLink>
-  <mets:smLink xlink:from="LINK36" xlink:to="page113" xlink:title="officers">
-  </METS:smLink>
-  <mets:smLink xlink:from="LINK37" xlink:to="page120" xlink:title="calender">
-  </METS:smLink>
-</mets:structLink>
-```
-
-[Image]
-
-## `<behaviorSec>` Behavior section
-
-METS provides a means to link digital content with applications or
-computer programming code that can be used in conjunction with the other
-information in the METS document to render or display the digital
-object, or to transform one or more of its component content files.
-Called "behaviors", such executable code may can be applied to any
-`<div>` in the METS structMap (as specified by the STRUCTID attribute of
-a `<behavior>` element) or to any `<transformFile>` element in a
-`<file>` element in the `<fileSec>`
-
-A **behavior section** `<behaviorSec>` associates executable behaviors
-with content in the METS document by means of a repeatable behavior
-`<behavior>` element. This element has an interface definition
-`<interfaceDef>` element that represents an abstract definition of the
-set of behaviors represented by a particular behavior section. A
-`<behavior>` element also has a `<mechanism>` element which is used to
-point to a module of executable code that implements and runs the
-behavior defined by the interface definition.
-
-The `<behaviorSec>` element, which is repeatable as well as nestable,
-can be used to group individual behaviors within the structure of the
-METS document. Such grouping can be useful for organizing families of
-behaviors together or to indicate other relationships between particular
-behaviors.
-
-### Attributes of the behavior section
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-CREATED (*dateTime/O*): Specifies the date and time of creation for the
-`<behaviorSec>`.
-
-LABEL (*string/O*): A text description of the behavior section.
-
-### Elements contained in the behavior section
-
-#### Behavior (element)
-
-A **behavior** `<behavior>` element can be used to associate executable
-behaviors with content in the METS document. This element has an
-interface definition `<interfaceDef>` element that represents an
-abstract definition of a set of behaviors represented by a particular
-behavior. A `<behavior>` element also has a behavior mechanism
-`<mechanism>` element, a module of executable code that implements and
-runs the behavior defined abstractly by the interface definition.
-
-#### Behavior (element) -- attributes 
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. In the case of
-a `<behavior>` element that applies to a `<transformFile>` element, the
-ID value must be present and would be referenced from the
-transformFile/@TRANSFORMBEHAVIOR attribute. For more information on
-using ID attributes for internal and external linking see Chapter 4.
-
-STRUCTID (*IDREFS/O*): An XML IDREFS attribute used to link a
-`<behavior>` to one or more `<div>` elements within a `<structMap>` in
-the METS document. The content to which the STRUCTID points is
-considered input to the executable behavior mechanism defined for the
-behavior. If the `<behavior>` applies to one or more `<div>` elements,
-then the STRUCTID attribute must be present.
-
-BTYPE (*string/O*):. The behavior type provides a means of categorizing
-the related behavior.
-
-CREATED (*dateTime/O*): The dateTime of creation for the behavior.
-
-LABEL (*string/O*): A text description of the behavior.
-
-GROUPID (*string/O*): An identifier that establishes a correspondence
-between the given behavior and other behaviors, typically used to
-facilitate versions of behaviors.
-
-ADMID (*IDREFS/O*): Lists the XML ID values of administrative metadata
-sections within the METS document that pertain to the given behavior.
-
-#### Behavior (element) -- example 
-
-```xml
-<mets:behaviorSec>
-  <mets:behavior ID="disp1" STRUCTID="top" BTYPE="display" LABEL="Display Behavior">
-```
-
-#### Interface definition 
-
-The **interface definition** `<interfaceDef>` element contains a pointer
-to an abstract definition of a single behavior or a set of related
-behaviors that are associated with the content of a METS object. The
-interface definition object to which the `<interfaceDef>` element points
-using xlink:href could be another digital object, or some other entity,
-such as a text file which describes the interface or a [Web Services
-Description Language]{.underline} (WSDL) file. Ideally, an interface
-definition object contains metadata that describes a set of behaviors or
-methods. It may also contain files that describe the intended usage of
-the behaviors, and possibly files that represent different expressions
-of the interface definition. The `<interfaceDef>` element is optional to
-allow for cases where an interface definition can be obtained directly
-from a behavior mechanism object. (see EXECUTABLE MECHANISM later in
-this section).
-
-#### Interface definition -- attributes 
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-LABEL (*string/O*): A text description of the interface definition
-section.
-
-LOCTYPE (*string/R*): Specifies the locator type used in the xlink:href
-attribute. Valid values for LOCTYPE are: *ARK, URN, URL, PURL, HANDLE,
-DOI, OTHER.*
-
-OTHERLOCTYPE (*string/O*): An attribute use to indicate an alternative
-LOCTYPE if the LOCTYPE attribute itself has a value of "OTHER".
-
-xlink:href (*URI/O*): An attribute, technically optional, that gives the
-URI where the interface definition object represented by the
-`<interfaceDef>` can be located. While technically optional, the
-xlink:href should always be present in this context if the
-`<interfaceDef>` is to have any meaning or use. This attribute is
-defined as of the xlink:simpleLink attribute group.
-
-xlink:role (*URI/O*): An optional XLink attribute that serves a semantic
-purpose. Must be a URI reference as defined in IETF RFC 2396, except
-that, if the URI scheme used is allowed to have absolute and relative
-forms, the URI portion must be absolute. If present, it specifies the
-URI of a resource that describes the role or function of the xlink:href
-link. This attribute is defined as part of the xlink:simpleLink
-attribute group.
-
-xlink:arcrole (*URI/O*): Must be a URI reference as defined in IETF RFC
-2396, except that, if the URI scheme used is allowed to have absolute
-and relative forms, the URI portion must be absolute. This is an
-optional XLink attribute that serves a semantic purpose. If present, it
-specifies the URI of a resource that describes the pertinent arcrole.
-While more likely to be used in arcLinks than simpleLinks, this
-attribute is nonetheless defined as part of the xlink:simpleLink
-attribute group.
-
-xlink:title (*string/O*): This attribute serves a semantic purpose. It
-is used to describe the meaning of a link or resource in a
-human-readable fashion. This attribute is defined as part of the
-xlink:simpleLink attribute group.
-
-xlink:show (*string/O*): Must contain one of the following values: *new,
-replace, embed, other, none.* This optional XLink attribute specifies a
-behavior. Within a simpleLink, it signals behavior intentions for
-traversal to the simpleLink's single remote ending resource.
-
-xlink:actuate (*string/O*): Must contain one of the following values:
-*onLoad, onRequest, other, none*. This optional XLink attribute
-specifies behavior. Within a simpleLink, it signals behavior intentions
-for traversal to the simpleLink's single remote ending resource.
-
-#### Interface definition -- example 
-
-```xml
-<mets:behaviorSec>
-  <mets:behavior ID="disp1" STRUCTID="top" BTYPE="display"
-    LABEL="Display Behavior">
-    <mets:interfaceDef LABEL="EAD Display Definition" LOCTYPE="URL"
-      xlink:href="http://texts.cdlib.org/dynaxml/profiles/display/oacDisplayDef.txt"/>
-```
-
-#### Executable mechanism 
-
-A **mechanism** element `<mechanism>` contains a pointer to an
-executable code module that implements a set of behaviors defined by an
-interface definition. The `<mechanism>` element will be a pointer to
-another object (a mechanism object). A mechanism object could be another
-METS object, or some other entity (e.g., a WSDL file). A mechanism
-object should contain executable code, pointers to executable code, or
-specifications for binding to network services (e.g., web services).
-
-#### Executable mechanism -- attributes 
-
-ID (*ID/O*): This attribute uniquely identifies the element within the
-METS document, and allows the element to be referenced unambiguously
-from another element or document via an IDREF or an XPTR. For more
-information on using ID attributes for internal and external linking see
-Chapter 4.
-
-LABEL (*sting/O*): A text description of the mechanism section.
-
-LOCTYPE (*string/R*): The type of locator contained in the `<mechanism>`
-element. Must be one of the following: *ARK, URN, URL, PURL, HANDLE,
-DOI, OTHER.*
-
-OTHERLOCTYPE (*string/O*): An attribute used to indicate an alternative
-LOCTYPE if the LOCTYPE attribute itself has a value of "OTHER".
-
-xlink:href (*URI/O*): An attribute that gives the URI where the
-mechanism object represented by the `<mechanism>` element can be
-located. While technically optional, the xlink:href should always be
-present in this context if the `<mechanism>` is to have any meaning or
-use.
-
-xlink:role (URI/O): An optional XLink attribute that serves a semantic
-purpose. Must be a URI reference as defined in IETF RFC 2396 except
-that, if the URI scheme used is allowed to have absolute and relative
-forms, the URI portion must be absolute. This optional XLink attribute
-serves a semantic purpose. If present, it specifies the URI of a
-resource that describes the role or function of the xlink:href link.
-This attribute is defined as part of the xlink:simpleLink attribute
-group.
-
-xlink:arcrole (*URI/O*): Must be a URI reference as defined in IETF RFC
-2396, except that, if the URI scheme used is allowed to have absolute
-and relative forms, the URI portion must be absolute. This optional
-XLink attribute serves a semantic purpose. If present, it specifies the
-URI of a resource that describes the pertinent arcrole. While more
-likely to be used in arcLinks than simpleLinks, this attribute is
-nonetheless defined as part of the xlink:simpleLink attribute group.
-
-xlink:title (*string/O*): An attribute that serves a semantic purpose.
-It is used to describe the meaning of a link or resource in a
-human-readable fashion. This attribute is defined as part of the
-xlink:simpleLink attribute group.
-
-xlink:show (*string/O*): Must contain one of the following values: *new,
-replace, embed, other, none*. This optional XLink attribute specifies a
-behavior. Within a simpleLink, it signals behavior intentions for
-traversal to the simpleLink's single remote ending resource.
-
-xlink:actuate (*string/O*): Must contain one of the following values:
-*on Load, onRequest, other, none*. This attribute specifies behavior.
-Within a simpleLink, it signals behavior intentions for traversal to the
-simpleLink's single remote ending resource.
-
-NOTE: `<mechanism>` is an empty element. The location of the mechanism
-object to which the `<mechanism>` element is pointing MUST be stored in
-the xlink:href attribute.
-
-#### Executable mechanism -- example 
-
-```xml
-<mets:behaviorSec>
-  <mets:behavior ID="disp1" STRUCTID="top" BTYPE="display"
-      LABEL="Display Behavior">
-    <mets:interfaceDef LABEL="EAD Display Definition" LOCTYPE="URL"
-      xlink:href="http://texts.cdlib.org/dynaxml/profiles/display/oacDisplayDef.txt"/>
-    <mets:mechanism LABEL="EAD Display Mechanism" LOCTYPE="URL"
-      xlink:href="http://texts.cdlib.org/dynaxml/profiles/display/oacDisplayMech.xml
-  </mets:behavior>
-</mets:behaviorSec>
-```
-
-### Behavior section -- example 
-
-The following example illustrates how a METS object will call executable
-code to 1) display an Encoded Archival Description (EAD) finding aid,
-and 2) authenticate public access to the finding aid. Pertinent sections
-of the `<structMap>` are included in the example.
-
-```xml
-<mets:mets schemaLocation="http://www.loc.gov/METS/
- http://www.loc.gov/standards/mets/mets.xsd http://www.loc.gov/mods/v3
- http://www.loc.gov/standards/mods/v3/mods-3-0.xsd
- http://www.loc.gov/mix/ http://www.loc.gov/standards/mix/mix.xsd
- http://sunsite.berkeley.edu/MOA2/ http://sunsite.berkeley.edu/METS/moa2md.xsd"
- OBJID="ark:/13030/hb1d5n9804" TYPE="text"
- PROFILE="http://sunsite.berkeley.edu/mets/profiles/UCBTextProfile.xml"
- LABEL="George E. Link, History of the Kaiser Permanente Medical Care Program">
-  ...
-  <mets:structMap>
-    <mets:div ID="top" TYPE="TEI.2" LABEL="George E. Link History of the Kaiser
-        Permanente Medical Care Program: Kaiser Permanente Medical Care Program Oral
-        History Project">
-      <mets:fptr FILEID="KAISER1"/>
-  </mets:structMap>
-  ...
-  <mets:behaviorSec>
-  <mets:behavior ID="disp1" STRUCTID="top" BTYPE="display"
-      LABEL="Display Behavior">
-    <mets:interfaceDef LABEL="EAD Display Definition" LOCTYPE="URL"
-      xlink:href="http://texts.cdlib.org/dynaxml/profiles/display/oacDispalyDef.txt"/
-    <mets:mechanism LABEL="EAD Display Mechanism" LOCTYPE="URL"
-      xlink:href="http://texts.cdlib.org/dymaxml/profiles/display/oacDisplaymech.xml"/>
-  </mets:behavior>
-  ...
-  <mets:behavior ID="auth1" STRUCTID="top" BTYPE="authentication"
-      LABEL="AuthenticationBehavior">
-    <mets:interfaceDef LABEL="General Public Authentication Definition" LOCTYPE="URL"
-      xlink:href=:http://texts.cdlib.org/dynaxml/profiles/display/publicAuthdef.txt"/>
-    <mets:mechanism LABEL="General Public Authentication Mechanism" LOCTYPE="URL"
-      xlink:href="http://texts.cdlib.org/dynaxml/profiles/authentication/publicAuthMech.xml"/>
-    </mets:behavior>
-  </mets:behaviorSec>
 </mets:mets>
 ```
 

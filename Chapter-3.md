@@ -216,28 +216,27 @@ Modification to this example record is indicated in LASTMODDATE.
 The **metadata section** `<mdSec>` records metadata pertaining to the
 METS object as a whole or one of its components. The METS document can
 have only one metadata section. Multiple metadata subelements `<md>` are
-allowed so that descriptive metadata can be recorded for each separate
-item or component within the METS document. Metadata elements `<md>`
-can also be grouped inside Metadata group elements `<mdGrp>`.
+allowed so that metadata can be recorded for each separate item or
+component within the METS document. Metadata elements `<md>` can also be
+grouped inside Metadata group elements `<mdGrp>`.
 
 METS does not itself provide a vocabulary or syntax for encoding the
 included or referred metadata. Content guidelines are supplied by the
-specific descriptive standard used. METS does, however, provide a means
-for linking this metadata to the digital content of the entity and to
-other types of metadata related to the object, such as structural
-metadata.
+specific standard used. METS does, however, provide a means for linking
+this metadata to the digital content of the entity and to other types of
+metadata related to the object, such as structural metadata.
 
-### Descriptive metadata elements
+### Metadata element
 
 A metadata element `<md>` can either wrap the metadata (mdWrap) or
 reference it in an external location (mdRef) or both. For example, a
-MODS record can be encoded in XML and embedded into the descriptive
-metadata section or a MARC record could be included in binary format.
-Alternately, the descriptive metadata section may simply identify the
-type of descriptive metadata it represents (MARC, EAD, etc), and point
-to this metadata in its external location via a URI. This is done by the
-metadata Wrap `<mdWrap>` and metadata Reference `<mdRef>` elements,
-which are discussed in more detail below.
+MODS record can be encoded in XML and embedded into the metadata section
+or a MARC record could be included in binary format. Alternately, the
+metadata section may simply identify the type of metadata it represents
+(for example MARC, EAD), and point to this metadata in its external
+location via a URI. This is done by the metadata Wrap `<mdWrap>` and
+metadata Reference `<mdRef>` elements, which are discussed in more detail
+below.
 
 #### Metadata reference
 
@@ -272,9 +271,9 @@ Such metadata can be in one of two forms:
 
 2.  Any arbitrary binary or textual form, PROVIDED that the metadata is
     Base64 encoded and wrapped in a `<binData>` element within the
-    internal descriptive metadata element.
+    internal metadata element.
 
-#### Internal descriptive metadata -- elements
+#### Internal metadata -- elements
 
 The `<mdWrap>` element has two elements:
 
@@ -295,7 +294,10 @@ the elements appearing in the `<xmlData>` element.
 
 #### Descriptive metadata wrapper -- example 1
 
-The following examples demonstrate the use of the `<mdWrap>` element:
+Descriptive metadata is metadata about the content and context of the
+data. With descriptive metadata, the content can be identified and
+discover. The following example demonstrate the use of the
+`<mdWrap>` element:
 
 ```xml
 <mets:md ID="DMD1" USE="DESCRIPTIVE">
@@ -1027,9 +1029,8 @@ individual issues might then organize their content.
 
 In addition to providing a means for organizing content, the
 `<structMap>` provides a mechanism for linking content at any
-hierarchical level with relevant descriptive and administrative
-metadata. For more on this type of linking see the section on the
-`<div>` element below.
+hierarchical level with relevant metadata. For more on this type of
+linking see the section on the `<div>` element below.
 
 The hierarchical structure specified by a `<structMap>` is encoded as a
 tree of nested `<div>` elements. A `<div>` element may directly point to

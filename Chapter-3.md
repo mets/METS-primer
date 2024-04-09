@@ -575,7 +575,7 @@ http://www.loc.gov.standards/premis/pig.html
 
 [Image]
 
-## `<file>` File section
+## `<fileSec>` File section
 
 The overall purpose of the content **file section** element `<fileSec>`
 is to provide an inventory of and the location for the content files

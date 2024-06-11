@@ -12,6 +12,10 @@ schema is referenced. This chapter was envisioned primarily as a
 reference tool for implementers who wish to dip in and out of specific
 sections as needed.
 
+This chapter does not list nor define the attributes available in
+different elements. Please have a look at the Schema Documentation
+for detailed information.
+
 As discussed in Chapter 2 many of the examples will be drawn from
 Martial's *Epigrams*, for consistency and for the ease of using a text
 to illustrate these concepts. Although text is not the only genre or
@@ -28,3 +32,11 @@ the METS document, including any externally referenced content or
 metadata needed to constitute a complete object. How an implementer
 chooses to use the identifiers associated with the mets root element may
 vary depending upon the situation.
+
+The subchapters of Chapter 3 are:
+
+- [Chapter 3.1: METS root element](./Chapter-3-1-root.md)
+- [Chapter 3.2: METS Header](./Chapter-3-2-metsHdr.md)
+- [Chapter 3.3: Metadata section](./Chapter-3-3-mdSec.md)
+- [Chapter 3.4: File section](./Chapter-3-4-fileSec.md)
+- [Chapter 3.5: Structural map section](./Chapter-3-5-structSec.md)

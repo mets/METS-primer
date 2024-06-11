@@ -1,8 +1,8 @@
 Reviewers: Andreas
+was: chapter 4
 
 ***
-
-# Chapter 4:  Common constructs and standards
+# Common constructs and standards
 
 XML Technologies and specifications used throughout METS
 

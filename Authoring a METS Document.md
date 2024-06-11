@@ -1,8 +1,5 @@
-Text only moved from Primer version 1
-
-***
-
-# Chapter 2: Authoring a METS Document
+(Text only moved from Primer version 1, chapter 2)
+# Authoring a METS Document
 
 The METS standard provides a means of encoding digital library materials.  Its most fundamental task in accomplishing this goal is to provide a mechanism for recording the various relationships that exist between pieces of content, and between the content and metadata that compose a digital library object.  As the exact meaning and use of the various elements and attributes outlined in Chapter 3 can be difficult to understand in the abstract, this chapter will demonstrate their use in a practical application by creating a METS file for a digital version of Martial's _Epigrams_ (see also the full METS Document in [Appendix A](#bookmark=id.qbtyoq)).  These guidelines will be of use for building METS documents by hand as a method to learn the schema, for creating a template to be applied to multiple objects, and for building METS documents programmatically.  Due to the extremely complex and detailed nature of METS documents, implementers will not create METS documents for use in a production environment by this method. 
 

@@ -9,7 +9,7 @@ Juha is currently editing:
 
 [Image]
 
-# Chapter 3: From the schema perspective
+# METS From the schema perspective
 
 This chapter will discuss and expand on upon the schema and as such will
 present sections, elements and attributes in the same order as they

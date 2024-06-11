@@ -811,6 +811,6 @@ English versions simultaneously.
         </mets:div>
       </mets:div>
     </mets:structMap>
-  </mets:stuctSec>
+  </mets:structSec>
 </mets:mets>
 ```

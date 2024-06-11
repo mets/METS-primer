@@ -359,7 +359,12 @@ expressed according to current digital provenance description standards
 </mets:md>
 ```
 
-Examples for implementing PREMIS can be found on the PREMIS
-Implementors' Group (PIG) wiki:
-http://www.loc.gov/standards/premis/pig.html
+Examples for implementing PREMIS can be found on the
+[PREMIS website](https://www.loc.gov/standards/premis/)
 
+Below, there are links to a few technical metadata standards:
+
+- [MIX XML Schema](https://www.loc.gov/standards/mix/)
+- [NISO Technical Metadata for Still Images](https://www.niso.org/publications/ansiniso-z3987-2006-r2017-data-dictionary-technical-metadata-digital-still-images)
+- [TextMD](https://www.loc.gov/standards/textMD/)
+- [AudioMD and VideoMD](https://www.loc.gov/standards/amdvmd/index.html)

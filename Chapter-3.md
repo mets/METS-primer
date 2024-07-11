@@ -572,8 +572,8 @@ expressed according to current digital provenance description standards
 ```
 
 Examples for implementing PREMIS can be found on the PREMIS
-Implemention Group (PIG) wiki:
-http://www.loc.gov.standards/premis/pig.html
+Implementors' Group (PIG) wiki:
+http://www.loc.gov/standards/premis/pig.html
 
 [Image]
 

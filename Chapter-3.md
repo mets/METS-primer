@@ -508,7 +508,7 @@ expressed according to current digital provenance description standards
     <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="oclcprov">
       <oclcprov:oclcprov>
         <oclcprov:digiprovMD>
-          <oclcprov:fixityAlgorithm>Adler-32 </oclcprov:fixityAlgorith>
+          <oclcprov:fixityAlgorithm>Adler-32 </oclcprov:fixityAlgorithm>
           <oclcprov:fixityCheckResults>202947597</oclcprov:fixityCheckResults>
           <oclcprov:fixityCheckStatus>Success</oclcprov:fixityCheckStatus>
           <oclcprov:fixityCheckDate>s006-05-15T09:17:49</oclcprov:fixityCheckDate>
@@ -563,8 +563,8 @@ expressed according to current digital provenance description standards
         </premis:linkingAgentIdentifier>
         <premis:linkingAgentIdentifier>
           <premis:linkingAgentIdentifierType>"Software"/>
-          <premis:linkingAgentIdentidierValue>"SDR_Ingest_Validator"/>
-        </premis:linkingAgentIdentidier>
+          <premis:linkingAgentIdentifierValue>"SDR_Ingest_Validator"/>
+        </premis:linkingAgentIdentifier>
       </premis:event>
     </mets:xmlData>
   </mets:mdWrap>
@@ -1803,7 +1803,7 @@ English versions simultaneously.
         </mets:div>
       </mets:div>
     </mets:structMap>
-  </mets:stuctSec>
+  </mets:structSec>
 </mets:mets>
 ```
 

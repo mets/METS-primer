@@ -1,9 +1,8 @@
-Text only moved from Primer version 1
+(Text only moved from Primer version 1, chapter 6)
 
 ***
 
-
-# Chapter 6:  External schema and Controlled Vocabulary
+# External schema and Controlled Vocabulary
 
 One of the main differences between METS and other content and metadata packaging specifications is its capability for organizing the metadata associated with a digital object into different categories.  By means of the **&lt;dmdSec>** and the **&lt;amdSec>**, the metadata for a digital object can be separated into descriptive and administrative metadata sections within the METS document.  The administrative metadata section can be subdivided further into other types of metadata including _technical_ metadata for different data formats, _digital provenance_ for preservation metadata, _source_ for metadata relating to an analog or digital item from which the digital object being described in the METS document derives, and _rights_ metadata.  Two mechanisms can be used to associate these different categories of metadata with the digital object and/or its components – either by including the metadata within the METS document using an &lt;mdWrap> element, or pointing to an external location for the metadata using an &lt;mdRef> element.  More complete explanations about how to use these elements can be found within Chapter 3.
 

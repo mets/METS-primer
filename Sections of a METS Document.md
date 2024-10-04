@@ -28,8 +28,8 @@ with the `mets` root element may vary depending upon the situation.
 
 Each major section of METS is covered on its own page:
 
-- [METS root element](./schema-perspective/root.md)
-- [METS Header](./schema-perspective/metsHdr.md)
-- [Metadata section](./schema-perspective/mdSec.md)
-- [File section](./schema-perspective/fileSec.md)
-- [Structural map section](./schema-perspective/structSec.md)
+- [METS root element](METS%20root%20element.md)
+- [METS Header](METS%20Header%20-%20metsHdr.md)
+- [Metadata section](Metadata%20Section%20-%20mdSec.md)
+- [File section - fileSec](File%20section%20-%20fileSec.md)
+- [Structural map section](Structural%20map%20section%20-%20structSec.md)

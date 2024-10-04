@@ -1,5 +1,4 @@
-(Text only moved from Primer version 1, chapter 2)
-(Split out subsections, but TODO: needs to be reviewed/rewritten for METS 2 & a new example, and potentially merged with chapter 3)
+(TODO needs to be entirely rewritten with the new example; see [[Complete Example]])
 
 ---
 # Authoring a METS Document

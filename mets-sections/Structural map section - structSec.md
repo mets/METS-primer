@@ -14,7 +14,7 @@ an understanding of the structural relationship of the content files or
 parts of the content files. The organization may be specified to any
 level of granularity (intellectual and or physical) that is desired.
 The section may contain one or more structural maps, with using
-repeatable <structMap> element, which allows more than one structure
+repeatable `<structMap>` element, which allows more than one structure
 to apply to the digital content represented by the METS document.
 
 The structure provided by the `<structMap>` may be purely
@@ -66,7 +66,7 @@ programs, etc.
 
 ### Elements contained in the structural map section
 
-#### Division
+#### Representing parts of a digital object: `<div>`
 
 The structural divisions of the hierarchical organization provided by a
 `<structMap>` are represented by **division** `<div>` elements, which
@@ -101,7 +101,7 @@ encoded using METS that represents a video might point to a `<md>` element
 that expresses the copyright and access restriction information for the
 entire video.
 
-#### Division -- example
+##### Example
 
 The simple encoding fragment below demonstrates the div features
 described thus far, including the TYPE, LABEL, and MDID attributes.
@@ -162,7 +162,7 @@ child `<fptr>` and/or `<mptr>` elements, a `<div>` element may itself
 contain `<div>` elements that further subdivide the content represented
 by the division.
 
-#### File pointer
+#### Connecting structure and content with file pointers: `<fptr>`
 
 The `<fptr>` or **file pointer** element represents digital content that
 manifests its parent `<div>` element. The content represented by an
@@ -195,7 +195,7 @@ with the `<fptr>` element include ID and CONTENTIDS. Descriptions of all
 of the attributes associated with the `<fptr>` element appear in the
 table below.
 
-#### File pointer -- example
+##### Example
 
 The following METS encoding fragment represents a case where the
 `<structMap>` as a whole represents a purely physical structure. The
@@ -300,7 +300,7 @@ manifestation (TIFF, JPEG, or GIF) of the same content:
 </mets:mets>
 ```
 
-#### METS pointer 
+#### Composing digital objects from multiple METS documents with METS pointers: `<mptr>`
 
 Like the `<fptr>` element, the **METS pointer** `<mptr>` element
 represents digital content that manifests its parent `<div>` element.
@@ -324,7 +324,7 @@ LOCREF attribute as described in the section on external linking. (See
 Chapter 4). This is the same mechanism used for associating `<file>`
 elements with external content files in the FLocat element.
 
-#### Mets pointer -- example
+##### Example
 
 The example below illustrates the application of the `<mptr>` element to
 the case of a book issued in two volumes, each of which is represented
@@ -377,7 +377,7 @@ entire two-volume set.
 </mets:mets>
 ```
 
-#### Area
+#### Including parts of files in the structure: `<area>`
 
 The **area** `<area>` element typically points to content consisting of
 just a portion or area of a file represented by a `<file>` element in
@@ -407,7 +407,7 @@ or segment of an integral file. When used in the context of a `<par>` or
 `<seq>` element, however, an area element can point either to an
 integral file or to a segment of a file as necessary.
 
-#### Area -- example
+##### Example
 
 The example below demonstrates the use of the `<area>` element to
 isolate particular areas of the image files that are referenced in the
@@ -487,7 +487,7 @@ For further examples of how the `<area>` element can be used in the
 context of the `<seq>` and `<par>` elements, see the sections on these
 elements immediately below.
 
-#### Sequence of files 
+#### Presenting content sequentially: `<seq>`
 
 The sequence of files `<seq>` element aggregates pointers to files,
 parts of files and/or parallel sets of files or parts of files that must
@@ -503,7 +503,7 @@ first `<area>` element (representing the page on which the diary entry
 starts) might be further qualified, via its SHAPE and COORDS attributes,
 to specify the specific, pertinent area of the associated image file.
 
-#### Sequence of files -- example 
+##### Example 
 
 The example below shows a case where a logical structuring of the
 digital content provided by the `<structMap>` is supported by the
@@ -585,7 +585,7 @@ simultaneously to manifest the content of the governing `<fptr>`
 element. See the section on the `<par>` element below for a more
 complete description of this case.
 
-#### Parallel files
+#### Presenting content simultaneously (in parallel): `<par>`
 
 The `<par>` or parallel files element aggregates pointers to files,
 parts of files, and/or sequences of files or parts of files that must be
@@ -604,7 +604,7 @@ the audio file could be further qualified with BETYPE, BEGIN, EXTTYPE,
 and EXTENT attributes if only a portion of the associated audio file
 should be played in conjunction with the image.
 
-#### Parallel files -- example 1
+##### Example 1
 
 In the example below the `<structMap>` encoding uses the `<par>` element
 to recreate the experience and intent of the original analog source. In
@@ -716,7 +716,7 @@ displayed in sequence to manifest these divisions; and two different
 sequences must be displayed in parallel to manifest both Latin and
 English versions simultaneously.
 
-#### Parallel Files -- example 2
+##### Example 2
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"

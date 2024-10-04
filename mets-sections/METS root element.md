@@ -1,6 +1,6 @@
 [Image]
 
-## `<mets>` METS root element
+# `<mets>` METS root element
 
 The root element `<mets>` establishes the container for the information
 being stored and/or transmitted by the standard.
@@ -12,7 +12,7 @@ being stored and/or transmitted by the standard.
    http://www.loc.gov/standards/mets/mets.xsd">
 ```
 
-### Elements contained in the root element
+## Elements contained in the root element
 
 The METS document structure consists of seven major sections, which in
 turn may contain a variety of elements and attributes as specified in
@@ -21,10 +21,10 @@ the METS schema.
 At the most general level a METS document may contain the following
 sections: each of which is described in its own section of this chapter.
 
-**METS Header** -- The METS Header contains metadata describing the METS
+**[[METS Header - metsHdr]]** -- The METS Header contains metadata describing the METS
 document itself, including such information as creator, editor, etc.
 
-**Metadata Section** -- This section contains metadata that is external
+**[[Metadata Section - mdSec]]** -- This section contains metadata that is external
 to the METS document, internally embedded metadata, or both. Multiple
 instances of both external and internal metadata may be included in the
 metadata section. The Metadata Section can have for example descriptive
@@ -35,17 +35,17 @@ the provenance of the files that comprise the object (i.e.,
 master/derivative file relationships, and migration/transformation
 information).
 
-**File Section** -- A list of all files that contain content which make
+**[[File section - fileSec]]** -- A list of all files that contain content which make
 up the electronic versions of the digital object. File elements may be
 grouped within File Group elements, to provide for subdividing the files
 by object version or other criteria such as file type, size etc.
 
-**Structural Map Section** -- Structural Map Section outlines a
+**[[Structural map section - structSec]]** -- Structural Map Section outlines a
 hierarchical structure for the digital object, and links the elements
 of that structure to content files and metadata that pertain to each
 element.
 
-### METS root element example
+## METS root element example
 
 This example uses: XML version 1.0 with UTF-8 encoding, an enumerated
 list of the standards used in this record with the URLs, the OBJID for

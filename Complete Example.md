@@ -1,0 +1,1 @@
+This will replace the old 'authoring' section. It should have a subsection for each major part of the METS document (header, metadata section, file section, and structural section) and explain it in detail.

@@ -1,56 +1,6 @@
 ## **Structural Map and File Section**
 The only required portion of a METS document is the structural map, and most schema-aware editing tools, when asked to create a METS document, will create the outermost [`<mets>`](#bookmark=id.3abhhcj) element and a subsidiary [`<structMap>`](#bookmark=id.1pgrrkc) element.  However, when authoring a METS document from scratch, it is often easier to create the file section ([`<fileSec>`](#bookmark=id.49gfa85)) first to record all of the digital content files, and then create both the basic structure for the object within the structural map as well as the links from the structural map to the content files.  So in this instance, we will populate the file section of the METS document first.
 
-The `<fileSec>` portion of the METS document can contain one or more file group (`<fileGrp>`) elements which can be used to organize the individual file elements into sets.  In this case, since we have three different types of files (archival master, reference copy, and thumbnail), we will create three `<fileGrp>` elements within the `<fileSec>` to organize the individual files.  The basic structure of the file section thus looks like this:
-
-
-```xml
-<mets:fileSec>
-  <mets:fileGrp USE="archive image"></mets:fileGrp>
-  <mets:fileGrp USE="reference image"></mets:fileGrp>
-  <mets:fileGrp USE="thumbnail image"></mets:fileGrp>
-</mets:fileSec>
-```
-
-We use the "USE" attribute of the `<fileGrp>` element to indicate the types of files which can be found within each file group.  All that is left at this point is to populate each `<fileGrp>` with <file> elements for each of the individual content files.  METS provides the ability for content either to be stored within the METS file itself or stored externally in another file and referenced.  For this example, we will store all of the content externally and reference it using the `<FLocat>` sub-element of the <file> element as follows:
-
-
-```xml
-<mets:file ID="epi01m" MIMETYPE="image/tiff">
-  <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/
-    docgroup/full/01.tif" LOCTYPE="URL"/>
-</mets:file>
-```
-
-Most of the important information within the <file> element and its sub-elements are actually conveyed via XML attributes.  So in this case, the <file> element itself provides two pieces of information: an XML ID value, which bears a unique identifier for this element that allows other portions of this METS document to reference it, and the MIME type for the data file being referenced.  The `<FLocat>` element supplies the location of the content file, using the xlink:href attribute, and also an indication of the type of referencing mechanism being used within the xlink:href attribute, in this case a URL (other possibilities might be a URN, HANDLE or PURL).  We can place this <file> element, and similar file elements for the equivalent reference and thumbnail images in the `<fileSec>` as follows:
-
-
-```xml
-<mets:fileSec>
-  <mets:fileGrp USE="archive image">
-    <mets:file ID="epi01m" MIMETYPE="image/tiff">
-      <mets:FLocat xlink:href="http://www.loc.gov/standards/mets/docgroup/full/01.tif"
-        LOCTYPE="URL"/>
-    </mets:file>
-  </mets:fileGrp>
-  <mets:fileGrp USE="reference image">
-    <mets:file ID="epi01r" MIMETYPE="image/jpeg">
-      <mets:FLocat
-        xlink:href="http://www.loc.gov/standards/mets/docgroup/jpg/01.jpg"
-        LOCTYPE="URL"/>
-    </mets:file>
-  </mets:fileGrp>
-  <mets:fileGrp USE="thumbnail image">
-    <mets:file ID="epi01t" MIMETYPE="image/gif">
-      <mets:FLocat
-        xlink:href="http://www.loc.gov/standards/mets/docgroup/gif/01.gif"
-        LOCTYPE="URL"/>
-    </mets:file>
-  </mets:fileGrp>
-</mets:fileSec>
-```
-
-We could continue adding the `<file>` elements to each of the `<fileGrp>` elements for each data file for all of the scanned pages, until we have `<fileSec>` that records the location for every page image file and provides a unique XML ID attribute value for each.
 
 Once the `<fileSec>` is completed, it is then relatively simple to construct a physical structural map for the work, listing all pages in sequence, and associate the components of the structural map with the various data files contained in the `<fileSec>` by referencing their XML ID values.  A simple structural map for the _Epigrams_ might look like the following:
 

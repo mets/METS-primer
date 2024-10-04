@@ -1,6 +1,6 @@
 # Embedding binary data in METS: `<binData>`
 
-The METS `<binData>` elements serve as wrappers for base64 encoded binary content. METS implementers would use this element when they wish to include non-xml metadata or digital content directly in the METS document.
+The METS `<binData>` elements serve as wrappers for base64 encoded binary content. This element can be used to include non-xml metadata or digital content directly in the METS document. This is only recommended for relatively small files.
 
 A `<binData>` element as described above can appear in each of the following contexts.
 ## Context 1: The `<mdWrap>` element of elements of the `mdType`
@@ -9,3 +9,7 @@ The `<binData>` element allows the METS `<md>` element to wrap non-XML content. 
 ## Context 2:  The `<FContent>` element of a `<file>` element
 
 If the digital content represented by a `<file>` element is not in XML format it can be encoded in a `<file>` element using the base64 binary format and then wrapping that encoding in a `file/FContent/binData` element. 
+
+See also: 
+* [[Embedding file content]]
+* [[Descriptive metadata - embedding binary MARC records]]

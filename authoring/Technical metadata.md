@@ -224,16 +224,16 @@ In our example, the PREMIS Object metadata is created for each of the five files
 As the 6th technical metadata section, we add a PREMIS Intellectual Entity of full Tutorial. The parts of the METS sections are added in very similar way compared to the PREMIS Object metadata of the files.
 
 ```xml
-    <mets:md ID="tech-006" USE="TECHNICAL"> 
-      <mets:mdWrap MDTYPE="PREMIS:OBJECT" MDTYPEVERSION="3.0">
-        <mets:xmlData>
-          <premis:object xsi:type="premis:intellectualEntity">
-            <premis:objectIdentifier>
-              <premis:objectIdentifierType authority="identifiers" authorityURI="http://id.loc.gov/vocabulary/identifiers" valueURI="http://id.loc.gov/vocabulary/identifiers/hdl" >hdl</premis:objectIdentifierType>
-              <premis:objectIdentifierValue>https://hdl.handle.net/2142/121056</premis:objectIdentifierValue>
-            </premis:objectIdentifier> 
-          </premis:object>            
-        </mets:xmlData>
-      </mets:mdWrap>
-    </mets:md>
+<mets:md ID="tech-006" USE="TECHNICAL"> 
+  <mets:mdWrap MDTYPE="PREMIS:OBJECT" MDTYPEVERSION="3.0">
+    <mets:xmlData>
+      <premis:object xsi:type="premis:intellectualEntity">
+        <premis:objectIdentifier>
+          <premis:objectIdentifierType authority="identifiers" authorityURI="http://id.loc.gov/vocabulary/identifiers" valueURI="http://id.loc.gov/vocabulary/identifiers/hdl" >hdl</premis:objectIdentifierType>
+          <premis:objectIdentifierValue>https://hdl.handle.net/2142/121056</premis:objectIdentifierValue>
+        </premis:objectIdentifier> 
+      </premis:object>            
+    </mets:xmlData>
+  </mets:mdWrap>
+</mets:md>
 ```

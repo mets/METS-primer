@@ -1,6 +1,38 @@
 # Provenance metadata
 
-Under construction
+To keep the authenticity of the digital content, all changes to the data (and metadata) must be done in a controlled way. This requires documenting the essential actions done to the content during its full lifecycle.
+
+I our example case we create provenance PREMIS metadata, including event and agent, for the creation of five different files. There are a couple of way to do this, but we create separate metadata sections for each event and agent.
+
+In METS, all of these follow the following notation for events:
+
+    ```xml
+    <mets:md ID="[event-id]" USE="PROVENANCE" MDID="[agent-id]">
+      <mets:mdWrap MDTYPE="PREMIS:EVENT" MDTYPEVERSION="3.0">
+        <mets:xmlData>
+          <premis:event>
+            [...]
+          </premis:event>            
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:md>
+    ```
+and for agents:
+
+    ```xml
+    <mets:md ID="[agent-id]" USE="PROVENANCE" MDID="[event-id]">
+      <mets:mdWrap MDTYPE="PREMIS:AGENT" MDTYPEVERSION="3.0">
+        <mets:xmlData>
+          <premis:agent>
+            [...]
+          </premis:agent>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:md>
+    ```
+In element `<mets:md>`, attributes `ID` and `USE` describe the identifier and the use of the metadata section, respectively. Attibute MDID refers from event to the corresponding agent and vice versa, by using the `ID` identifier of the section to refer to. For provenance metadata, we recommend using value `PROVENANCE` for attribute `USE`. Elements `<mets:mdWrap>` and `<mets:xmlData>` denote that the metadata is embedded in the section in XML format. Attributes `MDTYPE` and `MDTYPEVERSION` define that the type of the included metadata is PREMIS Event or Agent of version 3.0.
+
+In our example, the PREMIS Event and Agent metadata is created for each of the five files included, separately. All of them are listed below:
 
 - Provenance metadata for creation of Paper DOCX
 
@@ -160,7 +192,6 @@ Under construction
     <summary>Provenance metadata section for PREMIS Agent</summary>
 
     ```xml
-    <!-- provenance agent for creation of Handout PDF -->
     <mets:md ID="agent-003" USE="PROVENANCE" MDID="event-003">
       <mets:mdWrap MDTYPE="PREMIS:AGENT" MDTYPEVERSION="3.0">
         <mets:xmlData>
@@ -221,7 +252,6 @@ Under construction
     <summary>Provenance metadata section for PREMIS Agent</summary>
 
     ```xml
-    <!-- provenance agent for creation of Paper PDF -->
     <mets:md ID="agent-004" USE="PROVENANCE" MDID="event-004">
       <mets:mdWrap MDTYPE="PREMIS:AGENT" MDTYPEVERSION="3.0">
         <mets:xmlData>
@@ -251,7 +281,6 @@ Under construction
     <summary>Provenance metadata section for PREMIS Event</summary>
 
     ```xml
-    <!-- provenance event for creation/migration of Presentation PDF -->
     <mets:md ID="event-005" USE="PROVENANCE" MDID="agent-005">
       <mets:mdWrap MDTYPE="PREMIS:EVENT" MDTYPEVERSION="3.0">
         <mets:xmlData>
@@ -283,7 +312,6 @@ Under construction
     <summary>Provenance metadata section for PREMIS Agent</summary>
 
     ```xml
-    <!-- provenance agent for creation/migration of Presentation PDF -->
     <mets:md ID="agent-005" USE="PROVENANCE" MDID="event-005">
       <mets:mdWrap MDTYPE="PREMIS:AGENT" MDTYPEVERSION="3.0">
         <mets:xmlData>

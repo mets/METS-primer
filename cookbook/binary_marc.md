@@ -14,4 +14,4 @@ While it would normally be preferable to include MARC metadata as MARC-XML, or p
 
 [Image]
 
-See also: [[Embedding binary data in METS]]
+See also: [Embedding binary data in METS](binData.md)

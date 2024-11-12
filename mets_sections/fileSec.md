@@ -21,13 +21,13 @@ MDID attribute. See `<fileGrp>` discussion below.
 
 ## Elements Contained in the File Section
 
-[[Grouping related files]]
-[[Describing digital object content]]
-[[Embedding file content]]
-[[Representing parts of files]]
-[[Referencing external files]]
-[[Handling 'wrapper' file formats]]
+[Grouping related files](../cookbook/fileGrp.md)
+[Describing digital object content](../cookbook/file.md)
+[Embedding file content](../cookbook/FContent.md)
+[Representing parts of files](../cookbook/stream.md)
+[Referencing external files](../cookbook/FLocat.md)
+[Handling 'wrapper' file formats](../cookbook/transformFile.md)
 ## Examples
 
-[[File section example - multiple image representations]]
-[[File section example - audio and transcription]]
+[File section example - multiple image representations](../cookbook/fileSec_example_images.md)
+[File section example - audio and transcription](../cookbook/fileSec_example_audio.md)

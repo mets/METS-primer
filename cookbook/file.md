@@ -20,10 +20,10 @@ transformation for some reason, such as format migration.
 
 Read more:
 
-* [[Referencing external files]]
-* [[Embedding file content]]
-* [[Representing parts of files]]
-* [[Handling 'wrapper' file formats]]
+* [Referencing external files](FLocat.md)
+* [Embedding file content](FContent.md)
+* [Representing parts of files](stream.md)
+* [Handling 'wrapper' file formats](transformFile.md)
 ## Example
 
 The physical book example that we have been using represents each page

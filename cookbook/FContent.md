@@ -19,8 +19,8 @@ scheme is UTF-8 Unicode.
 
 See also:
 
-* [[Embedding XML content in METS]]
-* [[Embedding binary data in METS]]
+* [Embedding XML content in METS](xmlData.md)
+* [Embedding binary data in METS](binData.md)
 ##### File content -- example
 
 ```xml

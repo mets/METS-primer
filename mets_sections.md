@@ -19,8 +19,8 @@ with the `mets` root element may vary depending upon the situation.
 
 Each major section of METS is covered on its own page:
 
-- [METS root element](METS%20root%20element.md)
-- [METS Header](METS%20Header%20-%20metsHdr.md)
-- [Metadata section](Metadata%20Section%20-%20mdSec.md)
-- [File section - fileSec](File%20section%20-%20fileSec.md)
-- [Structural map section](Structural%20map%20section%20-%20structSec.md)
+* [METS root element](mets_sections/root_element.md)
+* [METS Header](mets_sections/metsHdr.md)
+* [Metadata section](mets_sections/mdSec.md)
+* [File section - fileSec](mets_sections/fileSec.md)
+* [Structural map section](mets_sections/structSec.md)

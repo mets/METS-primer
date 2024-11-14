@@ -2,7 +2,7 @@
 
 Some form of intellectual property rights statement regarding the content of the digital object and the source from which it was derived might be added.
 
-I our example case we create a section for PREMIS Rights metadata in the following way:
+In our example case we create a section for PREMIS Rights Statement metadata in the following way:
 
 ```xml
 <mets:md ID="rights-001" USE="RIGHTS">

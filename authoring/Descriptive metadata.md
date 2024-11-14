@@ -2,7 +2,7 @@
 
 The descriptive metadata needed for discovery and content management is easily added by creating a <md> element to contain it. We can then insert the descriptive metadata record of our choice within that section.
 
-I our example case we create a section for Dublin Core metadata in the following way:
+In our example case we create a section for descriptive Dublin Core metadata in the following way:
 
 ```xml
 <mets:mdGrp USE="DESCRIPTIVE">

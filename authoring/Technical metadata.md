@@ -2,7 +2,7 @@
 
 Long-term management and preservation of digital resources requires information regarding the technical characteristics of the digital content. Such technical metadata about text, image, audio, and video data is best produced when the digital content is originally created.
 
-I our example case we create technical PREMIS metadata for five different files each. In METS all of these follow the following notation:
+In our example case we create technical PREMIS Object metadata for five different files each. In METS all of these follow the following notation:
 
 ```xml
 <mets:md ID="[id]" USE="TECHNICAL"> 

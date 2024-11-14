@@ -2,7 +2,7 @@
 
 To keep the authenticity of the digital content, all changes to the data (and metadata) must be done in a controlled way. This requires documenting the essential actions done to the content during its full lifecycle.
 
-I our example case we create provenance PREMIS metadata, including event and agent, for the creation of five different files. There are a couple of way to do this, but we create separate metadata sections for each event and agent.
+In our example case we create provenance PREMIS metadata, including events and agents, for the creation of five different files. There are a couple of way to do this, but we create separate provenance metadata sections for each event and agent.
 
 In METS, all of these follow the following notation for events:
 

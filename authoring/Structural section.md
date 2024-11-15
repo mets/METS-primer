@@ -15,21 +15,21 @@ In our example, the root div contains the header of our tutorial content in attr
 There are three divisions in our example, defined with attributes `TYPE` and `LABEL`, describing the type and description of the division, respectively. The divisions are made for the division types `Paper`, `Presentation` and `Handout`. The leaf level has file pointers to the file section, referred from the attribute `FILEID`. The identifiers in `FILEID` references are the `ID` values used in the file section. (Please have a look at the file section.)[File%20section.md]
 
 ```xml
-    <mets:structSec>
-        <mets:structMap>
-            <mets:div LABEL="Understanding and implementing METS, A tutorial focused on METS 2" MDID="dmd-001 tech-006 rights-001">                
-                <mets:div TYPE="Paper" LABEL="UNDERSTANDING AND IMPLEMENTING METS: A tutorial focused on METS 2">
-                    <mets:fptr FILEID="file-001"/>
-                    <mets:fptr FILEID="file-004"/>
-                </mets:div>                
-                <mets:div TYPE="Presentation" LABEL="Understanding and Implementing METS">
-                    <mets:fptr FILEID="file-002"/>
-                    <mets:fptr FILEID="file-005"/>                    
-                </mets:div>                
-                <mets:div TYPE="Handout" LABEL="Exercise METS 2">
-                    <mets:fptr FILEID="file-003"/>
-                </mets:div>                
-            </mets:div>
-        </mets:structMap>
-    </mets:structSec>
+<mets:structSec>
+  <mets:structMap>
+    <mets:div LABEL="Understanding and implementing METS, A tutorial focused on METS 2" MDID="dmd-001 tech-006 rights-001">        
+      <mets:div TYPE="Paper" LABEL="UNDERSTANDING AND IMPLEMENTING METS: A tutorial focused on METS 2">
+        <mets:fptr FILEID="file-001"/>
+        <mets:fptr FILEID="file-004"/>
+      </mets:div>        
+      <mets:div TYPE="Presentation" LABEL="Understanding and Implementing METS">
+        <mets:fptr FILEID="file-002"/>
+        <mets:fptr FILEID="file-005"/>          
+      </mets:div>        
+      <mets:div TYPE="Handout" LABEL="Exercise METS 2">
+        <mets:fptr FILEID="file-003"/>
+      </mets:div>        
+    </mets:div>
+  </mets:structMap>
+</mets:structSec>
 ```

@@ -4,9 +4,9 @@ Metadata section `<mets:mdSec>` is one of the main sections of a METS document, 
 
 Each metadata is contained in their own metadata block with using element `<mets:md>`, which describes e.g. the type of the contained metadata. Different metadata blocks can be grouped with `<mets:mdGrp>` elements.
 
-In our example, we will create the following structure in the metadata section. It follows the structure of the previous METS version 1.x. Click the following to see the frame of the metadata section in our example.
+In our example, we will create the following structure in the metadata section. It follows the structure of the previous METS version 1.x. Click the following "Frame for metadata section" to see the frame of the metadata section in our example.
 
-<detail>
+<details>
 
 <summary>Frame for metadata section</summary>
 
@@ -73,7 +73,7 @@ In our example, we will create the following structure in the metadata section. 
 </mets:mdSec
 ```
 
-</detail>
+</details>
 
 Our example contains two groups for descriptive and administrative metadata. We have only one descriptive metadata in its own group. The administrative metadata group contains the following metadata:
 

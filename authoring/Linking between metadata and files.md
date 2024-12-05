@@ -40,7 +40,7 @@ The method used in our example is one of the basic ways to implement the linking
         [...]
     ```
 
-- Finally, the structural map combines files and all the metadata together. Attribute `MDID` in the root division elemet `<mets:div>` refers to three different metadata. In the root division it shows that these metadata blocks concern the whole content. File pointer element `<mets:fptr>` has an attribute `FILEID` referring to the file section. The file specific metadata blocks are referred in the file section.
+- Finally, the structural map combines files and all the metadata together. Attribute `MDID` in the root division elemet `<mets:div>` refers to three different metadata: descriptive metadata, rights metadata, and technical metadata describing a Handle indentifier for the whole content (intellectual entity). In the root division it shows that these metadata blocks concern the whole content. File pointer element `<mets:fptr>` has an attribute `FILEID` referring to the file section. The file specific metadata blocks are referred in the file section.
 
     ```xml
         <mets:structMap>

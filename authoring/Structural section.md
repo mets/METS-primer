@@ -6,13 +6,13 @@ Structural section is one of the main sections in a METS document. There can be 
 
 In our example we have a structure map with using element `<mets:structMap>`. The element `<mets:div>` denotes to a division element. There can be only one root division, but inside it there can be multiple sequential and nested divisions. In this way, we can create a hierachy tree to describe the structure. A division can refer to a metadata with the attribute `MDID`. In the leaf level, there are pointers `<mets:fptr>` to the files described the file section. The actual pointer is in attribute `FILEID`. 
 
-In our example, the root div contains the header of our tutorial content in attribute `LABEL`. Attribute `MDID` refers to the descriptive, technical and rights metadata blocks containing metadata related to the whole content. The referred block are described in detail in the following pages:
+In our example, the root div contains the header of our tutorial content in attribute `LABEL`. Attribute `MDID` refers to the descriptive, technical and rights metadata blocks containing metadata related to the whole content. The referred blocks are described in detail in the following pages:
 
-    * [Descriptive metadata](Descriptive%20metadata.md)
-    * [Technical metadata](Technical%20metadata.md)
-    * [Rights metadata](Rights%20metadata.md)
+- [Descriptive metadata](./Descriptive%20metadata.md)
+- [Technical metadata](./Technical%20metadata.md)
+- [Rights metadata](./Rights%20metadata.md)
 
-There are three divisions in our example, defined with attributes `TYPE` and `LABEL`, describing the type and description of the division, respectively. The divisions are made for the division types `Paper`, `Presentation` and `Handout`. The leaf level has file pointers to the file section, referred from the attribute `FILEID`. The identifiers in `FILEID` references are the `ID` values used in the file section. (Please have a look at the file section.)[File%20section.md]
+There are three divisions in our example, defined with attributes `TYPE` and `LABEL`, describing the type and description of the division, respectively. The divisions are made for the division types `Paper`, `Presentation` and `Handout`. The leaf level has file pointers to the file section, referred from the attribute `FILEID`. The identifiers in `FILEID` references are the `ID` values used in the file section. [Please have a look at the file section.](./File%20section.md)
 
 ```xml
 <mets:structSec>

@@ -1,3 +1,7 @@
+---
+title: "File section example: multiple image representations"
+parent: METS Cookbook
+---
 # File section example: multiple image representations
 
 Each physical page from the book is represented by three associated

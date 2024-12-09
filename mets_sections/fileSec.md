@@ -1,3 +1,8 @@
+---
+title: File section
+parent: Sections of a METS Document
+nav_order: 4
+---
 [Image]
 
 # `<fileSec>` File section

@@ -1,3 +1,10 @@
+---
+title: A Complete METS 2 Example
+nav_order: 5
+---
+
+TODO: merge with https://github.com/mets/METS-primer/tree/authoring-to-mets2
+
 # A Complete METS 2 Example
 
 The example: https://github.com/mets/METS-schema/blob/mets2/v2/examples/mets2-example-borndigital.xml

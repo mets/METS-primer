@@ -1,3 +1,7 @@
+---
+title: "Referring to external metadata"
+parent: METS Cookbook
+---
 # Referring to external metadata: `<mdRef>`
 
 The **metadata reference** element `<mdRef>` element is used to provide

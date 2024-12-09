@@ -1,6 +1,11 @@
+---
+title: Metadata Section
+parent: Sections of a METS Document
+nav_order: 3
+---
 [Image]
 
-## `<mdSec>` Metadata Section
+# `<mdSec>` Metadata Section
 
 The **metadata section** `<mdSec>` records metadata pertaining to the
 METS object as a whole or one of its components. The METS document can

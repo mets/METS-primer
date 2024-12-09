@@ -1,3 +1,7 @@
+---
+title: "Digital provenance metadata -- PREMIS"
+parent: METS Cookbook
+---
 # Digital provenance metadata -- PREMIS
 
 The **digital provenance metadata** could contain metadata about any

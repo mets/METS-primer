@@ -1,3 +1,7 @@
+---
+title: "Grouping related files"
+parent: METS Cookbook
+---
 # Grouping related files: `<fileGrp>`
 
 A sequence of file group elements `<fileGrp>` can be used group the

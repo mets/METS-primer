@@ -1,3 +1,7 @@
+---
+title: "Technical metadata for images"
+parent: METS Cookbook
+---
 # Technical metadata for images
 
 **Technical metadata** is metadata about a component of the METS

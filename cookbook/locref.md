@@ -1,3 +1,7 @@
+---
+title: "Linking to external resources from METS"
+parent: METS Cookbook
+---
 # Linking to external resources from METS
 
 METS uses its own attributes to provide links to external resources from elements within METS. Specifically, the LOCREF attribute is used to specify the URL of the pertinent external resource; and the LOCTYPE can be used to specify or associate pertinent metadata with the specified xlink:href link. These attributes can be used in two main contexts in METS.

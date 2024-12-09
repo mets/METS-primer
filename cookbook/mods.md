@@ -1,3 +1,7 @@
+---
+title: "Including descriptive metadata with MODS"
+parent: METS Cookbook
+---
 # Including descriptive metadata with MODS
 
 Descriptive metadata is metadata about the content and context of the

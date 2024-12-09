@@ -1,6 +1,11 @@
+---
+title: Structural map section
+parent: Sections of a METS Document
+nav_order: 5
+---
 [Image]
 
-## `<structSec>` Structural map section
+# `<structSec>` Structural map section
 
 The **structural map section** `<structMap>` provides a means for
 organizing the digital content represented by the `<file>` elements

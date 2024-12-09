@@ -1,3 +1,8 @@
+---
+title: METS Header 
+parent: Sections of a METS Document
+nav_order: 2
+---
 [Image]
 
 # `<metsHdr>` METS Header 

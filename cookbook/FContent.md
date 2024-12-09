@@ -1,3 +1,7 @@
+---
+title: "Embedding file content"
+parent: METS Cookbook
+---
 # Embedding file content: `<FContent>`
 
 The **file content** element `<FContent>` is used to identify a content

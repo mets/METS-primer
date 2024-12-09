@@ -1,0 +1,16 @@
+title: METS Primer
+description: Metadata Encoding and Transmission Standards Primer
+author: METS Editorial Board
+theme: just-the-docs
+
+url: https://mets.github.io/docs
+
+aux_links:
+  Template Repository: https://github.com/METS/METS-primer
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"

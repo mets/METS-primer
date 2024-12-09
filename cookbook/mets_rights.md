@@ -1,3 +1,7 @@
+---
+title: "Intellectual property rights metadata"
+parent: METS Cookbook
+---
 # Intellectual property rights metadata
 
 **Intellectual property rights metadata** is metadata about copyright and

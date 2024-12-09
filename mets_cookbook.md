@@ -1,3 +1,9 @@
+---
+title: METS Cookbook
+nav_order: 4
+has_toc: false
+---
+
 # METS Cookbook
 
 Examples and descriptions of how to accomplish various tasks in METS using the available elements and attributes as well as how to relate together various parts of the METS document and the components digital object it describes.

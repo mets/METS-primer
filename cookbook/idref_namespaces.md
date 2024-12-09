@@ -1,3 +1,7 @@
+---
+title: "IDREF/ID linking across different namespaces"
+parent: METS Cookbook
+---
 # IDREF/ID linking across different namespaces
 As is described above, the elements of the `mdType` has a required ID attributes. The unique identifier values assigned to this attribute allow these elements to be referenced from the MDID attributes that are associated with `<file>` and `<div>` elements. The mdType elements can all include metadata in the form of elements drawn from other namespaces in their `<xmlData>` sections. And in cases where the elements drawn from other namespaces for populating the `<xmlData>` sections themselves have ID attributes, as is the case with some elements drawn from the MODS and VRACORE namespaces, the MDID attribute can reference identifier values assigned to these ID attributes instead of or in addition to the values assigned to ID attributes in the top level `mdType` element (e.g., `<md>`).
 ## Example

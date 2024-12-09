@@ -1,3 +1,7 @@
+---
+title: "Referencing external files"
+parent: METS Cookbook
+---
 # Referencing external files - `<FLocat>`
 
 The **file location** element `<FLocat>` provides a pointer to the

@@ -1,3 +1,8 @@
+---
+title: "Embedding metadata in METS"
+parent: METS Cookbook
+parent: METS Cookbook
+---
 # Embedding metadata in METS: `<mdWrap>`
 
 A **metadata wrapper** element `<mdWrap>` provides a wrapper around

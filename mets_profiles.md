@@ -1,3 +1,8 @@
+---
+title: METS Profiles
+nav_order: 6
+---
+# METS Profiles
 (Text only moved from Primer version 1, chapter 5)
 ## TODO
 * [ ] update [description of the components of a METS profile](http://www.loc.gov/standards/mets/profile_docs/components.html) for METS 2

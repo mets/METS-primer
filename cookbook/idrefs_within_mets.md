@@ -1,3 +1,7 @@
+---
+title: "Referring to elements within METS"
+parent: METS Cookbook
+---
 # Referring to elements within METS
 
 METS makes extensive provisions for using attributes of the [[Referring to Parts of XML Documents|ID, IDREF and IDREFS datatypes]] to create cross-references between related elements. Ultimately, these provisions allow units of information appearing in dispersed locations across a METS instance document to be linked to all of their appropriate contexts without redundancy. METS elements of the mdType and fileType datatypes have required ID attributes which allow the metadata and content file elements that implement these datatypes to be referenced from the other parts of the METS instance document to which they pertain. In addition to this, ``<div>`` elements in the ``<structMap>`` and many other elements can include ID attribute values that allow them to be referenced by other elements. METS’ specific cross-referencing provisions for different contexts follow.

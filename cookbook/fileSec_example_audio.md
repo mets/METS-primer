@@ -1,3 +1,7 @@
+---
+title: "File section example: audio and transcription"
+parent: METS Cookbook
+---
 # File section example: audio and transcription
 
 Again, consider the example of a `<fileSec>` for an oral history

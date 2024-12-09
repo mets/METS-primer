@@ -1,3 +1,8 @@
+---
+title: METS root element
+parent: Sections of a METS Document
+nav_order: 1
+---
 [Image]
 
 # `<mets>` METS root element

@@ -1,3 +1,7 @@
+---
+title: "Describing the digital object with metadata"
+parent: METS Cookbook
+---
 # Describing the digital object with metadata: `<md>`
 
 A metadata element `<md>` can either wrap the metadata (mdWrap) or

@@ -1,4 +1,11 @@
+---
+title: External schema and Controlled Vocabulary
+nav_order: 7
+---
+
 (Text only moved from Primer version 1, chapter 6)
+
+TODO: rewrite & refer to https://github.com/mets/METS-schema/wiki/METS2-Suggested-Attribute-Values
 
 ***
 

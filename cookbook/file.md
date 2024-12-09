@@ -1,3 +1,7 @@
+---
+title: "Describing digital object content"
+parent: METS Cookbook
+---
 # Describing digital object content: `<file>`
 
 The **file element** `<file>` provides access to the content files for

@@ -1,3 +1,7 @@
+---
+title: "Alternative identifiers for a digital object"
+parent: METS Cookbook
+---
 # Alternative identifiers for a digital object: `<altRecordID>`
 
 The **alternative identifier** element `<altRecordID>` allows one to use

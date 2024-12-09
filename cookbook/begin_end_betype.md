@@ -1,3 +1,7 @@
+---
+title: "Referring to parts of external XML documents"
+parent: METS Cookbook
+---
 # Referring to parts of external XML documents: BEGIN, END, BETYPE
 
 Through its descendant `<fptr>`, `<area>`, `<par>` and `<seq>` elements, a `<div>` in the `<structMap>` can point to the `<file>` element or elements in the `<fileSec>` representing the content that manifests the `<div>`. Sometimes, however, only a portion of the integral content represented by the referenced `<file>` element is pertinent. If the content represented by the `<file>` element is encoded in XML, SGML, or HTML and the key elements of the content file have associated ID attribute values, a METS `<area>` element can use these ID values to isolate the relevant portion of the content file. In this case, the `<area>`'s BEGIN attribute would cite the ID attribute value of the first pertinent element in the indicated content file; the `<area>`'s END attribute would cite the ID value of the last pertinent element in the indicated content file; and the BETYPE attribute value would be "IDREF" to indicate that ID values were being used to identify the bounding elements defining the relevant section of the content file.

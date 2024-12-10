@@ -1,12 +1,10 @@
 title: METS Primer
 description: Metadata Encoding and Transmission Standards Primer
 author: METS Editorial Board
-theme: just-the-docs
-
-url: https://mets.github.io/docs
+remote_theme: just-the-docs/just-the-docs
 
 aux_links:
-  Template Repository: https://github.com/METS/METS-primer
+  METS primer on GitHub: https://github.com/METS/METS-primer
 
 defaults:
   -

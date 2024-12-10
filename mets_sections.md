@@ -12,8 +12,8 @@ attributes, see the [schema reference](https://mets.github.io/METS_v2_Docs/mets.
 
 Each major section of METS is covered on its own page:
 
-* [METS root element](mets_sections/root_element.html)
-* [METS Header](mets_sections/metsHdr.html)
-* [Metadata section](mets_sections/mdSec.html)
-* [File section - fileSec](mets_sections/fileSec.html)
-* [Structural map section](mets_sections/structSec.html)
+* [METS root element](mets_sections/root_element.md)
+* [METS Header](mets_sections/metsHdr.md)
+* [Metadata section](mets_sections/mdSec.md)
+* [File section - fileSec](mets_sections/fileSec.md)
+* [Structural map section](mets_sections/structSec.md)

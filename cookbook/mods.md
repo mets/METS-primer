@@ -59,4 +59,4 @@ discover. The following example demonstrate the use of the
 </mets:md>
 ```
 
-[Descriptive metadata - embedding binary MARC records](binary_marc.html)
+[Descriptive metadata - embedding binary MARC records](binary_marc.md)

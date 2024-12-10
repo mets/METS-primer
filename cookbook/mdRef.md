@@ -24,4 +24,4 @@ The following example demonstrates the use of the `<mdRef>` element.
 </mdSec>
 ```
 
-See also: [Linking to external resources from METS](locref.html)
+See also: [Linking to external resources from METS](locref.md)

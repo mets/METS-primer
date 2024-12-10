@@ -90,7 +90,7 @@ Our example contains two groups for descriptive and administrative metadata. We 
 
 Altogether we have 18 metadata blocks. Please see the following for a detailed example for each of them:
 
-- [Descriptive metadata](./Descriptive%20metadata.html)
-- [Technical metadata](./Technical%20metadata.html)
-- [Rights metadata](./Rights%20metadata.html)
-- [Provenance metadata](./Provenance%20metadata.html)
+- [Descriptive metadata](./Descriptive%20metadata.md)
+- [Technical metadata](./Technical%20metadata.md)
+- [Rights metadata](./Rights%20metadata.md)
+- [Provenance metadata](./Provenance%20metadata.md)

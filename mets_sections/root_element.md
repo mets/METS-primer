@@ -26,10 +26,10 @@ the METS schema.
 At the most general level a METS document may contain the following
 sections: each of which is described in its own section of this chapter.
 
-* [METS Header - metsHdr](metsHdr.html) -- The METS Header contains metadata describing the METS
+* [METS Header - metsHdr](metsHdr.md) -- The METS Header contains metadata describing the METS
 document itself, including such information as creator, editor, etc.
 
-* [Metadata Section - mdSec](mdSec.html) -- This section contains metadata that is external
+* [Metadata Section - mdSec](mdSec.md) -- This section contains metadata that is external
 to the METS document, internally embedded metadata, or both. Multiple
 instances of both external and internal metadata may be included in the
 metadata section. The Metadata Section can have for example descriptive
@@ -40,12 +40,12 @@ the provenance of the files that comprise the object (i.e.,
 master/derivative file relationships, and migration/transformation
 information).
 
-* [File section - fileSec](fileSec.html) -- A list of all files that contain content which make
+* [File section - fileSec](fileSec.md) -- A list of all files that contain content which make
 up the electronic versions of the digital object. File elements may be
 grouped within File Group elements, to provide for subdividing the files
 by object version or other criteria such as file type, size etc.
 
-* [Structural map section - structSec](structSec.html) -- Structural Map Section outlines a
+* [Structural map section - structSec](structSec.md) -- Structural Map Section outlines a
 hierarchical structure for the digital object, and links the elements
 of that structure to content files and metadata that pertain to each
 element.

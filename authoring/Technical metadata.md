@@ -24,7 +24,7 @@ In element `<mets:md>`, attributes `ID` and `USE` describe the identifier and th
 In our example, the PREMIS Object metadata is created for each of the five files included, separately. All of them are listed below:
 
 - **File 1 - Paper (DOCX)**: [iPRES2023_METS_Tutorial.docx](https://raw.githubusercontent.com/mets/METS-board/master/iPres2023Tutorial/originalfiles/iPRES2023_METS_Tutorial.docx)
-    <details>
+    <details markdown="block">
   
     <summary>Technical metadata section in PREMIS</summary>
 
@@ -66,7 +66,7 @@ In our example, the PREMIS Object metadata is created for each of the five files
     </details>
 
 - **File 2 - Presentation (PPTX)**: [1702_1A_Bredenberg.pptx](https://raw.githubusercontent.com/mets/METS-board/master/iPres2023Tutorial/originalfiles/1702_1A_Bredenberg.pptx)
-    <details>
+    <details markdown="block">
   
     <summary>Technical metadata section in PREMIS</summary>
 
@@ -106,7 +106,7 @@ In our example, the PREMIS Object metadata is created for each of the five files
     ```
 
 - **File 3 - Handout (PDF)**: [METS Exercise iPRES 2023.pdf](https://raw.githubusercontent.com/mets/METS-board/master/iPres2023Tutorial/METS%20Exercise%20iPRES%202023.pdf)
-    <details>
+    <details markdown="block">
   
     <summary>Technical metadata section in PREMIS</summary>
 
@@ -146,7 +146,7 @@ In our example, the PREMIS Object metadata is created for each of the five files
     ```
 
 - **File 4 - Paper PDF**: [iPRES2023_submission_1702.pdf](https://www.ideals.illinois.edu/items/128260/bitstreams/428885/object)
-    <details>
+    <details markdown="block">
   
     <summary>Technical metadata section in PREMIS</summary>
 
@@ -186,7 +186,7 @@ In our example, the PREMIS Object metadata is created for each of the five files
     ```
 
 - **File 5 - Presentation PDF**: [METS Tutorial iPRES 2023.pdf](https://raw.githubusercontent.com/mets/METS-board/master/iPres2023Tutorial/METS%20Tutorial%20iPRES%202023.pdf)
-    <details>
+    <details markdown="block">
   
     <summary>Technical metadata section in PREMIS</summary>
 

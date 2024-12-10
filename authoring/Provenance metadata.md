@@ -42,7 +42,7 @@ In our example, the PREMIS Event and Agent metadata is created for each of the f
 
 - Provenance metadata for creation of Paper DOCX
 
-    <details>
+    <details markdown="block">
 
     <summary>Provenance metadata section for PREMIS Event</summary>
 
@@ -73,7 +73,7 @@ In our example, the PREMIS Event and Agent metadata is created for each of the f
 
     </details>
 
-    <details>
+    <details markdown="block">
 
     <summary>Provenance metadata section for PREMIS Agent</summary>
 
@@ -102,7 +102,7 @@ In our example, the PREMIS Event and Agent metadata is created for each of the f
 
 - Provenance metadata for creation of Presentation PPTX
 
-    <details>
+    <details markdown="block">
 
     <summary>Provenance metadata section for PREMIS Event</summary>
 
@@ -133,7 +133,7 @@ In our example, the PREMIS Event and Agent metadata is created for each of the f
 
     </details>
 
-    <details>
+    <details markdown="block">
 
     <summary>Provenance metadata section for PREMIS Agent</summary>
 
@@ -162,7 +162,7 @@ In our example, the PREMIS Event and Agent metadata is created for each of the f
 
 - Provenance metadata for creation of Handout PDF
 
-    <details>
+    <details markdown="block">
 
     <summary>Provenance metadata section for PREMIS Event</summary>      
 
@@ -193,7 +193,7 @@ In our example, the PREMIS Event and Agent metadata is created for each of the f
 
     </details>
 
-    <details>
+    <details markdown="block">
 
     <summary>Provenance metadata section for PREMIS Agent</summary>
 
@@ -222,7 +222,7 @@ In our example, the PREMIS Event and Agent metadata is created for each of the f
 
 - Provenance metadata for migration of Paper PDF
 
-    <details>
+    <details markdown="block">
 
     <summary>Provenance metadata section for PREMIS Event</summary>
 
@@ -253,7 +253,7 @@ In our example, the PREMIS Event and Agent metadata is created for each of the f
 
     </details>
 
-    <details>
+    <details markdown="block">
 
     <summary>Provenance metadata section for PREMIS Agent</summary>
 
@@ -282,7 +282,7 @@ In our example, the PREMIS Event and Agent metadata is created for each of the f
 
 - Provenance metadata for migration of Presentation PDF
 
-    <details>
+    <details markdown="block">
 
     <summary>Provenance metadata section for PREMIS Event</summary>
 
@@ -313,7 +313,7 @@ In our example, the PREMIS Event and Agent metadata is created for each of the f
 
     </details>
 
-    <details>
+    <details markdown="block">
 
     <summary>Provenance metadata section for PREMIS Agent</summary>
 

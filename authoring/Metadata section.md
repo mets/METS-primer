@@ -12,7 +12,7 @@ Each metadata is contained in their own metadata block with using element `<mets
 
 In our example, we will create the following structure in the metadata section. It follows the structure of the previous METS version 1.x. Click the following to see the frame of the metadata section in our example.
 
-<details>
+<details markdown="block">
 
 <summary>Click for a frame for metadata section</summary>
 
@@ -76,7 +76,7 @@ In our example, we will create the following structure in the metadata section. 
       [...]
     </mets:md>
   </mets:mdGrp>
-</mets:mdSec
+</mets:mdSec>
 ```
 
 </details>

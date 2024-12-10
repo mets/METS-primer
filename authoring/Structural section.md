@@ -1,3 +1,8 @@
+---
+title: Structural section
+parent: A Complete METS 2 Example
+nav_order: 4
+---
 # Structural section
 
 Structural metadata describes the structure of the content. It describes how the files and metadata are connected together and how different metadata is linked to files or larger entities. The structual map can be physical (for eaxample describing the directory structure) or logical (for example semantic structure of the content).
@@ -8,11 +13,11 @@ In our example we have a structure map with using element `<mets:structMap>`. Th
 
 In our example, the root div contains the header of our tutorial content in attribute `LABEL`. Attribute `MDID` refers to the descriptive, technical and rights metadata blocks containing metadata related to the whole content. The referred blocks are described in detail in the following pages:
 
-- [Descriptive metadata](./Descriptive%20metadata.md)
-- [Technical metadata](./Technical%20metadata.md)
-- [Rights metadata](./Rights%20metadata.md)
+- [Descriptive metadata](./Descriptive%20metadata.html)
+- [Technical metadata](./Technical%20metadata.html)
+- [Rights metadata](./Rights%20metadata.html)
 
-There are three divisions in our example, defined with attributes `TYPE` and `LABEL`, describing the type and description of the division, respectively. The divisions are made for the division types `Paper`, `Presentation` and `Handout`. The leaf level has file pointers to the file section, referred from the attribute `FILEID`. The identifiers in `FILEID` references are the `ID` values used in the file section. [Please have a look at the file section.](./File%20section.md)
+There are three divisions in our example, defined with attributes `TYPE` and `LABEL`, describing the type and description of the division, respectively. The divisions are made for the division types `Paper`, `Presentation` and `Handout`. The leaf level has file pointers to the file section, referred from the attribute `FILEID`. The identifiers in `FILEID` references are the `ID` values used in the file section. [Please have a look at the file section.](./File%20section.html)
 
 ```xml
 <mets:structSec>

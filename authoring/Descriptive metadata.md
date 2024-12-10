@@ -1,6 +1,10 @@
+---
+title: Descriptive metadata
+parent: Metadata section
+---
 # Descriptive metadata
 
-The descriptive metadata needed for discovery and content management is easily added by creating a <md> element to contain it. We can then insert the descriptive metadata record of our choice within that section.
+The descriptive metadata needed for discovery and content management is easily added by creating a `<md>` element to contain it. We can then insert the descriptive metadata record of our choice within that section.
 
 In our example case we create a section for descriptive Dublin Core metadata in the following way:
 

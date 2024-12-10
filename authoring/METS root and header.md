@@ -1,3 +1,8 @@
+---
+title: METS root and header
+parent: A Complete METS 2 Example
+nav_order: 1
+---
 # METS root and header
 
 METS root begins the METS document. In our example, it contains all the namespaces used in the METS document. I also has the identifier of the primary identifier assigned to the METS object as a whole in the attribute `OBJID`. This identifier is used to tag the entire METS object to external systems. A description of the content can be added in the attribute `LABEL`.

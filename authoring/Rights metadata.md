@@ -1,3 +1,7 @@
+---
+title: Rights metadata
+parent: Metadata section
+---
 # Rights metadata
 
 Some form of intellectual property rights statement regarding the content of the digital object and the source from which it was derived might be added.

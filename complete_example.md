@@ -1,24 +1,25 @@
 ---
 title: A Complete METS 2 Example
 nav_order: 5
+has_toc: false
 ---
+# Complete Example
 
-TODO: merge with https://github.com/mets/METS-primer/tree/authoring-to-mets2
+The METS standard provides a means of encoding digital content. Its most fundamental task in accomplishing this goal is to provide a mechanism for recording the various relationships that exist between pieces of content, and between the content and metadata. This chapter will demonstrate a complete example in a practical approach by creating a METS file for a following example. 
 
-# A Complete METS 2 Example
+There are multiple ways to build a METS document for the same content. Because of the XML format detailed nature of the METS standard, this example shows only one mechanism with some basic features of METS. Overall, the METS documents are not meant to be produced or read manually in production, but instead programmatically.
 
-The example: https://github.com/mets/METS-schema/blob/mets2/v2/examples/mets2-example-borndigital.xml
+The example that we will use here contains the documents produced for METS Tutorial held at iPRES 2023 conference by the METS Editorial Board. In this example we have five digital objects: The first three objects are the conference paper in MS Office Word format (DOCX), the presentation slides in MS Office PowerPoint format (PPTX), and a handout document in PDF format. Additionally, the MS Office versions (paper and presentation) have been migrated to PDF format for archival purpose. 
 
-This example shows one way of structuring a METS file for born-digital material, in this case material for the METS workshop and tutorial at iPRES 2023. This includes the original Word, Powerpoint, and PDF files submitted for the tutorial as well as archival PDF versions. It gives an example of how to structure information about these files and the digital object they comprise using METS and PREMIS.
+Please follow the links to see a complete example creation of diffrent sections of METS:
 
-It includes:
+- [METS root and header](./authoring/METS%20root%20and%20header.html)
+- [Metadata section](./authoring/Metadata%20section.html)
+- [File section](./authoring/File%20section.html)
+- [Structural section](./authoring/Structural%20section.html)
 
-* A header describing the creation of the METS file itself
-* A manifest of the files comprising the digital object
-* The structure of hte digital object; that is, how the different files comprising it relate to each other.
-* Descriptive metadata for the object as a whole, using [Dublin Core](https://www.dublincore.org/)
-* Technical metadata for each file using PREMIS Objects
-* Digital provenance metadata describing the creation of each original file and the conversion from original files to preservation formats, using PREMIS Events and Agents
-* Rights metadata describing the license applicable to the obejct, using PREMIS Rights
+Additionally, see the information about creating links between the sections:
 
+- [Linking between metadata and files](./authoring/Linking%20between%20metadata%20and%20files.html) 
 
+By combining the `<metsHdr>`, `<mdSec>`, `<fileSec>` and `<structSec>` sections in a single METS document, we can create a document that contains the structure needed for applications to present the content in a reasonably sophisticated fashion as well as providing the information needed for both retrieval and management purposes. These sections discussed in this chapter are often all that is needed to represent even fairly complex works.

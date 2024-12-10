@@ -1,3 +1,7 @@
+---
+title: Provenance metadata
+parent: Metadata section
+---
 # Provenance metadata
 
 To keep the authenticity of the digital content, all changes to the data (and metadata) must be done in a controlled way. This requires documenting the essential actions done to the content during its full lifecycle.

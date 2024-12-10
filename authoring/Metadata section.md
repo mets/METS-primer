@@ -1,3 +1,9 @@
+---
+title: Metadata section
+parent: A Complete METS 2 Example
+nav_order: 2
+has_toc: false
+---
 # Metadata section
 
 Metadata section `<mets:mdSec>` is one of the main sections of a METS document, and it contains subsections for all the metadata. There can be only one metadata section in a METS document.
@@ -84,7 +90,7 @@ Our example contains two groups for descriptive and administrative metadata. We 
 
 Altogether we have 18 metadata blocks. Please see the following for a detailed example for each of them:
 
-- [Descriptive metadata](./Descriptive%20metadata.md)
-- [Technical metadata](./Technical%20metadata.md)
-- [Rights metadata](./Rights%20metadata.md)
-- [Provenance metadata](./Provenance%20metadata.md)
+- [Descriptive metadata](./Descriptive%20metadata.html)
+- [Technical metadata](./Technical%20metadata.html)
+- [Rights metadata](./Rights%20metadata.html)
+- [Provenance metadata](./Provenance%20metadata.html)

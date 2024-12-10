@@ -1,3 +1,8 @@
+---
+title: Linking between metadata and files
+parent: A Complete METS 2 Example
+nav_order: 5
+---
 # Linking between metadata and files
 
 Without internal linkings in METS, we would just have a set of unrelated metadata blocks and files. This is why all of these need to be linked together.

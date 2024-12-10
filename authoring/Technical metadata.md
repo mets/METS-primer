@@ -1,3 +1,7 @@
+---
+title: Technical metadata
+parent: Metadata section
+---
 # Technical metadata
 
 Long-term management and preservation of digital resources requires information regarding the technical characteristics of the digital content. Such technical metadata about text, image, audio, and video data is best produced when the digital content is originally created.

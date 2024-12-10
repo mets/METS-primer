@@ -10,7 +10,7 @@ location of a content file.
 NOTE: `<FLocat>` is an empty element. The location of the resource
 pointed to MUST be stored in the LOCREF attribute.
 
-See also: [Linking to external resources from METS](locref.md)
+See also: [Linking to external resources from METS](locref.html)
 
 ## Example
 

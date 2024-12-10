@@ -15,5 +15,5 @@ The `<binData>` element allows the METS `<md>` element to wrap non-XML content. 
 If the digital content represented by a `<file>` element is not in XML format it can be encoded in a `<file>` element using the base64 binary format and then wrapping that encoding in a `file/FContent/binData` element. 
 
 See also: 
-* [Embedding file content](FContent.md)
-* [Descriptive metadata - embedding binary MARC records](binary_marc.md)
+* [Embedding file content](FContent.html)
+* [Descriptive metadata - embedding binary MARC records](binary_marc.html)

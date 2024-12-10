@@ -15,11 +15,11 @@ metadata Reference `<mdRef>` elements, which are discussed in more detail
 below.
 
 See also: 
-* [Referring to elements within METS](idrefs_within_mets.md)
-* [Descriptive metadata - embedding binary MARC records](binary_marc.md)
-* [Digital provenance metadata -- PREMIS](premis.md)
-* [Intellectual property rights metadata](mets_rights.md)
-* [Describing characteristics of the source material](source_metadata.md)
-* [Technical metadata for images](technical_metadata.md)
-* [Referring to external metadata](mdRef.md)
-* [Embedding metadata in METS](mdWrap.md)
+* [Referring to elements within METS](idrefs_within_mets.html)
+* [Descriptive metadata - embedding binary MARC records](binary_marc.html)
+* [Digital provenance metadata -- PREMIS](premis.html)
+* [Intellectual property rights metadata](mets_rights.html)
+* [Describing characteristics of the source material](source_metadata.html)
+* [Technical metadata for images](technical_metadata.html)
+* [Referring to external metadata](mdRef.html)
+* [Embedding metadata in METS](mdWrap.html)

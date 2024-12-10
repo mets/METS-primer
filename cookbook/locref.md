@@ -24,7 +24,7 @@ In the `<mdSec>` below, the LOCREF attribute cites a URL that identifies the loc
 
 The `<FLocat>` element uses an xlink:href attribute to point to the pertinent content file in its external location. The other XLink simpleLink attributes can be used to describe this link. 
 
-See also: [Referencing external files](FLocat.md)
+See also: [Referencing external files](FLocat.html)
 ### Example
 
 In the example below, the LOCREF attribute uses a URL to identify the location of the pertinent external content file. 

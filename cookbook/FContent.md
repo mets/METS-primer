@@ -23,8 +23,8 @@ scheme is UTF-8 Unicode.
 
 See also:
 
-* [Embedding XML content in METS](xmlData.md)
-* [Embedding binary data in METS](binData.md)
+* [Embedding XML content in METS](xmlData.html)
+* [Embedding binary data in METS](binData.html)
 ##### File content -- example
 
 ```xml

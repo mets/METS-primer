@@ -34,12 +34,12 @@ an XML validator will check for well-formedness, but otherwise skip over
 the elements appearing in the `<xmlData>` element.
 
 See also:
-* [Embedding XML content in METS](xmlData.md)
-* [Embedding binary data in METS](binData.md)
+* [Embedding XML content in METS](xmlData.html)
+* [Embedding binary data in METS](binData.html)
 
 And examples:
-* [Descriptive metadata - embedding binary MARC records](binary_marc.md)
-* [Digital provenance metadata -- PREMIS](premis.md)
-* [Intellectual property rights metadata](mets_rights.md)
-* [Describing characteristics of the source material](source_metadata.md)
-* [Technical metadata for images](technical_metadata.md)
+* [Descriptive metadata - embedding binary MARC records](binary_marc.html)
+* [Digital provenance metadata -- PREMIS](premis.html)
+* [Intellectual property rights metadata](mets_rights.html)
+* [Describing characteristics of the source material](source_metadata.html)
+* [Technical metadata for images](technical_metadata.html)

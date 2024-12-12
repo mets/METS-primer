@@ -1,8 +1,9 @@
-Text only moved from Primer version 1
-
-***
-# Chapter 5:  Profiles
-
+---
+title: METS Profiles
+nav_order: 6
+---
+# METS Profiles
+(Text only moved from Primer version 1, chapter 5)
 ## TODO
 * [ ] update [description of the components of a METS profile](http://www.loc.gov/standards/mets/profile_docs/components.html) for METS 2
 * [ ] update http://www.loc.gov/standards/mets/profile_docs/mets_profile_example.xml] for METS 2
@@ -10,6 +11,7 @@ Text only moved from Primer version 1
 * [ ] pull request template /more detailed instructions for METS-profiles
 * [ ] README for METS-profiles repository
 
+***
 ## **Purpose of METS Profiles**
 One of the most advantageous features of the METS schema is its flexibility; it can be adapted to fit local practice as well as locally-developed tools and work flows.  This same flexibility can also be a disadvantage, however, when institutions are looking to transfer METS files between and among each other for any number of purposes.  As a mechanism to allow flexibility, but also to establish common practice among METS users, a METS profile schema has been developed along with a process to make the profiles visible to others looking to implement and/or share data and metadata among those using a given profile.
 

@@ -2,3 +2,5 @@
 .vendor
 _site
 .bundle
+*.sw?
+*~

@@ -3,8 +3,6 @@ title: Structural map section
 parent: Sections of a METS Document
 nav_order: 5
 ---
-[Image]
-
 # Structural map section
 
 The **structural map section** `<structMap>` provides a means for

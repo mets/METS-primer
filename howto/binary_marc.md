@@ -16,6 +16,4 @@ While it would normally be preferable to include MARC metadata as MARC-XML, or p
 </md>
 ```
 
-[Image]
-
 See also: [Embedding binary data in METS](binData.md)

@@ -3,8 +3,6 @@ title: File section
 parent: Sections of a METS Document
 nav_order: 4
 ---
-[Image]
-
 # File section
 
 The overall purpose of the content **file section** element `<fileSec>`

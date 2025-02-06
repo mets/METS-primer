@@ -3,8 +3,6 @@ title: METS root element
 parent: Sections of a METS Document
 nav_order: 1
 ---
-[Image]
-
 # METS root element
 
 The root element `<mets>` establishes the container for the information

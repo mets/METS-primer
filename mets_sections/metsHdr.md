@@ -3,8 +3,6 @@ title: METS Header
 parent: Sections of a METS Document
 nav_order: 2
 ---
-[Image]
-
 # METS Header 
 
 The **mets header** element `<metsHdr>` captures metadata about the METS

@@ -4,27 +4,13 @@ parent: METS How-Tos
 ---
 # Embedding file content
 
-The **file content** element `<FContent>` is used to identify a content
-file contained internally within a METS document. The content file must
-be either Base64 encoded and contained within the subsidiary `<binData>`
-wrapper element, or consist of XML information and be contained within
-the subsidiary `<xmlData>` wrapper element. An xml data element
-`<xmlData>` is used to contain an XML encoded file. The content of an
-`<xmlData>` element can be in any namespace or in no namespace. As
-permitted by the XML Schema Standard, the processContents attribute
-value for the metadata in an `<xmlData>` element is set to "lax".
-Therefore, if the source schema and its location are identified by means
-of an xsi:schemaLocation attribute, then an XML processor will validate
-the elements for which it can find declarations. If a source schema is
-not identified, or cannot be found at the specified schemaLocation, then
-an XML validator will check for well-formedness, but otherwise skip over
-the elements appearing in the `<xmlData>` element. METS default encoding
-scheme is UTF-8 Unicode.
+The **file content** element `<FContent>` is used to identify a content file contained internally within a METS document. The content file must be either Base64 encoded and contained within the subsidiary `<binData>` wrapper element, or consist of XML information and be contained within the subsidiary `<xmlData>` wrapper element. An xml data element `<xmlData>` is used to contain an XML encoded file. The content of an `<xmlData>` element can be in any namespace or in no namespace. As permitted by the XML Schema Standard, the processContents attribute value for the metadata in an `<xmlData>` element is set to "lax".  Therefore, if the source schema and its location are identified by means of an xsi:schemaLocation attribute, then an XML processor will validate the elements for which it can find declarations. If a source schema is not identified, or cannot be found at the specified schemaLocation, then an XML validator will check for well-formedness, but otherwise skip over the elements appearing in the `<xmlData>` element. METS default encoding scheme is UTF-8 Unicode.
 
 See also:
 
 * [Embedding XML content in METS](xmlData.md)
 * [Embedding binary data in METS](binData.md)
+
 ##### File content -- example
 
 ```xml

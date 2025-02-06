@@ -4,16 +4,11 @@ parent: METS How-Tos
 ---
 # Handling "Wrapper" file formats
 
-The **transform file** `<transformFile>` element provides a means to
-access any subsidiary files listed below a `<file>` element by
-indicating the steps required to unpack or transform the subsidiary
-files, such as decompressing, decrypting, or un-archiving files. This element is repeatable.
+The **transform file** `<transformFile>` element provides a means to access any subsidiary files listed below a `<file>` element by indicating the steps required to unpack or transform the subsidiary files, such as decompressing, decrypting, or un-archiving files. This element is repeatable.
+
 ## Example
 
-The following example describes a *.tar.gz file which has two embedded
-files within it, one a TIFF file and the other a JPEG file of the same
-image. To use the `<fileSec>` to describe these files, you could use the
-`<transformFile>` element in the following way:
+The following example describes a *.tar.gz file which has two embedded files within it, one a TIFF file and the other a JPEG file of the same image. To use the `<fileSec>` to describe these files, you could use the `<transformFile>` element in the following way:
 
 ```xml
 <mets:fileSec ID="TransformEX_01">

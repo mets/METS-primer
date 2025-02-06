@@ -4,10 +4,7 @@ parent: METS How-Tos
 ---
 # Including descriptive metadata with MODS
 
-Descriptive metadata is metadata about the content and context of the
-data. With descriptive metadata, the content can be identified and
-discover. The following example demonstrate the use of the
-`<mdWrap>` element:
+Descriptive metadata is metadata about the content and context of the data. With descriptive metadata, the content can be identified and discover. The following example demonstrate the use of the `<mdWrap>` element:
 
 ```xml
 <mets:md ID="DMD1" USE="DESCRIPTIVE">

@@ -4,19 +4,15 @@ parent: METS How-Tos
 ---
 # Referencing external files
 
-The **file location** element `<FLocat>` provides a pointer to the
-location of a content file. 
+The **file location** element `<FLocat>` provides a pointer to the location of a content file. 
 
-NOTE: `<FLocat>` is an empty element. The location of the resource
-pointed to MUST be stored in the LOCREF attribute.
+NOTE: `<FLocat>` is an empty element. The location of the resource pointed to MUST be stored in the LOCREF attribute.
 
 See also: [Linking to external resources from METS](locref.md)
 
 ## Example
 
-In the following example, the `<fileGrp>` of the TIFF images is
-represented as is a single `<file>` within that group and the file
-location:
+In the following example, the `<fileGrp>` of the TIFF images is represented as is a single `<file>` within that group and the file location:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

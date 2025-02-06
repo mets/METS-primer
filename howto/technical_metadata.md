@@ -4,10 +4,7 @@ parent: METS How-Tos
 ---
 # Technical metadata for images
 
-**Technical metadata** is metadata about a component of the METS
-object, such as a digital content file. One might, for example,
-have a `<md>` element which includes technical metadata regarding
-a file's preparation:
+**Technical metadata** is metadata about a component of the METS object, such as a digital content file. One might, for example, have a `<md>` element which includes technical metadata regarding a file's preparation:
 
 ## TODO use current version of NISO/MIX schema
 
@@ -26,10 +23,7 @@ a file's preparation:
 </mets:md>
 ```
 
-Within a file section, a `<file>` element within a `<fileGrp>` might
-then identify the administrative metadata pertaining to the file to
-which it points by referencing an MDID attribute for its `<md>`
-element:
+Within a file section, a `<file>` element within a `<fileGrp>` might then identify the administrative metadata pertaining to the file to which it points by referencing an MDID attribute for its `<md>` element:
 
 ```xml
 <mets:file ID="FILE001" MDID="AMD001">

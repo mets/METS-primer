@@ -4,24 +4,7 @@ parent: METS How-Tos
 ---
 # Digital provenance metadata -- PREMIS
 
-The **digital provenance metadata** could contain metadata about any
-preservation-related actions taken on the various files which comprise
-a digital object (e.g., those subsequent to the initial digitization of
-the files such as transformation or migrations) or, in the case of born
-digital materials, the files' creation. In short, digital provenance
-should be used to record information that allows both archival/library
-staff and scholars to understand what modifications have been made to a
-digital object and/or its constituent parts during its life cycle. This
-information can then be used to judge how those processes might have
-altered or corrupted the object's ability to accurately represent the
-original item. One might, for example, record master derivative
-relationships and the process by which those derivations have been
-created. Digital provenance metadata could contain information regarding
-the migration/transformation of a file from its original digitization
-(e.g., OCR, TEI, etc.,)to its current incarnation as a digital object
-(e.g., JPEG2000). Digital provenance metadata can be
-expressed according to current digital provenance description standards
-(such as PREMIS) or a locally produced XML schema.
+The **digital provenance metadata** could contain metadata about any preservation-related actions taken on the various files which comprise a digital object (e.g., those subsequent to the initial digitization of the files such as transformation or migrations) or, in the case of born digital materials, the files' creation. In short, digital provenance should be used to record information that allows both archival/library staff and scholars to understand what modifications have been made to a digital object and/or its constituent parts during its life cycle. This information can then be used to judge how those processes might have altered or corrupted the object's ability to accurately represent the original item. One might, for example, record master derivative relationships and the process by which those derivations have been created. Digital provenance metadata could contain information regarding the migration/transformation of a file from its original digitization (e.g., OCR, TEI, etc.,)to its current incarnation as a digital object (e.g., JPEG2000). Digital provenance metadata can be expressed according to current digital provenance description standards (such as PREMIS) or a locally produced XML schema.
 
 ## TODO use current version of PREMIS
 

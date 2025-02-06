@@ -4,16 +4,11 @@ parent: METS How-Tos
 ---
 # Alternative identifiers for a digital object
 
-The **alternative identifier** element `<altRecordID>` allows one to use
-alternative record identifier values for the digital object represented
-by the METS document; the primary record identifier is stored in the
-OBJID attribute in the root `<mets>` element.
+The **alternative identifier** element `<altRecordID>` allows one to use alternative record identifier values for the digital object represented by the METS document; the primary record identifier is stored in the OBJID attribute in the root `<mets>` element.
 
 ## Examples
 
-First example: expanding on the basic example, altRecordID reflects the
-Library of Congress Control Number (LCCN) associated with the
-manifestation "20023838".
+First example: expanding on the basic example, altRecordID reflects the Library of Congress Control Number (LCCN) associated with the manifestation "20023838".
 
 ```xml
 <metsHdr CREATEDATE="2006-05-09T00:00:00">
@@ -24,9 +19,7 @@ manifestation "20023838".
 <mets:metsHdr>
 ```
 
-In the second example, altRecordID reflects the University of
-California, San Diego's internal identification code for the object;
-this example also reflects various uses of the role attribute on agent.
+In the second example, altRecordID reflects the University of California, San Diego's internal identification code for the object; this example also reflects various uses of the role attribute on agent.
 
 ```xml
 <metsHdr CREATEDATE="2004-02-22T00:00:00"

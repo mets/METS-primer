@@ -4,12 +4,9 @@ parent: METS How-Tos
 ---
 # Referring to external metadata
 
-The **metadata reference** element `<mdRef>` element is used to provide
-a pointer to metadata which resides outside the METS document.
+The **metadata reference** element `<mdRef>` element is used to provide a pointer to metadata which resides outside the METS document.
 
-NOTE: `<mdRef>` is an empty element; the location of the external
-metadata must be recorded in the LOCREF attribute, and can be
-supplemented by the XPTR attribute as needed.
+NOTE: `<mdRef>` is an empty element; the location of the external metadata must be recorded in the LOCREF attribute, and can be supplemented by the XPTR attribute as needed.
 
 ##### Metadata reference -- example
 

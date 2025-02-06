@@ -1,5 +1,5 @@
 ---
-title: "Including descriptive metadata with MODS"
+title: Including descriptive metadata with MODS
 parent: METS Cookbook
 ---
 # Including descriptive metadata with MODS

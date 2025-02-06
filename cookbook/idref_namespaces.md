@@ -1,9 +1,11 @@
 ---
-title: "IDREF/ID linking across different namespaces"
+title: IDREF/ID linking across different namespaces
 parent: METS Cookbook
 ---
 # IDREF/ID linking across different namespaces
+
 As is described above, the elements of the `mdType` has a required ID attributes. The unique identifier values assigned to this attribute allow these elements to be referenced from the MDID attributes that are associated with `<file>` and `<div>` elements. The mdType elements can all include metadata in the form of elements drawn from other namespaces in their `<xmlData>` sections. And in cases where the elements drawn from other namespaces for populating the `<xmlData>` sections themselves have ID attributes, as is the case with some elements drawn from the MODS and VRACORE namespaces, the MDID attribute can reference identifier values assigned to these ID attributes instead of or in addition to the values assigned to ID attributes in the top level `mdType` element (e.g., `<md>`).
+
 ## Example
 
 The example below includes a `<md>` with very abbreviated VRA encoded descriptive metadata. These metadata include a description of a print series, a description of a single print from this series, and descriptions of multiple images. The various other parts of the METS document reference the pertinent sections of the VRA encoding by citing ID values identifying elements in the VRA namespace. For example, each `<file>` element in the `<fileSec>` uses its MDID attribute to cite the ID attribute value that identifies the `<vra:image>` element that describes it. The root `<div>` element in the mets `<structMap>` uses its MDID attribute to cite the ID attribute value that identifies the `<vra:work>` element that describes the print series as a whole; and the `<div>` that is the immediate child of the root `<div>` element, and which represents a single print from the series, uses its MDID attribute to cite the ID attribute value that identifies the `<vra:work>` element that describes the individual print.

@@ -1,5 +1,5 @@
 ---
-title: "Describing characteristics of the source material"
+title: Describing characteristics of the source material
 parent: METS Cookbook
 ---
 # Describing characteristics of the source material

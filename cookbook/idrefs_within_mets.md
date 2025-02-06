@@ -1,5 +1,5 @@
 ---
-title: "Referring to elements within METS"
+title: Referring to elements within METS
 parent: METS Cookbook
 ---
 # Referring to elements within METS

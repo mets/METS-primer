@@ -1,9 +1,8 @@
 ---
-title: "Embedding metadata in METS"
-parent: METS Cookbook
+title: Embedding metadata in METS
 parent: METS Cookbook
 ---
-# Embedding metadata in METS: `<mdWrap>`
+# Embedding metadata in METS
 
 A **metadata wrapper** element `<mdWrap>` provides a wrapper around
 metadata embedded within a METS document. The element is repeatable.

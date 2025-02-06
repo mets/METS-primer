@@ -5,7 +5,7 @@ nav_order: 2
 ---
 [Image]
 
-# `<metsHdr>` METS Header 
+# METS Header 
 
 The **mets header** element `<metsHdr>` captures metadata about the METS
 document itself, not the digital object the METS document encodes.

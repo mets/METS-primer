@@ -1,5 +1,5 @@
 ---
-title: "Digital provenance metadata -- PREMIS"
+title: Digital provenance metadata -- PREMIS
 parent: METS Cookbook
 ---
 # Digital provenance metadata -- PREMIS

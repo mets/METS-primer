@@ -1,5 +1,5 @@
 ---
-title: "Intellectual property rights metadata"
+title: Intellectual property rights metadata
 parent: METS Cookbook
 ---
 # Intellectual property rights metadata

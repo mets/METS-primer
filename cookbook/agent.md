@@ -1,8 +1,8 @@
 ---
-title: "Recording who created or modified a METS document"
+title: Recording who created or modified a METS document
 parent: METS Cookbook
 ---
-# Recording who created or modified a METS document: `<agent>`
+# Recording who created or modified a METS document
 
 The **agent** element `<agent>` provides for various parties and their
 roles with respect to the METS record to be documented.

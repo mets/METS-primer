@@ -1,8 +1,8 @@
 ---
-title: "Referring to external metadata"
+title: Referring to external metadata
 parent: METS Cookbook
 ---
-# Referring to external metadata: `<mdRef>`
+# Referring to external metadata
 
 The **metadata reference** element `<mdRef>` element is used to provide
 a pointer to metadata which resides outside the METS document.

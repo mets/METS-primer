@@ -5,7 +5,7 @@ nav_order: 1
 ---
 [Image]
 
-# `<mets>` METS root element
+# METS root element
 
 The root element `<mets>` establishes the container for the information
 being stored and/or transmitted by the standard.

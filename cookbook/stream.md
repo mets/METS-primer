@@ -1,8 +1,8 @@
 ---
-title: "Representing parts of files"
+title: Representing parts of files
 parent: METS Cookbook
 ---
-# Representing parts of files: `<stream>`
+# Representing parts of files
 
 A **component byte stream** element `<stream>` may be composed of one or
 more subsidiary streams. An MPEG4 file, for example, might contain

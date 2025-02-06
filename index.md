@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 
-# METS Primer
+# METS Primer - Home
 
 * [Introduction and Background](intro_background.md): provides some generation information about the background and development of METS.
 * [Sections of a METS Document](mets_sections.md): provides reference about the various major sections of a METS document.

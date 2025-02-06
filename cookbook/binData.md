@@ -1,8 +1,8 @@
 ---
-title: "Embedding binary data in METS"
+title: Embedding binary data in METS
 parent: METS Cookbook
 ---
-# Embedding binary data in METS: `<binData>`
+# Embedding binary data in METS
 
 The METS `<binData>` elements serve as wrappers for base64 encoded binary content. This element can be used to include non-xml metadata or digital content directly in the METS document. This is only recommended for relatively small files.
 

@@ -5,7 +5,7 @@ nav_order: 4
 ---
 [Image]
 
-# `<fileSec>` File section
+# File section
 
 The overall purpose of the content **file section** element `<fileSec>`
 is to provide an inventory of and the location for the content files

@@ -1,8 +1,8 @@
 ---
-title: "Referring to Parts of XML Documents"
+title: Referring to Parts of XML Documents
 parent: METS Cookbook
 ---
-# Referring to Parts of XML Documents: ID, IDREF, IDREFS
+# Referring to Parts of XML Documents
 
 METS uses IDREF and IDREFS attributes on numerous elements to establish links between these elements and other elements within the METS document. In addition, METS uses IDREF mechanisms to establish links between an ``<area>`` element within the METS structMap and elements in a structured text content file.
 ## The XSD ID datatype

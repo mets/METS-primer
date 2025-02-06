@@ -3,7 +3,7 @@ title: A Complete METS 2 Example
 nav_order: 5
 has_toc: false
 ---
-# Complete Example
+# A Complete METS 2 Example
 
 The METS standard provides a means of encoding digital content. Its most fundamental task in accomplishing this goal is to provide a mechanism for recording the various relationships that exist between pieces of content, and between the content and metadata. This chapter will demonstrate a complete example in a practical approach by creating a METS file for a following example. 
 

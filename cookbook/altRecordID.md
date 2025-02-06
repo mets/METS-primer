@@ -1,8 +1,8 @@
 ---
-title: "Alternative identifiers for a digital object"
+title: Alternative identifiers for a digital object
 parent: METS Cookbook
 ---
-# Alternative identifiers for a digital object: `<altRecordID>`
+# Alternative identifiers for a digital object
 
 The **alternative identifier** element `<altRecordID>` allows one to use
 alternative record identifier values for the digital object represented

@@ -1,8 +1,8 @@
 ---
-title: "Embedding file content"
+title: Embedding file content
 parent: METS Cookbook
 ---
-# Embedding file content: `<FContent>`
+# Embedding file content
 
 The **file content** element `<FContent>` is used to identify a content
 file contained internally within a METS document. The content file must

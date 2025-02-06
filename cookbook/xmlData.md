@@ -1,5 +1,5 @@
 ---
-title: "Embedding XML content in METS"
+title: Embedding XML content in METS
 parent: METS Cookbook
 ---
 # Embedding XML content in METS

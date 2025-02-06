@@ -1,5 +1,5 @@
 ---
-title: "Linking to external resources from METS"
+title: Linking to external resources from METS
 parent: METS Cookbook
 ---
 # Linking to external resources from METS

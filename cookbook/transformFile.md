@@ -1,8 +1,8 @@
 ---
-title: "Handling 'Wrapper' file formats"
+title: Handling 'Wrapper' file formats
 parent: METS Cookbook
 ---
-# Handling "Wrapper" file formats: `<transformFile>`
+# Handling "Wrapper" file formats
 
 The **transform file** `<transformFile>` element provides a means to
 access any subsidiary files listed below a `<file>` element by

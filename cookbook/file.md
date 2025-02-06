@@ -1,8 +1,8 @@
 ---
-title: "Describing digital object content"
+title: Describing digital object content
 parent: METS Cookbook
 ---
-# Describing digital object content: `<file>`
+# Describing digital object content
 
 The **file element** `<file>` provides access to the content files for
 the digital object being described by the METS document. A `<file>`

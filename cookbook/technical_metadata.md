@@ -1,5 +1,5 @@
 ---
-title: "Technical metadata for images"
+title: Technical metadata for images
 parent: METS Cookbook
 ---
 # Technical metadata for images

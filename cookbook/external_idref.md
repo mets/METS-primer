@@ -1,5 +1,5 @@
 ---
-title: "Referencing METS elements from external documents"
+title: Referencing METS elements from external documents
 parent: METS Cookbook
 ---
 # Referencing METS elements from external documents

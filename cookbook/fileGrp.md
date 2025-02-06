@@ -1,8 +1,8 @@
 ---
-title: "Grouping related files"
+title: Grouping related files
 parent: METS Cookbook
 ---
-# Grouping related files: `<fileGrp>`
+# Grouping related files
 
 A sequence of file group elements `<fileGrp>` can be used group the
 digital files comprising the content of a METS object either into a

@@ -1,6 +1,6 @@
 ---
 title: Technical metadata for images
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Technical metadata for images
 

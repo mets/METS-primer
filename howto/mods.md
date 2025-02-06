@@ -1,6 +1,6 @@
 ---
 title: Including descriptive metadata with MODS
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Including descriptive metadata with MODS
 

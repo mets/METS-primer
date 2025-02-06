@@ -1,6 +1,6 @@
 ---
 title: "File section example: audio and transcription"
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # File section example: audio and transcription
 

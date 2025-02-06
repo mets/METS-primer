@@ -1,6 +1,6 @@
 ---
 title: Handling 'Wrapper' file formats
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Handling "Wrapper" file formats
 

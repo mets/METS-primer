@@ -1,6 +1,6 @@
 ---
 title: Referring to Parts of XML Documents
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Referring to Parts of XML Documents
 

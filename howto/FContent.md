@@ -1,6 +1,6 @@
 ---
 title: Embedding file content
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Embedding file content
 

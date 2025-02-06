@@ -1,6 +1,6 @@
 ---
 title: Embedding XML content in METS
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Embedding XML content in METS
 

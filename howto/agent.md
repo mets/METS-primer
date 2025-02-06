@@ -1,6 +1,6 @@
 ---
 title: Recording who created or modified a METS document
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Recording who created or modified a METS document
 

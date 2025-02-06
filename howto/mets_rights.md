@@ -1,6 +1,6 @@
 ---
 title: Intellectual property rights metadata
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Intellectual property rights metadata
 

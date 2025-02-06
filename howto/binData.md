@@ -1,6 +1,6 @@
 ---
 title: Embedding binary data in METS
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Embedding binary data in METS
 

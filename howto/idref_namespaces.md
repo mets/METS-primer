@@ -1,6 +1,6 @@
 ---
 title: IDREF/ID linking across different namespaces
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # IDREF/ID linking across different namespaces
 

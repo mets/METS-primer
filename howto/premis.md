@@ -1,6 +1,6 @@
 ---
 title: Digital provenance metadata -- PREMIS
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Digital provenance metadata -- PREMIS
 

@@ -1,6 +1,6 @@
 ---
 title: Referencing external files
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Referencing external files
 

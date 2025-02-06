@@ -1,6 +1,6 @@
 ---
 title: Alternative identifiers for a digital object
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Alternative identifiers for a digital object
 

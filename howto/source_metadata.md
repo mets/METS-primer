@@ -1,6 +1,6 @@
 ---
 title: Describing characteristics of the source material
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Describing characteristics of the source material
 

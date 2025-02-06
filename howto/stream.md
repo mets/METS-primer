@@ -1,6 +1,6 @@
 ---
 title: Representing parts of files
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Representing parts of files
 

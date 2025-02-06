@@ -1,6 +1,6 @@
 ---
 title: "File section example: multiple image representations"
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # File section example: multiple image representations
 

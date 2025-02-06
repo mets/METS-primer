@@ -20,8 +20,8 @@ The `<metsHdr>` may include: document author or agent, any alternative
 identifiers for a METS document, creation and update dates and times,
 and the status of the METS document.
 
-* [Recording who created or modified a METS document](../cookbook/agent.md)
-* [Alternative identifiers for a digital object](../cookbook/altRecordID.md)
+* [Recording who created or modified a METS document](../howto/agent.md)
+* [Alternative identifiers for a digital object](../howto/altRecordID.md)
 
 Modification to this example record is indicated in LASTMODDATE.
 

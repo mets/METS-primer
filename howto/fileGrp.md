@@ -1,6 +1,6 @@
 ---
 title: Grouping related files
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Grouping related files
 

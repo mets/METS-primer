@@ -1,6 +1,6 @@
 ---
 title: Describing the digital object with metadata
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Describing the digital object with metadata
 

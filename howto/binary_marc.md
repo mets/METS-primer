@@ -1,6 +1,6 @@
 ---
 title: "Descriptive metadata: embedding binary MARC records"
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Descriptive metadata: embedding binary MARC records
 

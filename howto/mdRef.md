@@ -1,6 +1,6 @@
 ---
 title: Referring to external metadata
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Referring to external metadata
 

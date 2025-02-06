@@ -1,6 +1,6 @@
 ---
 title: Linking to external resources from METS
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Linking to external resources from METS
 

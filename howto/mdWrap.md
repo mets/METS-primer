@@ -1,6 +1,6 @@
 ---
 title: Embedding metadata in METS
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Embedding metadata in METS
 

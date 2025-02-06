@@ -1,6 +1,6 @@
 ---
 title: Referring to elements within METS
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Referring to elements within METS
 

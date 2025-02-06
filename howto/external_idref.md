@@ -1,6 +1,6 @@
 ---
 title: Referencing METS elements from external documents
-parent: METS Cookbook
+parent: METS How-Tos
 ---
 # Referencing METS elements from external documents
 

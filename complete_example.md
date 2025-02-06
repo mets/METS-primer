@@ -13,13 +13,13 @@ The example that we will use here contains the documents produced for METS Tutor
 
 Please follow the links to see a complete example creation of diffrent sections of METS:
 
-- [METS root and header](./authoring/METS%20root%20and%20header.md)
-- [Metadata section](./authoring/Metadata%20section.md)
-- [File section](./authoring/File%20section.md)
-- [Structural section](./authoring/Structural%20section.md)
+- [METS root and header](./authoring/mets_root_header.md)
+- [Metadata section](./authoring/metadata_section.md)
+- [File section](./authoring/file_section.md)
+- [Structural section](./authoring/structural_section.md)
 
 Additionally, see the information about creating links between the sections:
 
-- [Linking between metadata and files](./authoring/Linking%20between%20metadata%20and%20files.md) 
+- [Linking between metadata and files](./authoring/linking.md) 
 
 By combining the `<metsHdr>`, `<mdSec>`, `<fileSec>` and `<structSec>` sections in a single METS document, we can create a document that contains the structure needed for applications to present the content in a reasonably sophisticated fashion as well as providing the information needed for both retrieval and management purposes. These sections discussed in this chapter are often all that is needed to represent even fairly complex works.

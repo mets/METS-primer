@@ -12,8 +12,8 @@ File section can contain one or more file groups elements `<fileGrp>` which can 
 
 In our example below, we have two file groups `original` and `archival`. These are defined in the attribute `USE` of element `<mets:fileGrp>`. There are three files in the `original` group and two files in the `archival` group. File element `<mets:file>` describes the actual files. Attribute `ID` is a file identifier in METS, referred from the [structural map](Structural section.md). Attribute `MDID` contains references to metadata sections of METS and it connects the files and corresponding administrative metadata together. The referred metadata sections are described in the following pages:
 
-- [Technical metadata](./Technical%20metadata.md)
-- [Provenance metadata](./Provenance%20metadata.md)
+- [Technical metadata](technical_metadata.md)
+- [Provenance metadata](provenance_metadata.md)
 
 Element `<mets:FLocat>` describes the location of the file. Attributes `LOCTYPE` and `LOCREF` contain the type and reference of the file, respectively.
 

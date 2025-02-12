@@ -1,6 +1,6 @@
 ---
 title: External schema and Controlled Vocabulary
-nav_order: 7
+nav_order: 6
 ---
 
 (Text only moved from Primer version 1, chapter 6)

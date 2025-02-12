@@ -1,6 +1,6 @@
 ---
 title: METS Profiles
-nav_order: 6
+nav_order: 7
 ---
 # METS Profiles
 (Text only moved from Primer version 1, chapter 5)

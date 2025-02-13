@@ -6,18 +6,38 @@ parent: METS How-Tos
 
 **Technical metadata** is metadata about a component of the METS object, such as a digital content file. One might, for example, have a `<md>` element which includes technical metadata regarding a file's preparation:
 
-## TODO use current version of NISO/MIX schema
+## Example
 
 ```xml
-<mets:md ID="AMD001" USE="TECHNICAL">
-  <mets:mdWrap MIMETYPE="text/xml" MDTYPE="NISOIMG" LABEL="NISO Img.Data">
+<mets:md ID="MD001" USE="TECHNICAL">
+  <mets:mdWrap MIMETYPE="text/xml" MDTYPE="MIX" LABEL="NISO Img.Data">
     <mets:xmlData>
-      <niso:MIMEtype>image/tiff</niso:MIMEtype>
-      <niso:Compression>LZW</niso:Compression>
-      <niso:PhotometricInterpretation>8
-      </niso:PhotometricInterpretation>
-      <niso:Orientation>1</niso:Orientation>
-      <niso:ScanningAgency>NYU Press</niso:ScanningAgency>
+      <mix:mix xmlns:mix="http://www.loc.gov/mix/v20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.loc.gov/mix/v20 https://www.loc.gov/standards/mix/mix.xsd">
+        <mix:BasicDigitalObjectInformation>
+          <mix:FormatDesignation>
+            <mix:formatName>image/tiff</mix:formatName>
+          </mix:FormatDesignation>
+          <mix:Compression>
+            <mix:compressionScheme>LZW</mix:compressionScheme>
+          </mix:Compression>
+        </mix:BasicDigitalObjectInformation>
+        <mix:BasicImageInformation>
+          <mix:BasicImageCharacteristics>
+            <mix:PhotometricInterpretation>
+              <mix:colorSpace>DeviceGray</mix:colorSpace>
+            </mix:PhotometricInterpretation>
+          </mix:BasicImageCharacteristics>
+        </mix:BasicImageInformation>
+        <mix:ImageCaptureMetadata>
+          <mix:orientation>normal*</mix:orientation>
+        </mix:ImageCaptureMetadata>
+        <mix:ChangeHistory>
+          <mix:ImageProcessing>
+            <mix:processingAgency>NYU Press</mix:processingAgency>
+          </mix:ImageProcessing>
+        </mix:ChangeHistory>
+      </mix:mix>
     </mets:xmlData>
   </mets:mdWrap>
 </mets:md>
@@ -26,7 +46,7 @@ parent: METS How-Tos
 Within a file section, a `<file>` element within a `<fileGrp>` might then identify the administrative metadata pertaining to the file to which it points by referencing an MDID attribute for its `<md>` element:
 
 ```xml
-<mets:file ID="FILE001" MDID="AMD001">
+<mets:file ID="FILE001" MDID="MD001">
   <mets:FLocat LOCTYPE="URL" LOCREF="http://dlib.nyu.edu/press/testing.tif"/>
 </mets:file>
 ```

@@ -1,4 +1,8 @@
-# METS Primer
+# METS 2 Primer
+
+This guide provides documentation and detailed examples of usage for the Metadata Encoding & Transmission Standard (METS) schema, version 2. [Detailed documentation for METS 1](https://www.loc.gov/standards/mets/METSPrimer.pdf) is also available.
+
+The published version of this site is available at [https://mets.github.io](https://mets.github.io). This site *continues to be a work in progress*, and not all sections have yet been fully updated for METS 2.
 
 * [Introduction and Background](intro_background.md): provides some generation information about the background and development of METS.
 * [Sections of a METS Document](mets_sections.md): provides reference about the various major sections of a METS document.

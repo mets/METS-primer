@@ -11,15 +11,14 @@ The overall purpose of the content **file section** element `<fileSec>` is to pr
 
 Similarly, `<file>`s within a `<fileGrp>` may point to metadata using MDID attribute. See `<fileGrp>` discussion below.
 
-## Elements Contained in the File Section
+## More information
+* [Grouping related files](../howto/fileGrp.md)
+* [Describing digital object content](../howto/file.md)
+* [Embedding file content](../howto/FContent.md)
+* [Representing parts of files](../howto/stream.md)
+* [Referencing external files](../howto/FLocat.md)
+* [Handling 'wrapper' file formats](../howto/transformFile.md)
 
-[Grouping related files](../howto/fileGrp.md)
-[Describing digital object content](../howto/file.md)
-[Embedding file content](../howto/FContent.md)
-[Representing parts of files](../howto/stream.md)
-[Referencing external files](../howto/FLocat.md)
-[Handling 'wrapper' file formats](../howto/transformFile.md)
 ## Examples
-
-[File section example - multiple image representations](../howto/fileSec_example_images.md)
-[File section example - audio and transcription](../howto/fileSec_example_audio.md)
+* [File section example - multiple image representations](../howto/fileSec_example_images.md)
+* [File section example - audio and transcription](../howto/fileSec_example_audio.md)

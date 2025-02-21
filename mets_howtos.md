@@ -11,6 +11,7 @@ Examples and descriptions of how to accomplish various tasks in METS using the a
 ## METS Header
 * [Alternative identifiers for a digital object](howto/altRecordID.md)
 * [Recording who created or modified a METS document](howto/agent.md)
+
 ## Metadata
 * [Describing the digital object with metadata](howto/md.md)
 * [Descriptive metadata - embedding binary MARC records](howto/binary_marc.md)
@@ -21,6 +22,7 @@ Examples and descriptions of how to accomplish various tasks in METS using the a
 * [Technical metadata for images](howto/technical_metadata.md)
 * [Referring to external metadata](howto/mdRef.md)
 * [Embedding metadata in METS](howto/mdWrap.md)
+
 ## Content Files
 * [Describing digital object content](howto/file.md)
 * [File section example - audio and transcription](howto/fileSec_example_audio.md)
@@ -30,11 +32,13 @@ Examples and descriptions of how to accomplish various tasks in METS using the a
 * [Representing parts of files](howto/stream.md)
 * [Referencing external files](howto/FLocat.md)
 * [Embedding file content](howto/FContent.md)
+
 ## Embedding content and metadata
 * [Embedding file content](howto/FContent.md)
 * [Embedding metadata in METS](howto/mdWrap.md)
 * [Embedding XML content in METS](howto/xmlData.md)
 * [Embedding binary data in METS](howto/binData.md)
+
 ## Structuring and Linking
 * [Referencing METS elements from external documents](howto/external_idref.md)
 * [Referencing external files](howto/FLocat.md)

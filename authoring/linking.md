@@ -5,11 +5,11 @@ nav_order: 5
 ---
 # Linking between metadata and files
 
-Without internal linkings in METS, we would just have a set of unrelated metadata blocks and files. This is why all of these need to be linked together.
+Without internal links in METS, we would just have a set of unrelated metadata blocks and files. So we need to link them all together.
 
-The method used in our example is one of the basic ways to implement the linkings in XML. Our example works in the following way:
+The method used in our example is one of the basic ways of implementing links in XML. Our example works as follows:
 
-- In metadata section, every metadata block has its own internal identifier in attribute `ID`. For example:
+- In the metadata section, each metadata block has its own internal identifier in the `ID` attribute. For example:
     ```xml
     <mets:mdGrp USE="DESCRIPTIVE">
       <mets:md ID="dmd-001">
@@ -20,7 +20,7 @@ The method used in our example is one of the basic ways to implement the linking
       [...]
     ```
 
-- Additionally, linking between metadata sections is possible, and in our example we will do it for provenance metadata to connect an event and an agent. This is done by referring to the `ID` of the metadata section by using the attribute `MDID` in another section.
+- In addition, it is possible to link between metadata sections, and in our example we will do this for provenance metadata to link an event and an agent. This is done by referencing the `ID` of the metadata section using the `MDID` attribute in another section.
 
     For an event:
 
@@ -38,14 +38,14 @@ The method used in our example is one of the basic ways to implement the linking
         [...]
     ```
     
-- In the file section, each file element has an internal identifier in attribute `ID`. Attribute `MDID` refers to the metadata sections related to file, more specifically to technical and provenance metadata. In provenance metadata, we could have references for both event and agent, but since event and agent blocks refer between each other, it is enough to have a link for one.
+- In the file section, each file element has an internal identifier in the attribute `ID`. The `MDID` attribute refers to the metadata sections associated with the file, more specifically the technical and provenance metadata. In provenance metadata, we could have references for both event and agent, but since event and agent blocks refer to each other, it is sufficient to have a link for one.
 
     ```xml
       <mets:file ID="file-001" MDID="tech-001 event-001">
         [...]
     ```
 
-- Finally, the structural map combines files and all the metadata together. Attribute `MDID` in the root division elemet `<mets:div>` refers to three different metadata: descriptive metadata, rights metadata, and technical metadata describing a handle indentifier for the whole content (intellectual entity). In the root division element it shows that these metadata blocks concern the whole content. File pointer element `<mets:fptr>` has an attribute `FILEID` referring to the file section. The file specific metadata blocks are referenced in the file section.
+- Finally, the structural map combines files and all metadata. The `MDID` attribute in the `<mets:div>` root division elemet refers to three types of metadata: descriptive metadata, rights metadata and technical metadata describing a handle identifier for the whole content (intellectual entity). The root division element indicates that these metadata blocks apply to the entire content. The file pointer element `<mets:fptr>` has an attribute `FILEID` referring to the file section. The file specific metadata blocks are referenced in the file section.
 
     ```xml
         <mets:structMap>

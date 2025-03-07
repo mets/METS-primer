@@ -35,7 +35,7 @@ The simple encoding fragment below demonstrates the div features described thus 
 
 <details markdown="block">
 
-<summary>Example</summary>
+<summary>Click to see the example</summary>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -99,7 +99,7 @@ The following METS encoding fragment represents a case where the `<structMap>` a
 
 <details markdown="block">
 
-<summary>Example</summary>
+<summary>Click to see the example</summary>
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
@@ -211,7 +211,7 @@ The example below illustrates the application of the `<mptr>` element to the cas
 
 <details markdown="block">
 
-<summary>Example</summary>
+<summary>Click to see the example</summary>
 
 ```xml 
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
@@ -273,7 +273,7 @@ The example below demonstrates the use of the `<area>` element to isolate partic
 
 <details markdown="block">
 
-<summary>Example</summary>
+<summary>Click to see the example</summary>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -354,7 +354,7 @@ The example below shows a case where a logical structuring of the digital conten
 
 <details markdown="block">
 
-<summary>Example</summary>
+<summary>Click to see the example</summary>
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
@@ -438,7 +438,7 @@ In the example below the `<structMap>` encoding uses the `<par>` element to recr
 
 <details markdown="block">
 
-<summary>Example 1</summary>
+<summary>Click to see the example</summary>
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
@@ -523,7 +523,7 @@ The example below demonstrates a use of `<seq>` elements within a `<par>` elemen
 
 <details markdown="block">
 
-<summary>Example 2</summary>
+<summary>Click to see the example</summary>
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"

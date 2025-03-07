@@ -4,11 +4,11 @@ parent: Metadata section
 ---
 # Provenance metadata
 
-To keep the authenticity of the digital content, all changes to the data (and metadata) must be done in a controlled way. This requires documenting the essential actions done to the content during its full lifecycle.
+To maintain the authenticity of digital content, any changes to the data (and metadata) must be done in a controlled manner. This requires the documentation of the essential actions performed on the content during its entire life cycle.
 
-In our example case we create provenance PREMIS metadata, including events and agents, for the creation of five different files. There are a couple of way to do this, but we create separate provenance metadata sections for each event and agent.
+In our example case, we create PREMIS provenance metadata, including events and agents, for the creation of five different files. There are several ways to do this, but we create separate provenance metadata sections for each event and agent.
 
-In METS, all of these follow the following notation for events:
+In METS, they all follow the following notation for events:
 
 ```xml
 <mets:md ID="[event-id]" USE="PROVENANCE" MDID="[agent-id]">
@@ -36,9 +36,9 @@ and for agents:
 </mets:md>
 ```
 
-In element `<mets:md>`, attributes `ID` and `USE` describe the identifier and the use of the metadata section, respectively. Attibute MDID refers from event to the corresponding agent and vice versa, by using the `ID` identifier of the section to refer to. For provenance metadata, we recommend using value `PROVENANCE` for attribute `USE`. Elements `<mets:mdWrap>` and `<mets:xmlData>` denote that the metadata is embedded in the section in XML format. Attributes `MDTYPE` and `MDTYPEVERSION` define that the type of the included metadata is PREMIS Event or Agent of version 3.0.
+In the `<mets:md>` element, the `ID` and `USE` attributes describe the identifier and use of the metadata section, respectively. The `MDID` attribute refers from the event to the corresponding agent and vice versa, using the `ID` identifier of the section to be referenced. For provenance metadata, we recommend using the value `PROVENANCE` for the attribute `USE`. The elements `<mets:mdWrap>` and `<mets:xmlData>` indicate that the metadata is embedded in the section in XML format. The attributes `MDTYPE` and `MDTYPEVERSION` define that the type of the included metadata is PREMIS Event or Agent of version 3.0.
 
-In our example, the PREMIS Event and Agent metadata is created for each of the five files included, separately. All of them are listed below:
+In our example, the PREMIS Event and Agent metadata is created separately for each of the five included files. They are all listed below:
 
 - Provenance metadata for creation of Paper DOCX
 

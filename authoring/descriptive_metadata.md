@@ -4,9 +4,9 @@ parent: Metadata section
 ---
 # Descriptive metadata
 
-The descriptive metadata needed for discovery and content management is easily added by creating a `<md>` element to contain it. We can then insert the descriptive metadata record of our choice within that section.
+The descriptive metadata needed for discovery and content management is easily added by creating a `<md>` element to contain it. We can then insert the descriptive metadata record of our choice within this section.
 
-In our example case we create a section for descriptive Dublin Core metadata in the following way:
+In our example, we create a Dublin Core descriptive metadata section as follows:
 
 ```xml
 <mets:mdGrp USE="DESCRIPTIVE">
@@ -50,9 +50,9 @@ In our example case we create a section for descriptive Dublin Core metadata in 
 </mets:mdGrp>
 ```
 
-In element `<mets:mdGrp>` attribute `USE` and in element `<mets:md>` and ID describe the use and the identifier of the metadata section, respectively. For descriptive metadata, we recommend using value `DESCRIPTIVE` for attribute `USE`. Elements `<mets:mdWrap>` and `<mets:xmlData>` denote that the metadata is embedded in the section in XML format. Attribute `MDTYPE` defines that the type of the included metadata is Dublin Core.
+In the `<mets:mdGrp>` element the `USE` attribute and in the `<mets:md>` element the `ID` attribute describe the use and the identifier of the metadata section respectively. For descriptive metadata, it is recommended to use the value `DESCRIPTIVE` for the `USE` attribute. The elements `<mets:mdWrap>` and `<mets:xmlData>` indicate that the metadata is embedded in the section in XML format. The `MDTYPE` attribute specifies that the type of metadata included is Dublin Core.
 
-There are other possibilities to construct METS metadata sections. One example is to have the grouping with some other way, or even without grouping, and define the `USE` as `DESCRIPTIVE` in the `<mets:md>` element:
+There are other ways to construct METS metadata sections. One example is to have the grouping in some other way, or even no grouping, and to define `USE` as `DESCRIPTIVE` in the `<mets:md>` element:
 
 ```xml
 <mets:md ID="dmd-001" USE="DESCRIPTIVE">

@@ -19,18 +19,19 @@ The physical book example that we have been using represents each page by `<div>
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www/w3/org/2001/XMLSchema-instance"
- xsi:schemalocation="http://www.loc.gov/METS/v2
- http://www/loc/gov/standards/mets/mets.xsd" OBJID="ark:/13010/kt9s2009hz"
- LABEL="Martial Epigrams">
-  ...
+    xmlns:xsi="http://www/w3/org/2001/XMLSchema-instance"
+    xsi:schemalocation="http://www.loc.gov/METS/v2
+    http://www/loc/gov/standards/mets/mets.xsd"
+    OBJID="ark:/13010/kt9s2009hz"
+    LABEL="Martial Epigrams">
+  [...]
   <mets:fileSec>
     <mets:fileGrp ID="TIFF_GRP01" USE="MASTER IMAGE">
       <mets:file ID="epi01m" SIZE="65768" CREATED="2006-04-11T07:35:22"
-      MIMETYPE="image/tiff" MDID="MIX_v1.0_TIFF_epi01m">
-      ...
+        MIMETYPE="image/tiff" MDID="MIX_v1.0_TIFF_epi01m">
+      [...]
       </mets:file>
     </mets:fileGrp>
   </mets:fileSec>
-  ...
+  [...]
 ```

@@ -36,12 +36,12 @@ The simple encoding fragment below demonstrates the div features described thus 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:mods="http://www.loc.gov/mods/v3"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
- http://www.loc.gov/standards/mets/mets.xsd
- http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-1.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+    xmlns:mods="http://www.loc.gov/mods/v3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd
+      http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-1.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:mdSec>
     <mets:md ID="DMD1" USE="DESCRIPTIVE">
       <mets:mdWrap MDTYPE="MODS">
@@ -55,7 +55,7 @@ The simple encoding fragment below demonstrates the div features described thus 
       </mets:mdWrap>
     </mets:md>
   </mets:mdSec>
-  ...
+  [...]
   <mets:structSec>
     <mets:structMap TYPE="physical">
       <mets:div TYPE="book" LABEL="Martial Epigrams II" MDID="DMD1">
@@ -93,11 +93,11 @@ The following METS encoding fragment represents a case where the `<structMap>` a
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
- http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams II">
-  ...
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams II">
+  [...]
   <mets:fileSec>
     <mets:fileGrp USE="MASTER IMAGE">
       <mets:file ID="epi01m" MIMETYPE="image/tiff">
@@ -116,7 +116,7 @@ The following METS encoding fragment represents a case where the `<structMap>` a
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/full/04.tif"
           LOCTYPE="URL"/>
       </mets:file>
-      ...
+      [...]
     </mets:fileGrp>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi01r" MIMETYPE="image/jpeg">
@@ -135,7 +135,7 @@ The following METS encoding fragment represents a case where the `<structMap>` a
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/04.jpg"
           LOCTYPE="URL"/>
       </mets:file>
-      ...
+      [...]
     </mets:fileGrp>
     <mets:fileGrp USE="THUMBNAIL IMAGE">
       <mets:file ID="epi01t" MIMETYPE="image/gif">
@@ -154,7 +154,7 @@ The following METS encoding fragment represents a case where the `<structMap>` a
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/gif/04.gif"
           LOCTYPE="URL"/>
       </mets:file>
-      ...
+      [...]
     </mets:fileGrp>
   </mets:fileSec>
   <mets:structSec>
@@ -180,7 +180,7 @@ The following METS encoding fragment represents a case where the `<structMap>` a
           <mets:fptr FILEID="epi04r"/>
           <mets:fptr FILEID="epi04t"/>
         </mets:div>
-        ...
+        [...]
       </mets:div>
     </mets:structMap>
   <mets:structSec>
@@ -199,13 +199,13 @@ The example below illustrates the application of the `<mptr>` element to the cas
 
 ```xml 
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:mods="http://www.loc.gov/mods/v3"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
-   http://www.loc.gov/standards/mets/mets.xsd
-   http://www.loc.gov/mods/v3
-   http://www.loc.gov/mods/v3/mods-3-1.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams I &amp; II">
+    xmlns:mods="http://www.loc.gov/mods/v3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd
+      http://www.loc.gov/mods/v3
+      http://www.loc.gov/mods/v3/mods-3-1.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams I &amp; II">
   <mets:mdSec>
     <mets:md ID="DMD1" USE="DESCRIPTIVE">
       <mets:mdWrap MDTYPE="MODS">
@@ -223,7 +223,7 @@ The example below illustrates the application of the `<mptr>` element to the cas
       </mets:mdWrap>
     </mets:md>
   </mets:mdSec>
-  ...
+  [...]
   <mets:structSec>
     <mets:structMap TYPE="physical">
       <mets:div TYPE="multivolume book" LABEL="Martial Epigrams I &amp; II" MDID="DMD1">
@@ -256,10 +256,10 @@ The example below demonstrates the use of the `<area>` element to isolate partic
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
- http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:fileSec>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi09r" MIMETYPE="image/jpeg">
@@ -330,10 +330,10 @@ The example below shows a case where a logical structuring of the digital conten
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
- http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:fileSec>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi09r" MIMETYPE="image/jpeg">
@@ -360,7 +360,7 @@ The example below shows a case where a logical structuring of the digital conten
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/14.jpg"
           LOCTYPE="URL"/>
       </mets:file>
-      ...
+      [...]
     </mets:fileGrp>
   </mets:fileSec>
   <mets:structSec>
@@ -373,7 +373,7 @@ The example below shows a case where a logical structuring of the digital conten
                 <mets:area FILEID="epi09r"/>
                 <mets:area FILEID="epi11r"/>
                 <mets:area FILEID="epi13r"/>
-                ...
+                [...]
               </mets:seq>
             </mets:fptr>
           </mets:div>
@@ -383,7 +383,7 @@ The example below shows a case where a logical structuring of the digital conten
                 <mets:area FILEID="epi10r"/>
                 <mets:area FILEID="epi12r"/>
                 <mets:area FILEID="epi14r"/>
-                ...
+                [...]
               </mets:seq>
             </mets:fptr>
           </mets:div>
@@ -408,10 +408,10 @@ In the example below the `<structMap>` encoding uses the `<par>` element to recr
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
-   http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:fileSec>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi09r" MIMETYPE="image/jpeg">
@@ -438,7 +438,7 @@ In the example below the `<structMap>` encoding uses the `<par>` element to recr
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/14.jpg"
           LOCTYPE="URL"/>
       </mets:file>
-      ...
+      [...]
     </mets:fileGrp>
   </mets:fileSec>
   <mets:structSec>
@@ -469,7 +469,7 @@ In the example below the `<structMap>` encoding uses the `<par>` element to recr
               </mets:par>
             </mets:fptr>
           </mets:div>
-          ...
+          [...]
         </mets:div>
       </mets:div>
     </mets:structMap>
@@ -487,10 +487,10 @@ The example below demonstrates a use of `<seq>` elements within a `<par>` elemen
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
-   http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:fileSec>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi09r" MIMETYPE="image/jpeg">

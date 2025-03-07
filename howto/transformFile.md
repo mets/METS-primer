@@ -15,21 +15,21 @@ The following example describes a *.tar.gz file which has two embedded files wit
   <mets:fileGrp ID="TAR_GZ_container_01" USE="Container">
     <mets:file MIMETYPE="application/tar.gz" USE="Container">
       <mets:FLocat LOCREF="file://sample01.tar.gz" ID="sampleTar01.gz"
-        LOCTYPE="URL" />
+          LOCTYPE="URL" />
       <mets:transformFile TRANSFORMORDER="1" TRANSFORMTYPE="decompression"
-        TRANSFORMALGORITHM="gunzip">
+          TRANSFORMALGORITHM="gunzip">
       <mets:transformFile TRANSFORMORDER="2" TRANSFORMTYPE="decompression"
-        TRANSFORMALGORITHM="tar">
+          TRANSFORMALGORITHM="tar">
       </mets:transformFile>
       <mets:file SEQ="1" MIMETYPE="image/tiff"
-          CHECKSUM="c1b82611e48066016ceb8daa93d46de7"CHECKSUMTYPE="MD5">
+            CHECKSUM="c1b82611e48066016ceb8daa93d46de7"CHECKSUMTYPE="MD5">
         <mets:FLocat LOCREF="file://sample01_image01.tiff" LOCTYPE="URL"
-          USE="Archival Master"/>
+            USE="Archival Master"/>
       </mets:file>
       <mets:file SEQ="2" MIMETYPE="image/jpeg"
           CHECKSUM="c3cb82611e48066016ceb8daa93d46df5" CHECKSUMTYPE="MD5">
         <mets:FLocat LOCREF="file://sample01_image01jpeg"
-          LOCTYPE="URL"USE="Display Derivative"/>
+            LOCTYPE="URL"USE="Display Derivative"/>
     </mets:file>
   </mets:fileGrp>
 </mets:fileSec>

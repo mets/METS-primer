@@ -22,9 +22,10 @@ In our example case we create a section for PREMIS Rights Statement metadata in 
           <premis:licenseInformation>
             <premis:licenseDocumentationIdentifier>
               <premis:licenseDocumentationIdentifierType>uri</premis:licenseDocumentationIdentifierType>
-              <premis:licenseDocumentationIdentifierValue>https://creativecommons.org/licenses/by/4.0/</premis:licenseDocumentationIdentifierValue>                    
+              <premis:licenseDocumentationIdentifierValue>https://creativecommons.org/licenses/by/4.0/</premis:licenseDocumentationIdentifierValue>
             </premis:licenseDocumentationIdentifier>
-            <premis:licenseTerms>The text of this paper is published under a CC BY-SA license (https://creativecommons.org/licenses/by/4.0/).</premis:licenseTerms>
+            <premis:licenseTerms>The text of this paper is published under a CC BY-SA license
+              (https://creativecommons.org/licenses/by/4.0/).</premis:licenseTerms>
           </premis:licenseInformation>
         </premis:rightsStatement>
       </premis:rights>

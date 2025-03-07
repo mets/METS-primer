@@ -33,6 +33,10 @@ A `<div>` element at any level can be associated with one or more metadata group
 
 The simple encoding fragment below demonstrates the div features described thus far, including the TYPE, LABEL, and MDID attributes.
 
+<details markdown="block">
+
+<summary>Example</summary>
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
@@ -79,6 +83,8 @@ The simple encoding fragment below demonstrates the div features described thus 
 </mets:mets>
 ```
 
+</details>
+
 Through its subsidiary elements, each `<div>` element points to the digital content that manifests it. It can do so through one or more `<mptr>` element, if this content is represented by one or more external METS documents, or through one or more `<fptr>` element, if this content is represented by one or more `<file>` elements in the `<fileSec>` In addition to or instead of directly pointing to digital content via its child `<fptr>` and/or `<mptr>` elements, a `<div>` element may itself contain `<div>` elements that further subdivide the content represented by the division.
 
 #### Connecting structure and content with file pointers: `<fptr>`
@@ -90,6 +96,10 @@ More than one `<fptr>` element can be associated with a `<div>` element.  Typica
 ##### Example
 
 The following METS encoding fragment represents a case where the `<structMap>` as a whole represents a purely physical structure. The root division represents the whole book, and each structural division under this root represents a physical page. Each page division has three associated content files, each of which represents a different image manifestation (TIFF, JPEG, or GIF) of the same content:
+
+<details markdown="block">
+
+<summary>Example</summary>
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
@@ -187,6 +197,8 @@ The following METS encoding fragment represents a case where the `<structMap>` a
 </mets:mets>
 ```
 
+</details>
+
 #### Composing digital objects from multiple METS documents with METS pointers: `<mptr>`
 
 Like the `<fptr>` element, the **METS pointer** `<mptr>` element represents digital content that manifests its parent `<div>` element.  Unlike the `<fptr>`, which either directly or indirectly points to content represented in the `<fileSec>` of the parent METS document, the `<mptr>` element points to content represented by an external METS document. Thus, this element allows multiple discrete and separate METS documents to be organized at a higher level by a separate METS document.  For example, METS documents representing the individual issues in the series of a journal could be grouped together and organized by a higher level METS document that represents the entire journal series. Each of the `<div>` elements in the `<structMap>` of the METS document representing the journal series would point to a METS document representing an issue. It would do so via a child `<mptr>` element. Thus the `<mptr>` element gives METS users considerable flexibility in managing the depth of the `<structMap>` hierarchy of individual METS documents.
@@ -196,6 +208,10 @@ The `<mptr>` element points to an external METS document by means of an LOCREF a
 ##### Example
 
 The example below illustrates the application of the `<mptr>` element to the case of a book issued in two volumes, each of which is represented by a discrete METS document. Using the `<mptr>` element, the METS document below binds the two separate METS documents representing the individual volumes together into a single METS document representing the entire two-volume set.
+
+<details markdown="block">
+
+<summary>Example</summary>
 
 ```xml 
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
@@ -241,6 +257,8 @@ The example below illustrates the application of the `<mptr>` element to the cas
 </mets:mets>
 ```
 
+</details>
+
 #### Including parts of files in the structure: `<area>`
 
 The **area** `<area>` element typically points to content consisting of just a portion or area of a file represented by a `<file>` element in the `<fileSec>` In some contexts, however, the `<area>` element can also point to content represented by an integral file.
@@ -252,6 +270,10 @@ Multiple `<area>` elements would appear as the direct children of a `<par>` elem
 ##### Example
 
 The example below demonstrates the use of the `<area>` element to isolate particular areas of the image files that are referenced in the associated FILEID attributes. It shows both uses of the `<area>` element as a direct child of an `<fptr>` element and as a direct child of a `<seq>` element. In the former case, the specified area of the referenced image manifests the parent division by itself. In the latter case, the specified areas of two different images must be displayed in sequence to fully manifest the parent division.
+
+<details markdown="block">
+
+<summary>Example</summary>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -318,6 +340,8 @@ The example below demonstrates the use of the `<area>` element to isolate partic
 </mets:mets>
 ```
 
+</details>
+
 For further examples of how the `<area>` element can be used in the context of the `<seq>` and `<par>` elements, see the sections on these elements immediately below.
 
 #### Presenting content sequentially: `<seq>`
@@ -327,6 +351,10 @@ The sequence of files `<seq>` element aggregates pointers to files, parts of fil
 ##### Example 
 
 The example below shows a case where a logical structuring of the digital content provided by the `<structMap>` is supported by the `<seq>` element. The structuring in this case is independent of the physical layout of the material in the analog source. The `<structMap>` here divides Book VIII of Martial's Epigrams into Latin and English versions, each of which is manifested by the sequences of files comprising the version.
+
+<details markdown="block">
+
+<summary>Example</summary>
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
@@ -394,6 +422,8 @@ The example below shows a case where a logical structuring of the digital conten
 </mets:mets>
 ```
 
+</details>
+
 Multiple `<seq>` elements would appear under a `<par>` element when multiple sequences of files or parts of files must be played/displayed simultaneously to manifest the content of the governing `<fptr>` element. See the section on the `<par>` element below for a more complete description of this case.
 
 #### Presenting content simultaneously (in parallel): `<par>`
@@ -405,6 +435,10 @@ This might be the case, for example, with multi-media content, where a still ima
 ##### Example 1
 
 In the example below the `<structMap>` encoding uses the `<par>` element to recreate the experience and intent of the original analog source. In the source, a page of Latin text appears side by side with a page containing its English translation. The `<par>` elements here aggregate the images that represent the pairs of pages that must be displayed together to recreate this experience.
+
+<details markdown="block">
+
+<summary>Example 1</summary>
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
@@ -477,6 +511,8 @@ In the example below the `<structMap>` encoding uses the `<par>` element to recr
 </mets:mets>
 ```
 
+</details>
+
 A `<par>` element can also aggregate `<seq>` elements representing sequences of files or parts of files that must be played or displayed simultaneously to manifest the content represented by an `<fptr>` This might be the case when a single bytestream which should be played in parallel with other streams is too large to fit in a single file (e.g., very high quality multi-track audio, or video). In these cases, you would use subsidiary `<seq>` elements, where each sequence identified the files comprising a particular bytestream in the order they should be played back.
 
 The two potential subsidiary units --- `<area>` and `<seq>` --- may not both be used directly under the same `<par>` element; a `<par>` must contain either a set of `<area>` elements or a set of `<seq>` elements.  In the case where a `<par>` element aggregates `<seq>` elements, however, the `<seq>` elements themselves will aggregate the `<area>` elements that point to the pertinent files or parts of files.
@@ -484,6 +520,10 @@ The two potential subsidiary units --- `<area>` and `<seq>` --- may not both be 
 The example below demonstrates a use of `<seq>` elements within a `<par>` element. In this case, the `<structMap>` provides for the parallel display of Latin and English versions of the material where the Latin and English versions appear on separate pages in the analog source, and in separate sets of image files in the digital version.  Furthermore, the `<structMap>` arranges the digital version of the material into a logical structure in which the divisions are manifested by just portions of the referenced integral image files. But, in the case of two divisions, that for the "Introduction" and that for "Book VIII, Epigram III," the relevant portions of the material spans two image files. Therefore, the relevant areas of two image files must be displayed in sequence to manifest these divisions; and two different sequences must be displayed in parallel to manifest both Latin and English versions simultaneously.
 
 ##### Example 2
+
+<details markdown="block">
+
+<summary>Example 2</summary>
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
@@ -581,3 +621,5 @@ The example below demonstrates a use of `<seq>` elements within a `<par>` elemen
   </mets:structSec>
 </mets:mets>
 ```
+
+</details>

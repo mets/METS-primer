@@ -33,15 +33,19 @@ A `<div>` element at any level can be associated with one or more metadata group
 
 The simple encoding fragment below demonstrates the div features described thus far, including the TYPE, LABEL, and MDID attributes.
 
+<details markdown="block">
+
+<summary>Click to see the example</summary>
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:mods="http://www.loc.gov/mods/v3"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
- http://www.loc.gov/standards/mets/mets.xsd
- http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-1.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+    xmlns:mods="http://www.loc.gov/mods/v3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd
+      http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-1.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:mdSec>
     <mets:md ID="DMD1" USE="DESCRIPTIVE">
       <mets:mdWrap MDTYPE="MODS">
@@ -55,7 +59,7 @@ The simple encoding fragment below demonstrates the div features described thus 
       </mets:mdWrap>
     </mets:md>
   </mets:mdSec>
-  ...
+  [...]
   <mets:structSec>
     <mets:structMap TYPE="physical">
       <mets:div TYPE="book" LABEL="Martial Epigrams II" MDID="DMD1">
@@ -79,6 +83,8 @@ The simple encoding fragment below demonstrates the div features described thus 
 </mets:mets>
 ```
 
+</details>
+
 Through its subsidiary elements, each `<div>` element points to the digital content that manifests it. It can do so through one or more `<mptr>` element, if this content is represented by one or more external METS documents, or through one or more `<fptr>` element, if this content is represented by one or more `<file>` elements in the `<fileSec>` In addition to or instead of directly pointing to digital content via its child `<fptr>` and/or `<mptr>` elements, a `<div>` element may itself contain `<div>` elements that further subdivide the content represented by the division.
 
 #### Connecting structure and content with file pointers: `<fptr>`
@@ -91,13 +97,17 @@ More than one `<fptr>` element can be associated with a `<div>` element.  Typica
 
 The following METS encoding fragment represents a case where the `<structMap>` as a whole represents a purely physical structure. The root division represents the whole book, and each structural division under this root represents a physical page. Each page division has three associated content files, each of which represents a different image manifestation (TIFF, JPEG, or GIF) of the same content:
 
+<details markdown="block">
+
+<summary>Click to see the example</summary>
+
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
- http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams II">
-  ...
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams II">
+  [...]
   <mets:fileSec>
     <mets:fileGrp USE="MASTER IMAGE">
       <mets:file ID="epi01m" MIMETYPE="image/tiff">
@@ -116,7 +126,7 @@ The following METS encoding fragment represents a case where the `<structMap>` a
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/full/04.tif"
           LOCTYPE="URL"/>
       </mets:file>
-      ...
+      [...]
     </mets:fileGrp>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi01r" MIMETYPE="image/jpeg">
@@ -135,7 +145,7 @@ The following METS encoding fragment represents a case where the `<structMap>` a
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/04.jpg"
           LOCTYPE="URL"/>
       </mets:file>
-      ...
+      [...]
     </mets:fileGrp>
     <mets:fileGrp USE="THUMBNAIL IMAGE">
       <mets:file ID="epi01t" MIMETYPE="image/gif">
@@ -154,7 +164,7 @@ The following METS encoding fragment represents a case where the `<structMap>` a
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/gif/04.gif"
           LOCTYPE="URL"/>
       </mets:file>
-      ...
+      [...]
     </mets:fileGrp>
   </mets:fileSec>
   <mets:structSec>
@@ -180,12 +190,14 @@ The following METS encoding fragment represents a case where the `<structMap>` a
           <mets:fptr FILEID="epi04r"/>
           <mets:fptr FILEID="epi04t"/>
         </mets:div>
-        ...
+        [...]
       </mets:div>
     </mets:structMap>
   <mets:structSec>
 </mets:mets>
 ```
+
+</details>
 
 #### Composing digital objects from multiple METS documents with METS pointers: `<mptr>`
 
@@ -197,15 +209,19 @@ The `<mptr>` element points to an external METS document by means of an LOCREF a
 
 The example below illustrates the application of the `<mptr>` element to the case of a book issued in two volumes, each of which is represented by a discrete METS document. Using the `<mptr>` element, the METS document below binds the two separate METS documents representing the individual volumes together into a single METS document representing the entire two-volume set.
 
+<details markdown="block">
+
+<summary>Click to see the example</summary>
+
 ```xml 
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:mods="http://www.loc.gov/mods/v3"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
-   http://www.loc.gov/standards/mets/mets.xsd
-   http://www.loc.gov/mods/v3
-   http://www.loc.gov/mods/v3/mods-3-1.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams I &amp; II">
+    xmlns:mods="http://www.loc.gov/mods/v3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd
+      http://www.loc.gov/mods/v3
+      http://www.loc.gov/mods/v3/mods-3-1.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams I &amp; II">
   <mets:mdSec>
     <mets:md ID="DMD1" USE="DESCRIPTIVE">
       <mets:mdWrap MDTYPE="MODS">
@@ -223,7 +239,7 @@ The example below illustrates the application of the `<mptr>` element to the cas
       </mets:mdWrap>
     </mets:md>
   </mets:mdSec>
-  ...
+  [...]
   <mets:structSec>
     <mets:structMap TYPE="physical">
       <mets:div TYPE="multivolume book" LABEL="Martial Epigrams I &amp; II" MDID="DMD1">
@@ -241,6 +257,8 @@ The example below illustrates the application of the `<mptr>` element to the cas
 </mets:mets>
 ```
 
+</details>
+
 #### Including parts of files in the structure: `<area>`
 
 The **area** `<area>` element typically points to content consisting of just a portion or area of a file represented by a `<file>` element in the `<fileSec>` In some contexts, however, the `<area>` element can also point to content represented by an integral file.
@@ -253,13 +271,17 @@ Multiple `<area>` elements would appear as the direct children of a `<par>` elem
 
 The example below demonstrates the use of the `<area>` element to isolate particular areas of the image files that are referenced in the associated FILEID attributes. It shows both uses of the `<area>` element as a direct child of an `<fptr>` element and as a direct child of a `<seq>` element. In the former case, the specified area of the referenced image manifests the parent division by itself. In the latter case, the specified areas of two different images must be displayed in sequence to fully manifest the parent division.
 
+<details markdown="block">
+
+<summary>Click to see the example</summary>
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
- http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:fileSec>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi09r" MIMETYPE="image/jpeg">
@@ -318,6 +340,8 @@ The example below demonstrates the use of the `<area>` element to isolate partic
 </mets:mets>
 ```
 
+</details>
+
 For further examples of how the `<area>` element can be used in the context of the `<seq>` and `<par>` elements, see the sections on these elements immediately below.
 
 #### Presenting content sequentially: `<seq>`
@@ -328,12 +352,16 @@ The sequence of files `<seq>` element aggregates pointers to files, parts of fil
 
 The example below shows a case where a logical structuring of the digital content provided by the `<structMap>` is supported by the `<seq>` element. The structuring in this case is independent of the physical layout of the material in the analog source. The `<structMap>` here divides Book VIII of Martial's Epigrams into Latin and English versions, each of which is manifested by the sequences of files comprising the version.
 
+<details markdown="block">
+
+<summary>Click to see the example</summary>
+
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
- http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:fileSec>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi09r" MIMETYPE="image/jpeg">
@@ -360,7 +388,7 @@ The example below shows a case where a logical structuring of the digital conten
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/14.jpg"
           LOCTYPE="URL"/>
       </mets:file>
-      ...
+      [...]
     </mets:fileGrp>
   </mets:fileSec>
   <mets:structSec>
@@ -373,7 +401,7 @@ The example below shows a case where a logical structuring of the digital conten
                 <mets:area FILEID="epi09r"/>
                 <mets:area FILEID="epi11r"/>
                 <mets:area FILEID="epi13r"/>
-                ...
+                [...]
               </mets:seq>
             </mets:fptr>
           </mets:div>
@@ -383,7 +411,7 @@ The example below shows a case where a logical structuring of the digital conten
                 <mets:area FILEID="epi10r"/>
                 <mets:area FILEID="epi12r"/>
                 <mets:area FILEID="epi14r"/>
-                ...
+                [...]
               </mets:seq>
             </mets:fptr>
           </mets:div>
@@ -393,6 +421,8 @@ The example below shows a case where a logical structuring of the digital conten
   </mets:structSec>
 </mets:mets>
 ```
+
+</details>
 
 Multiple `<seq>` elements would appear under a `<par>` element when multiple sequences of files or parts of files must be played/displayed simultaneously to manifest the content of the governing `<fptr>` element. See the section on the `<par>` element below for a more complete description of this case.
 
@@ -406,12 +436,16 @@ This might be the case, for example, with multi-media content, where a still ima
 
 In the example below the `<structMap>` encoding uses the `<par>` element to recreate the experience and intent of the original analog source. In the source, a page of Latin text appears side by side with a page containing its English translation. The `<par>` elements here aggregate the images that represent the pairs of pages that must be displayed together to recreate this experience.
 
+<details markdown="block">
+
+<summary>Click to see the example</summary>
+
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
-   http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:fileSec>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi09r" MIMETYPE="image/jpeg">
@@ -438,7 +472,7 @@ In the example below the `<structMap>` encoding uses the `<par>` element to recr
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/14.jpg"
           LOCTYPE="URL"/>
       </mets:file>
-      ...
+      [...]
     </mets:fileGrp>
   </mets:fileSec>
   <mets:structSec>
@@ -469,13 +503,15 @@ In the example below the `<structMap>` encoding uses the `<par>` element to recr
               </mets:par>
             </mets:fptr>
           </mets:div>
-          ...
+          [...]
         </mets:div>
       </mets:div>
     </mets:structMap>
   </mets:structSec>
 </mets:mets>
 ```
+
+</details>
 
 A `<par>` element can also aggregate `<seq>` elements representing sequences of files or parts of files that must be played or displayed simultaneously to manifest the content represented by an `<fptr>` This might be the case when a single bytestream which should be played in parallel with other streams is too large to fit in a single file (e.g., very high quality multi-track audio, or video). In these cases, you would use subsidiary `<seq>` elements, where each sequence identified the files comprising a particular bytestream in the order they should be played back.
 
@@ -485,12 +521,16 @@ The example below demonstrates a use of `<seq>` elements within a `<par>` elemen
 
 ##### Example 2
 
+<details markdown="block">
+
+<summary>Click to see the example</summary>
+
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
-   http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:fileSec>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi09r" MIMETYPE="image/jpeg">
@@ -581,3 +621,5 @@ The example below demonstrates a use of `<seq>` elements within a `<par>` elemen
   </mets:structSec>
 </mets:mets>
 ```
+
+</details>

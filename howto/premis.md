@@ -15,6 +15,7 @@ The **digital provenance metadata** could contain metadata about any preservatio
     <mets:xmlData xmlns:premis=http://www.loc.gov/standards/premis/v1
         xsi:schemaLocation="http://www.loc.gov/standards/premis/v1
           http://www.loc.gov/standards/premis/v1/Event-v1-1.xsd">
+      <premis:event>
         <premis:eventIdentifier>
           <premis:eventIdentifierType>Validation</premis:eventIdentifierType>
           <premis:eventIdentifierValue>Ingest_Validation_01</premis:eventIdentifierValue>
@@ -46,7 +47,8 @@ The **digital provenance metadata** could contain metadata about any preservatio
         </premis:linkingAgentIdentifier>
         <premis:linkingAgentIdentifier>
           <premis:linkingAgentIdentifierType>"Software"/>
-          <premis:linkingAgentIdentifierValue>"SDR_Ingest_Validator"/> </premis:linkingAgentIdentieier>
+          <premis:linkingAgentIdentifierValue>"SDR_Ingest_Validator"/>
+        </premis:linkingAgentIdentieier>
       </premis:event>
     </mets:xmlData>
   </mets:mdWrap>

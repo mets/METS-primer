@@ -22,7 +22,8 @@ There are three divisions in our example, defined with attributes `TYPE` and `LA
 ```xml
 <mets:structSec>
   <mets:structMap>
-    <mets:div LABEL="Understanding and implementing METS, A tutorial focused on METS 2" MDID="dmd-001 tech-006 rights-001">        
+    <mets:div LABEL="Understanding and implementing METS, A tutorial focused on METS 2"
+      MDID="dmd-001 tech-006 rights-001">        
       <mets:div TYPE="Paper" LABEL="UNDERSTANDING AND IMPLEMENTING METS: A tutorial focused on METS 2">
         <mets:fptr FILEID="file-001"/>
         <mets:fptr FILEID="file-004"/>

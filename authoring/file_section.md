@@ -19,36 +19,40 @@ The `<mets:FLocat>` element describes the location of the file. The `LOCTYPE` an
 
 ```xml
 <mets:fileSec>
+  <mets:fileGrp USE="original">
+    <!-- Paper DOCX -->
+    <mets:file ID="file-001" MDID="tech-001 event-001">
+      <mets:FLocat LOCTYPE="URL"
+        LOCREF="https://raw.githubusercontent.com/mets/METS-board/master/iPres2023Tutorial/originalfiles/iPRES2023_METS_Tutorial.docx" />
+    </mets:file>
 
-    <mets:fileGrp USE="original">
-      <!-- Paper DOCX -->
-      <mets:file ID="file-001" MDID="tech-001 event-001">
-        <mets:FLocat LOCTYPE="URL" LOCREF="https://raw.githubusercontent.com/mets/METS-board/master/iPres2023Tutorial/originalfiles/iPRES2023_METS_Tutorial.docx" />
-      </mets:file>
+    <!-- Presentation PPTX -->
+    <mets:file ID="file-002" MDID="tech-002 event-002">
+      <mets:FLocat LOCTYPE="URL"
+        LOCREF="https://raw.githubusercontent.com/mets/METS-board/master/iPres2023Tutorial/originalfiles/1702_1A_Bredenberg.pptx" />
+    </mets:file>
 
-      <!-- Presentation PPTX -->
-      <mets:file ID="file-002" MDID="tech-002 event-002">
-        <mets:FLocat LOCTYPE="URL" LOCREF="https://raw.githubusercontent.com/mets/METS-board/master/iPres2023Tutorial/originalfiles/1702_1A_Bredenberg.pptx" />
-      </mets:file>
+    <!-- Handout PDF -->
+    <mets:file ID="file-003" MDID="tech-003 event-003">
+      <mets:FLocat LOCTYPE="URL"
+        LOCREF="https://raw.githubusercontent.com/mets/METS-board/master/iPres2023Tutorial/METS%20Exercise%20iPRES%202023.pdf" />
+    </mets:file>
+  </mets:fileGrp>
 
-      <!-- Handout PDF -->
-      <mets:file ID="file-003" MDID="tech-003 event-003">
-        <mets:FLocat LOCTYPE="URL" LOCREF="https://raw.githubusercontent.com/mets/METS-board/master/iPres2023Tutorial/METS%20Exercise%20iPRES%202023.pdf" />
-      </mets:file>
-    </mets:fileGrp>
+  <mets:fileGrp USE="archival">
+    <!-- Paper PDF -->
+    <mets:file ID="file-004" MDID="tech-004 event-004">
+      <mets:FLocat LOCTYPE="URL"
+        LOCREF="https://www.ideals.illinois.edu/items/128260/bitstreams/428885/object" />
+    </mets:file>
 
-    <mets:fileGrp USE="archival">
-      <!-- Paper PDF -->
-      <mets:file ID="file-004" MDID="tech-004 event-004">
-        <mets:FLocat LOCTYPE="URL" LOCREF="https://www.ideals.illinois.edu/items/128260/bitstreams/428885/object" />
-      </mets:file>
+    <!-- Presentation PDF -->
+    <mets:file ID="file-005" MDID="tech-005 event-005">
+      <mets:FLocat LOCTYPE="URL"
+        LOCREF="https://raw.githubusercontent.com/mets/METS-board/master/iPres2023Tutorial/METS%20Tutorial%20iPRES%202023.pdf" />
+    </mets:file>
 
-      <!-- Presentation PDF -->
-      <mets:file ID="file-005" MDID="tech-005 event-005">
-        <mets:FLocat LOCTYPE="URL" LOCREF="https://raw.githubusercontent.com/mets/METS-board/master/iPres2023Tutorial/METS%20Tutorial%20iPRES%202023.pdf" />
-      </mets:file>
-
-    </mets:fileGrp>
+  </mets:fileGrp>
 
 </mets:fileSec>
 ```

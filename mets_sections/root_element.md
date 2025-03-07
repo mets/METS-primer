@@ -9,9 +9,9 @@ The root element `<mets>` establishes the container for the information being st
 
 ```xml
 <mets:mets OBJID="loc.natlib.ihas.200003790"
- PROFILE="http://www.loc.gov/mets/profiles/00000007.xml"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
-   http://www.loc.gov/standards/mets/mets.xsd">
+    PROFILE="http://www.loc.gov/mets/profiles/00000007.xml"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd">
 ```
 
 ## Elements contained in the root element
@@ -35,9 +35,9 @@ This example uses: XML version 1.0 with UTF-8 encoding, an enumerated list of th
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
-   http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz"
- LABEL="Martial Epigrams">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz"
+    LABEL="Martial Epigrams">
 ```

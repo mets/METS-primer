@@ -6,16 +6,16 @@ nav_order: 3
 
 # File section
 
-File section `<mets:fileSec>` is one of the main elements of a METS document. There can be only one file section. File section allows us to list all of the files in the content and link metadata to files.
+The file section `<mets:fileSec>` is one of the main elements of a METS document. There can only be one file section. The file section allows us to list all files in the content and to link metadata to files.
 
-File section can contain one or more file groups elements `<fileGrp>` which can be used to organize the individual file elements into sets. The file groups are not meant to be describing the structure of the content, but merely to provide a manifest of files, with an optional single-level file grouping.
+The file section may contain one or more file group elements `<fileGrp>`, which can be used to organize the individual file elements into sets. The file groups are not intended to describe the structure of the content, but simply to provide a manifest of files, with optional single-level file grouping.
 
-In our example below, we have two file groups `original` and `archival`. These are defined in the attribute `USE` of element `<mets:fileGrp>`. There are three files in the `original` group and two files in the `archival` group. File element `<mets:file>` describes the actual files. Attribute `ID` is a file identifier in METS, referred from the [structural map](Structural section.md). Attribute `MDID` contains references to metadata sections of METS and it connects the files and corresponding administrative metadata together. The referred metadata sections are described in the following pages:
+In our example below, we have two file groups, `original` and `archival`. These are defined in the `USE` attribute of the `<mets:fileGrp>` element. There are three files in the `original` group and two files in the `archival` group. The file element `<mets:file>` describes the actual files. Attribute `ID` is a file identifier in METS, referenced from the [structural map](Structural section.md). The `MDID` attribute contains references to metadata sections of METS and links the files and their associated administrative metadata. The referenced metadata sections are described on the following pages:
 
 - [Technical metadata](technical_metadata.md)
 - [Provenance metadata](provenance_metadata.md)
 
-Element `<mets:FLocat>` describes the location of the file. Attributes `LOCTYPE` and `LOCREF` contain the type and reference of the file, respectively.
+The `<mets:FLocat>` element describes the location of the file. The `LOCTYPE` and `LOCREF` attributes contain the type and reference of the file respectively.
 
 ```xml
 <mets:fileSec>

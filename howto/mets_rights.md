@@ -9,7 +9,7 @@ parent: METS How-Tos
 ## TODO use premis rights for the example
 ```xml
 <mets:md ID="ADMRTS1" USE="RIGHTS">
-  <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">
+  <mets:mdWrap MDTYPE="METSRights">
     <mets:xmlData>
       <rts:RightsDeclarationMD RIGHTSCATEGORY="PUBLIC DOMAIN">
         <rts:Context CONTEXTCLASS="GENERAL PUBLIC">

@@ -22,16 +22,17 @@ The following METS fragment represents the TIFF page images of a book:
 
 ```xml
 <mets:mets xmlns:mets="http://www/loc.gov/METS/v2"
- xmlns:xsi="http://www/w3/org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
- http://www.loc.gov/standards/mets/mets.xsd" OBJID="ark:/13010/kt9s2009hz"
- LABEL="Martial Epigrams">
-  ...
+    xmlns:xsi="http://www/w3/org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+    http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13010/kt9s2009hz"
+    LABEL="Martial Epigrams">
+  [...]
   <mets:fileSec>
     <mets:fileGrp ID="TIFF_GRP01" USE="ARCHIVAL">
-      ...
+      [...]
   </mets:fileSec>
-  ...
+  [...]
 ```
 
 There may be other `<fileGrp>` elements that contain JPEG or PNG versions of the same pages.

@@ -10,8 +10,11 @@ parent: METS How-Tos
 <mets:md USE="PROVENANCE" ID="md-001" CREATED="2025-02-12T23:04:00">
   <mets:mdWrap MDTYPE="PREMIS">
     <mets:xmlData>
-      <premis:event xmlns:premis="http://www.loc.gov/premis/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.loc.gov/premis/v3 https://www.loc.gov/standards/premis/v3/premis-v3-0.xsd" version="3.0">
+      <premis:event version="3.0"
+          xmlns:premis="http://www.loc.gov/premis/v3"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.loc.gov/premis/v3
+            https://www.loc.gov/standards/premis/v3/premis-v3-0.xsd">
         <premis:eventIdentifier>
           <premis:eventIdentifierType>Validation</premis:eventIdentifierType>
           <premis:eventIdentifierValue>Ingest_Validation_01</premis:eventIdentifierValue>

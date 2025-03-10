@@ -4,9 +4,9 @@ parent: Metadata section
 ---
 # Technical metadata
 
-Long-term management and preservation of digital resources requires information regarding the technical characteristics of the digital content. Such technical metadata about text, image, audio, and video data is best produced when the digital content is originally created.
+Long-term management and preservation of digital resources requires information about the technical characteristics of the digital content. Such technical metadata about text, image, audio and video data is best created when the digital content is originally created.
 
-In our example case we create technical PREMIS Object metadata for five different files each. In METS all of these follow the following notation:
+In our example case, we create PREMIS Object technical metadata for five different files. In METS they all follow the following notation:
 
 ```xml
 <mets:md ID="[id]" USE="TECHNICAL"> 
@@ -19,9 +19,9 @@ In our example case we create technical PREMIS Object metadata for five differen
   </mets:mdWrap>
 </mets:md>
 ```
-In element `<mets:md>`, attributes `ID` and `USE` describe the identifier and the use of the metadata section, respectively. For technical metadata, we recommend using value `TECHNICAL` for attribute `USE`. Elements `<mets:mdWrap>` and `<mets:xmlData>` denote that the metadata is embedded in the section in XML format. Attributes `MDTYPE` and `MDTYPEVERSION` define that the type of the included metadata is PREMIS Object of version 3.0.
+In the `<mets:md>` element, the `ID` and `USE` attributes describe the identifier and use of the metadata section, respectively. For technical metadata, we recommend using the value `TECHNICAL` for the `USE` attribute. The `<mets:mdWrap>` and `<mets:xmlData>` elements indicate that the metadata is embedded in the section in XML format. The `MDTYPE` and `MDTYPEVERSION` attributes indicate that the type of the included metadata is PREMIS Object version 3.0.
 
-In our example, the PREMIS Object metadata is created for each of the five files included, separately. All of them are listed below:
+In our example, the PREMIS Object metadata is created separately for each of the five included files. They are all listed below:
 
 - **File 1 - Paper (DOCX)**: [iPRES2023_METS_Tutorial.docx](https://raw.githubusercontent.com/mets/METS-board/master/iPres2023Tutorial/originalfiles/iPRES2023_METS_Tutorial.docx)
     <details markdown="block">
@@ -225,7 +225,7 @@ In our example, the PREMIS Object metadata is created for each of the five files
     </mets:md>
     ```
     
-As the 6th technical metadata section, we add a PREMIS Intellectual Entity of full Tutorial. The METS elements are similar to the corresponding elements in PREMIS Object metadata of the files.
+As the 6th technical metadata section, we add a PREMIS Intellectual Entity of the full tutorial. The METS elements are similar to the corresponding elements in the PREMIS Object metadata of the files.
 
 ```xml
 <mets:md ID="tech-006" USE="TECHNICAL"> 

@@ -5,19 +5,19 @@ nav_order: 4
 ---
 # Structural section
 
-Structural metadata describes the structure of the content. It describes how the files and metadata are connected together and how different metadata is linked to files or larger entities. The structual map can be physical (for eaxample describing the directory structure) or logical (for example semantic structure of the content).
+Structural metadata describes the structure of the content. It describes how the files and metadata are related to each other and how different metadata are related to files or larger entities. The structural map can be physical (for example, describing the directory structure) or logical (for example, the semantic structure of the content).
 
-Structural section is one of the main sections in a METS document. There can be only one structural section. However, it is allowed to have multiple structural maps. It is worth noting that there are a variety of ways that we could have organized the structural map other than the one used in our example.
+The structural section is one of the main sections in a METS document. There can be only one structural section. However, it is allowed to have several structural maps. It is worth noting that there are a variety of ways we could have organized the structural map other than the one used in our example.
 
-In our example we have a structure map with using element `<mets:structMap>`. The element `<mets:div>` denotes to a division element. There can be only one root division, but inside it there can be multiple sequential and nested divisions. In this way, we can create a hierachy tree to describe the structure. A division can refer to a metadata with the attribute `MDID`. In the leaf level, there are pointers `<mets:fptr>` to the files described the file section. The actual pointer is in attribute `FILEID`. 
+In our example, we have a structural map using the `<mets:structMap>` element. The `<mets:div>` element indicates a division element. There can be only one root division, but within it there can be several sequential and nested divisions. In this way, we can create a hierarchy tree to describe the structure. A division can refer to metadata with the `MDID` attribute. At the leaf level, there are `<mets:fptr>` pointers to the files described by the file section. The actual pointers are in the `FILEID` attributes. 
 
-In our example, the root div contains the header of our tutorial content in attribute `LABEL`. Attribute `MDID` refers to the descriptive, technical and rights metadata blocks containing metadata related to the whole content. The referred blocks are described in detail in the following pages:
+In our example, the root div contains the header of our tutorial content in the `LABEL` attribute. The `MDID` attribute refers to the descriptive, technical, and rights metadata blocks that contain metadata about the entire content. These blocks are described in detail on the following pages:
 
 - [Descriptive metadata](descriptive_metadata.md)
 - [Technical metadata](technical_metadata.md)
 - [Rights metadata](rights_metadata.md)
 
-There are three divisions in our example, defined with attributes `TYPE` and `LABEL`, describing the type and description of the division, respectively. The divisions are made for the division types `Paper`, `Presentation` and `Handout`. The leaf level has file pointers to the file section, referred from the attribute `FILEID`. The identifiers in `FILEID` references are the `ID` values used in the file section. [Please have a look at the file section.](file_section.md)
+In our example, there are three divisions defined by the `TYPE` and `LABEL` attributes, which describe the type and description of the division, respectively. The divisions are created for the division types `Paper`, `Presentation` and `Handout`. The leaf level has file pointers to the file section, referenced by the `FILEID` attribute. The identifiers in the `FILEID` references are the `ID` values used in the file section. [See the file section.](file_section.md)
 
 ```xml
 <mets:structSec>

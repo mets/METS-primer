@@ -4,9 +4,9 @@ parent: Metadata section
 ---
 # Rights metadata
 
-Some form of intellectual property rights statement regarding the content of the digital object and the source from which it was derived might be added.
+Some form of intellectual property rights statement about the content of the digital object and the source from which it was derived may be added.
 
-In our example case we create a section for PREMIS Rights Statement metadata in the following way:
+In our example, we create a section for PREMIS Rights Statement metadata as follows:
 
 ```xml
 <mets:md ID="rights-001" USE="RIGHTS">
@@ -33,4 +33,4 @@ In our example case we create a section for PREMIS Rights Statement metadata in 
 </mets:md>
 ```
 
-In element `<mets:md>`, attributes `ID` and `USE` describe the identifier and the use of the metadata section, respectively. For rights metadata, we recommend using value `RIGHTS` for attribute `USE`. Elements `<mets:mdWrap>` and `<mets:xmlData>` denote that the metadata is embedded in the section in XML format. Attributes `MDTYPE` and `MDTYPEVERSION` define that the type of the included metadata is PREMIS Rights of version 3.0.
+In the `<mets:md>` element, the `ID` and `USE` attributes describe the identifier and use of the metadata section, respectively. For rights metadata, we recommend using the value `RIGHTS` for the `USE` attribute. The `<mets:mdWrap>` and `<mets:xmlData>` elements indicate that the metadata is embedded in the section in XML format. The `MDTYPE` and `MDTYPEVERSION` attributes indicate that the type of the included metadata is PREMIS Rights version 3.0.

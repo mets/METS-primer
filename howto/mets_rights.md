@@ -11,7 +11,7 @@ parent: METS How-Tos
 <mets:md ID="ADMRTS1" USE="RIGHTS">
   <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">
     <mets:xmlData>
-      <rts:RightsDeclarationMD RIGHTSCATEGORY="PUBLIC DOMAIN">
+      <rts:RightsDeclarationMD xmlns:rts="http://cosimo.stanford.edu/sdr/metsrights/" RIGHTSCATEGORY="PUBLIC DOMAIN">
         <rts:Context CONTEXTCLASS="GENERAL PUBLIC">
           <rts:Constraints CONSTRAINTTYPE="RE-USE">
             <rts:ConstraintDescription>This volume was published in Great

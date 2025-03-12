@@ -4,9 +4,8 @@ parent: METS How-Tos
 ---
 # Intellectual property rights metadata
 
-**Intellectual property rights metadata** is metadata about copyright and licensing pertaining to a component of the METS object. Rights metadata can be expressed according current rights description standards, such as PREMIS Rights or a locally produced XML schema.
+**Intellectual property rights metadata** is metadata about copyright and licensing pertaining to a component of the METS object. Rights metadata can be expressed according current rights description standards, such as [PREMIS](https://www.loc.gov/standards/premis/) rights, [METS rights](https://github.com/mets/METS-Rights-Schema/) or a locally produced XML schema.
 
-## TODO use premis rights for the example
 ```xml
 <mets:md ID="ADMRTS1" USE="RIGHTS">
   <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">

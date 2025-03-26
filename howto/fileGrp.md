@@ -24,7 +24,7 @@ The following METS fragment represents the page images of a book that are in TIF
 <mets:mets xmlns:mets="http://www/loc.gov/METS/v2"
     xmlns:xsi="http://www/w3/org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.loc.gov/METS/v2
-    http://www.loc.gov/standards/mets/mets.xsd"
+      http://www.loc.gov/standards/mets/mets.xsd"
     OBJID="ark:/13010/kt9s2009hz"
     LABEL="Martial Epigrams">
   [...]

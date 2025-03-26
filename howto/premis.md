@@ -12,7 +12,7 @@ The **digital provenance metadata** could contain metadata about any preservatio
     <mets:xmlData>
       <premis:event version="3.0"
           xmlns:premis="http://www.loc.gov/premis/v3"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://www.loc.gov/premis/v3
             https://www.loc.gov/standards/premis/v3/premis-v3-0.xsd">
         <premis:eventIdentifier>

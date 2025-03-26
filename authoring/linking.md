@@ -50,9 +50,9 @@ The method used in our example is one of the basic ways of implementing links in
   ```xml
   <mets:structMap>
     <mets:div LABEL="Understanding and implementing METS, A tutorial focused on METS 2"
-      MDID="dmd-001 tech-006 rights-001">
+        MDID="dmd-001 tech-006 rights-001">
       <mets:div LABEL="UNDERSTANDING AND IMPLEMENTING METS: A tutorial focused on METS 2"
-        TYPE="Paper">
+          TYPE="Paper">
         <mets:fptr FILEID="file-001"/>
           [...]
   ```

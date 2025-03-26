@@ -29,7 +29,7 @@ In the example below the ID attribute value of “MD1” identifies the single `
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.loc.gov/METS/v2
       https://github.com/mets/METS-schema/raw/mets2/v2/mets.xsd
-    http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-1.xsd"
+      http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-1.xsd"
     OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:mdSec>
     <mets:md ID="MD1">
@@ -164,7 +164,7 @@ In the example below the ID attribute value of “App4ADM1” identifies the fir
       <mets:file ID="App4FID1" MIMETYPE="image/tiff" SEQ="1"
           CREATED="2003-01-22T00:00:00.0" MDID="App4ADM1 App4ADM2" GROUPID="GID1">
         <mets:FLocat LOCTYPE="URL"
-            LOCREF="http://offlineimage/calcultures/ucb/cubanc_1_2_00004722a.tif"/>
+          LOCREF="http://offlineimage/calcultures/ucb/cubanc_1_2_00004722a.tif"/>
       </mets:file>
     </mets:fileGrp>
   </mets:fileSec>

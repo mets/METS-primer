@@ -16,7 +16,7 @@ The following example demonstrates the use of the `<mdRef>` element.
 <mdSec>
   <md ID="DMD1" USE="DESCRIPTIVE">
     <mdRef MIMETYPE="text/xml" LABEL="MODS record" LOCTYPE="URN"
-        MDTYPE="MODS" LOCREF="urn:x-nyu:fales1735"/>
+      MDTYPE="MODS" LOCREF="urn:x-nyu:fales1735"/>
   </md>
 </mdSec>
 ```

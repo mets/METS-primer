@@ -260,7 +260,8 @@ In our example, the PREMIS Event and Agent metadata is created separately for ea
         valueURI="http://id.loc.gov/vocabulary/preservation/eventType/mig">migration</premis:eventType>
       <premis:eventDateTime>2023-11-01T19:52:59</premis:eventDateTime>
       <premis:eventDetailInformation>
-        <premis:eventDetail>Object migrated from Microsoft Word for Windows to Acrobat PDF 1.4 - Portable Document Format</premis:eventDetail>
+        <premis:eventDetail>Object migrated from Microsoft Word for Windows to
+          Acrobat PDF 1.4 - Portable Document Format</premis:eventDetail>
       </premis:eventDetailInformation>
       <premis:linkingAgentIdentifier>
         <premis:linkingAgentIdentifierType>local</premis:linkingAgentIdentifierType>
@@ -326,7 +327,8 @@ In our example, the PREMIS Event and Agent metadata is created separately for ea
         valueURI="http://id.loc.gov/vocabulary/preservation/eventType/mig">migration</premis:eventType>
       <premis:eventDateTime>2023-09-15T23:09:29</premis:eventDateTime>
       <premis:eventDetailInformation>
-        <premis:eventDetail>Object migrated from Microsoft Powerpoint for Windows to Acrobat PDF 1.7 - Portable Document Format</premis:eventDetail>
+        <premis:eventDetail>Object migrated from Microsoft Powerpoint for
+          Windows to Acrobat PDF 1.7 - Portable Document Format</premis:eventDetail>
       </premis:eventDetailInformation>
       <premis:linkingAgentIdentifier>
         <premis:linkingAgentIdentifierType>local</premis:linkingAgentIdentifierType>

@@ -15,7 +15,7 @@ In the example below, which is an excerpt from a longer encoding, the second `<d
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.loc.gov/METS/v2
-    https://github.com/mets/METS-schema/raw/mets2/v2/mets.xsd"
+      https://github.com/mets/METS-schema/raw/mets2/v2/mets.xsd"
     OBJID="ark:/13030/kt9s2010hz" TYPE="text"
     LABEL="[Patrick Breen Diary November 20, 1846 - March 1, 1847]"
     PROFILE="http://www.loc.gov/mets/profiles/00000005.xml">

@@ -23,7 +23,7 @@ In the second example, `<altRecordID>` reflects the University of California, Sa
 
 ```xml
 <metsHdr CREATEDATE="2004-02-22T00:00:00"
-  LASTMODDATE="2004-03-16T00:00:00" RECORDSTATUS="production">
+    LASTMODDATE="2004-03-16T00:00:00" RECORDSTATUS="production">
   <mets:agent ROLE="CREATOR" TYPE="ORGANIZATION">
     <mets:name>UCSD</mets:name>
     <mets:note>SIP METS submitted to CDL.</mets:note>

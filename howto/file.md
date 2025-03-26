@@ -12,6 +12,7 @@ Read more:
 * [Embedding file content](FContent.md)
 * [Representing parts of files](stream.md)
 * [Handling 'wrapper' file formats](transformFile.md)
+
 ## Example
 
 The physical book example that we have been using represents each page by `<div>` elements, one for each of the three different image manifestations (TIFF, JPEG, or GIF). The `<fileGrp>` for the TIFF images is represented in the following example as a single file within that group.
@@ -21,7 +22,7 @@ The physical book example that we have been using represents each page by `<div>
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
     xmlns:xsi="http://www/w3/org/2001/XMLSchema-instance"
     xsi:schemalocation="http://www.loc.gov/METS/v2
-    http://www/loc/gov/standards/mets/mets.xsd"
+      http://www/loc/gov/standards/mets/mets.xsd"
     OBJID="ark:/13010/kt9s2009hz"
     LABEL="Martial Epigrams">
   [...]

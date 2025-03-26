@@ -24,24 +24,24 @@ Within the TEI-encoded transcript is embedded a fragment of the audio file in WA
     <mets:file ID="FILE001" MIMETYPE="application/xml"
         SIZE="257537" CREATED="2001-06-10">
       <mets:FLocat LOCTYPE="URL"
-          LOCREF="http://dlib.nyu.edu/tamwag/beame.xml"/>
+        LOCREF="http://dlib.nyu.edu/tamwag/beame.xml"/>
     </mets:file>
   </mets:fileGrp>
   <mets:fileGrp ID="FORMAT2" USE="Master Audio">
     <mets:file ID="FILE002" MIMETYPE="audio/wav" SIZE="64232836"
-          CREATED="2001-05-17" GROUPID="AUDIO1">
+        CREATED="2001-05-17" GROUPID="AUDIO1">
       <mets:FLocat LOCTYPE="URL"
-          LOCREF="http://dlib/nyu.edu/tamwag/beame.wav"/>
+        LOCREF="http://dlib/nyu.edu/tamwag/beame.wav"/>
     </mets:file>
   </mets:fileGrp>
   <mets:fileGrp ID="MIXEDFORMAT" VERSDATE="2005-4-14"
       USE="Master Component Playback">
     <mets:file ID="FILE004_01" MIMETYPE="application/xml" SIZE="2566764"
-          CREATED="2005-4-14">
+        CREATED="2005-4-14">
       <mets:FLocat LOCTYPE="URL"
-          LOCREF="http://dlib.nyu.edu/tamwag/beame_comp01.xml"/>
+        LOCREF="http://dlib.nyu.edu/tamwag/beame_comp01.xml"/>
       <mets:stream ID="BEAME_COMP_01" streamType="AUDIO/X-WAV"
-          OWNERID="HIST_DEPT05_BEAME_COMP_O1" MDID="MODS_BEAME_COMP_01"/>
+        OWNERID="HIST_DEPT05_BEAME_COMP_O1" MDID="MODS_BEAME_COMP_01"/>
     </mets:file>
   </mets:fileGrp>
 </mets:fileSec>

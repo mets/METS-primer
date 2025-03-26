@@ -19,12 +19,12 @@ The simple encoding fragment below demonstrates the div features described thus 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:mods="http://www.loc.gov/mods/v3"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
- http://www.loc.gov/standards/mets/mets.xsd
- http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-1.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+    xmlns:mods="http://www.loc.gov/mods/v3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd
+      http://www.loc.gov/mods/v3 http://www.loc.gov/mods/v3/mods-3-1.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:mdSec>
     <mets:md ID="DMD1" USE="DESCRIPTIVE">
       <mets:mdWrap MDTYPE="MODS">
@@ -38,7 +38,7 @@ The simple encoding fragment below demonstrates the div features described thus 
       </mets:mdWrap>
     </mets:md>
   </mets:mdSec>
-  ...
+  [...]
   <mets:structSec>
     <mets:structMap TYPE="physical">
       <mets:div TYPE="book" LABEL="Martial Epigrams II" MDID="DMD1">

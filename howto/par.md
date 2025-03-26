@@ -14,10 +14,10 @@ In the example below the `<structMap>` encoding uses the `<par>` element to recr
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
-   http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:fileSec>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi09r" MIMETYPE="image/jpeg">
@@ -44,7 +44,7 @@ In the example below the `<structMap>` encoding uses the `<par>` element to recr
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/14.jpg"
           LOCTYPE="URL"/>
       </mets:file>
-      ...
+      [...]
     </mets:fileGrp>
   </mets:fileSec>
   <mets:structSec>
@@ -75,7 +75,7 @@ In the example below the `<structMap>` encoding uses the `<par>` element to recr
               </mets:par>
             </mets:fptr>
           </mets:div>
-          ...
+          [...]
         </mets:div>
       </mets:div>
     </mets:structMap>
@@ -93,10 +93,10 @@ The example below demonstrates a use of `<seq>` elements within a `<par>` elemen
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
-   http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:fileSec>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi09r" MIMETYPE="image/jpeg">

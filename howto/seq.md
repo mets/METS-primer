@@ -12,10 +12,10 @@ The example below shows a case where a logical structuring of the digital conten
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
- http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
   <mets:fileSec>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi09r" MIMETYPE="image/jpeg">
@@ -42,7 +42,7 @@ The example below shows a case where a logical structuring of the digital conten
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/14.jpg"
           LOCTYPE="URL"/>
       </mets:file>
-      ...
+      [...]
     </mets:fileGrp>
   </mets:fileSec>
   <mets:structSec>
@@ -55,7 +55,7 @@ The example below shows a case where a logical structuring of the digital conten
                 <mets:area FILEID="epi09r"/>
                 <mets:area FILEID="epi11r"/>
                 <mets:area FILEID="epi13r"/>
-                ...
+                [...]
               </mets:seq>
             </mets:fptr>
           </mets:div>
@@ -65,7 +65,7 @@ The example below shows a case where a logical structuring of the digital conten
                 <mets:area FILEID="epi10r"/>
                 <mets:area FILEID="epi12r"/>
                 <mets:area FILEID="epi14r"/>
-                ...
+                [...]
               </mets:seq>
             </mets:fptr>
           </mets:div>

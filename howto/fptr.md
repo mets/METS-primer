@@ -14,11 +14,11 @@ The following METS encoding fragment represents a case where the `<structMap>` a
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
- http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams II">
-  ...
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams II">
+  [...]
   <mets:fileSec>
     <mets:fileGrp USE="MASTER IMAGE">
       <mets:file ID="epi01m" MIMETYPE="image/tiff">
@@ -37,7 +37,7 @@ The following METS encoding fragment represents a case where the `<structMap>` a
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/full/04.tif"
           LOCTYPE="URL"/>
       </mets:file>
-      ...
+      [...]
     </mets:fileGrp>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi01r" MIMETYPE="image/jpeg">
@@ -56,7 +56,7 @@ The following METS encoding fragment represents a case where the `<structMap>` a
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/04.jpg"
           LOCTYPE="URL"/>
       </mets:file>
-      ...
+      [...]
     </mets:fileGrp>
     <mets:fileGrp USE="THUMBNAIL IMAGE">
       <mets:file ID="epi01t" MIMETYPE="image/gif">
@@ -75,7 +75,7 @@ The following METS encoding fragment represents a case where the `<structMap>` a
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/gif/04.gif"
           LOCTYPE="URL"/>
       </mets:file>
-      ...
+      [...]
     </mets:fileGrp>
   </mets:fileSec>
   <mets:structSec>

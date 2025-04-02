@@ -24,16 +24,14 @@ Within the TEI-encoded transcript is embedded a fragment of the audio file in WA
     <mets:file ID="FILE001" MIMETYPE="application/xml"
         SIZE="257537" CREATED="2001-06-10">
       <mets:FLocat LOCTYPE="URL"
-          LOCREF="http://dlib.nyu.edu/tamwag/beame.xml"
-      </mets:FLocat>
+        LOCREF="http://dlib.nyu.edu/tamwag/beame.xml"/>
     </mets:file>
   </mets:fileGrp>
   <mets:fileGrp ID="FORMAT2" USE="Master Audio">
     <mets:file ID="FILE002" MIMETYPE="audio/wav" SIZE="64232836"
         CREATED="2001-05-17" GROUPID="AUDIO1">
       <mets:FLocat LOCTYPE="URL"
-        LOCREF="http://dlib/nyu.edu/tamwag/beame.wav"
-      </mets:FLocat>
+        LOCREF="http://dlib/nyu.edu/tamwag/beame.wav"/>
     </mets:file>
   </mets:fileGrp>
   <mets:fileGrp ID="MIXEDFORMAT" VERSDATE="2005-4-14"

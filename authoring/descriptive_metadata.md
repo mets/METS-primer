@@ -21,7 +21,9 @@ In our example, we create a Dublin Core descriptive metadata section as follows:
           <dc:creator>Juha Lehtonen</dc:creator>
           <dc:date>2023-09-19</dc:date>
           <dc:description>Tutorial</dc:description>
-          <dcterms:license>Copyright held by the author(s). The text of this paper is published under a CC BY-SA license (https://creativecommons.org/licenses/by/4.0/).</dcterms:license>
+          <dcterms:license>Copyright held by the author(s). The text of this
+            paper is published under a CC BY-SA license
+            (https://creativecommons.org/licenses/by/4.0/).</dcterms:license>
           <dc:identifier>https://hdl.handle.net/2142/121056</dc:identifier>
           <dc:subject>Metadata and information strategies and workflows</dc:subject>
           <dc:subject>Infrastructure, systems, and tools</dc:subject>
@@ -56,6 +58,6 @@ There are other ways to construct METS metadata sections. One example is to have
 
 ```xml
 <mets:md ID="dmd-001" USE="DESCRIPTIVE">
-   [...]
+  [...]
 </mets:md>
 ```

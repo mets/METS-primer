@@ -8,7 +8,7 @@ parent: METS How-Tos
 
 ```xml
 <mets:md ID="ADMRTS1" USE="RIGHTS">
-  <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="METSRights">
+  <mets:mdWrap MDTYPE="METSRights">
     <mets:xmlData>
       <rts:RightsDeclarationMD xmlns:rts="http://cosimo.stanford.edu/sdr/metsrights/" RIGHTSCATEGORY="PUBLIC DOMAIN">
         <rts:Context CONTEXTCLASS="GENERAL PUBLIC">

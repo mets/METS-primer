@@ -9,11 +9,11 @@ Each physical page from the book is represented by three associated content file
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.loc.gov/METS/v2
-   http://www.loc.gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
-  ...
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.loc.gov/METS/v2
+      http://www.loc.gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+  [...]
   <mets:fileSec>
     <mets:fileGrp USE="MASTER IMAGE">
       <mets:file ID="epi01m" MIMETYPE="image/tiff">
@@ -31,7 +31,8 @@ Each physical page from the book is represented by three associated content file
       <mets:file ID="epi04m" MIMETYPE="image/tiff">
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/full/04.tif"
           LOCTYPE="URL"/>
-      </mets:file> ...
+      </mets:file>
+      [...]
     </mets:fileGrp>
     <mets:fileGrp USE="REFERENCE IMAGE">
       <mets:file ID="epi01r" MIMETYPE="image/jpeg">
@@ -49,7 +50,8 @@ Each physical page from the book is represented by three associated content file
       <mets:file ID="epi04r" MIMETYPE="image/jpeg">
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/jpg/04.jpg"
           LOCTYPE="URL"/>
-      </mets:file> ...
+      </mets:file>
+      [...]
     </mets:fileGrp>
     <mets:fileGrp USE="THUMBNAIL IMAGE">
       <mets:file ID="epi01t" MIMETYPE="image/gif">
@@ -67,7 +69,8 @@ Each physical page from the book is represented by three associated content file
       <mets:file ID="epi04t" MIMETYPE="image/gif">
         <mets:FLocat LOCREF="http://www.loc.gov/standards/mets/docgroup/gif/04.gif"
           LOCTYPE="URL"/>
-      </mets:file> ...
+      </mets:file>
+      [...]
     </mets:fileGrp>
   </mets:fileSec>
 </mets:mets>

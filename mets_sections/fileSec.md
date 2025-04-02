@@ -9,17 +9,16 @@ The overall purpose of the content **file section** element `<fileSec>` is to pr
 
 `<fileGrp>` may point to pertinent metadata groups `<mdGrp>` and metadata elements `<md>` in the Metadata Section `<mdSec>` of the METS document by means of an MDID attribute.
 
-Similarly, `<file>`s within a `<fileGrp>` may point to metadata using MDID attribute. See `<fileGrp>` discussion below.
+Similarly, `<file>`s within a `<fileGrp>` may point to metadata using MDID attribute; see "[Grouping related files](../howto/fileGrp.md)]".
 
-## Elements Contained in the File Section
+## More information
+* [Grouping related files](../howto/fileGrp.md)
+* [Describing digital object content](../howto/file.md)
+* [Embedding file content](../howto/FContent.md)
+* [Representing parts of files](../howto/stream.md)
+* [Referencing external files](../howto/FLocat.md)
+* [Handling 'wrapper' file formats](../howto/transformFile.md)
 
-[Grouping related files](../howto/fileGrp.md)
-[Describing digital object content](../howto/file.md)
-[Embedding file content](../howto/FContent.md)
-[Representing parts of files](../howto/stream.md)
-[Referencing external files](../howto/FLocat.md)
-[Handling 'wrapper' file formats](../howto/transformFile.md)
 ## Examples
-
-[File section example - multiple image representations](../howto/fileSec_example_images.md)
-[File section example - audio and transcription](../howto/fileSec_example_audio.md)
+* [File section example - multiple image representations](../howto/fileSec_example_images.md)
+* [File section example - audio and transcription](../howto/fileSec_example_audio.md)

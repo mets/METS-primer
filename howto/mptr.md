@@ -6,7 +6,7 @@ parent: METS How-Tos
 
 Like the `<fptr>` element, the **METS pointer** `<mptr>` element represents digital content that manifests its parent `<div>` element.  Unlike the `<fptr>`, which either directly or indirectly points to content represented in the `<fileSec>` of the parent METS document, the `<mptr>` element points to content represented by an external METS document. Thus, this element allows multiple discrete and separate METS documents to be organized at a higher level by a separate METS document.  For example, METS documents representing the individual issues in the series of a journal could be grouped together and organized by a higher level METS document that represents the entire journal series. Each of the `<div>` elements in the `<structMap>` of the METS document representing the journal series would point to a METS document representing an issue. It would do so via a child `<mptr>` element. Thus the `<mptr>` element gives METS users considerable flexibility in managing the depth of the `<structMap>` hierarchy of individual METS documents.
 
-The `<mptr>` element points to an external METS document by means of an LOCREF attribute as described in the section on external linking. (See Chapter 4). This is the same mechanism used for associating `<file>` elements with external content files in the FLocat element.
+The `<mptr>` element points to an external METS document by means of an LOCREF attribute as described in "[Linking to external resources from METS](locref.md)". This is the same mechanism used for associating `<file>` elements with external content files in the [FLocat element](FLocat.md)
 
 ##### Example
 

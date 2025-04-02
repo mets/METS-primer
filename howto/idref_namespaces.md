@@ -4,7 +4,7 @@ parent: METS How-Tos
 ---
 # IDREF/ID linking across different namespaces
 
-As described above, the `<md>` elements have a required ID attribute. The unique identifier values assigned to this attribute allow these elements to be referenced from the MDID attributes that are associated with `<file>` and `<div>` elements. The `<md>` elements can all include metadata in the form of elements drawn from other namespaces in their `<xmlData>` sections. In cases where the elements drawn from other namespaces for populating the `<xmlData>` sections themselves have ID attributes - as is the case with some elements drawn from the MODS and VRA Core namespaces - the MDID attribute can reference identifier values assigned to these ID attributes instead of, or in addition to, the values assigned to ID attributes in the top-level `<md>` element.
+As described [Referring to elements within METS](idrefs_within_mets.md), the `<md>` elements have a required ID attribute. The unique identifier values assigned to this attribute allow these elements to be referenced from the MDID attributes that are associated with `<file>` and `<div>` elements. The `<md>` elements can all include metadata in the form of elements drawn from other namespaces in their `<xmlData>` sections. In cases where the elements drawn from other namespaces for populating the `<xmlData>` sections themselves have ID attributes - as is the case with some elements drawn from the MODS and VRA Core namespaces - the MDID attribute can reference identifier values assigned to these ID attributes instead of, or in addition to, the values assigned to ID attributes in the top-level `<md>` element.
 
 ## Example
 

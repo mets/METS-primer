@@ -12,7 +12,7 @@ A sequence of `<fileGrp>` elements can be used to group the digital files compri
 
 Meanwhile, the `<structMap>` element can be used to link together the different representations of the same intellectual content.
 
-A `<fileGrp>` may contain zero or more `<file>` elements. As described below, a `<file>` element may contain `<FLocat>` pointers to one or more external content files via a URI and/or may itself contain the file content as XML or binary data using the `<FContent>` element.
+A `<fileGrp>` may contain zero or more `<file>` elements. A `<file>` element may contain `<FLocat>` pointers to one or more external content files via a URI (see [Referencing external files](FLocat.md)) and/or may itself contain the file content as XML or binary data using the `<FContent>` element (see [Embedding file content](FContent.md)).
 
 A nested (hierarchical) arrangement of file groups is not allowed, since complex structures are meant to be described in the structural map section `<structSec>`.
 

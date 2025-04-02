@@ -76,4 +76,4 @@ The example below shows a case where a logical structuring of the digital conten
 </mets:mets>
 ```
 
-Multiple `<seq>` elements would appear under a `<par>` element when multiple sequences of files or parts of files must be played/displayed simultaneously to manifest the content of the governing `<fptr>` element. See the section on the `<par>` element below for a more complete description of this case.
+Multiple `<seq>` elements would appear under a `<par>` element when multiple sequences of files or parts of files must be played/displayed simultaneously to manifest the content of the governing `<fptr>` element. See also "[Presenting content simultaneously (in parallel)](par.md)" for a more complete description of this case.

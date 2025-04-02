@@ -4,12 +4,12 @@ parent: METS How-Tos
 ---
 # Referring to elements within METS
 
-METS makes extensive provisions for using the ID, IDREF, and IDREFS attributes to create cross-references between related elements. Ultimately, these provisions allow units of information appearing in dispersed locations across a METS instance document to be linked to all of their appropriate contexts without redundancy. METS `<md>` and `<file>` elements have required ID attributes, which allow the metadata and content file elements to be referenced from the other parts of the METS instance document to which they pertain. In addition, ``<div>`` elements in the ``<structMap>`` and many other elements can include ID attribute values that allow them to be referenced by other elements. METS’ specific cross-referencing provisions for different contexts are outlined below.
+METS makes extensive provisions for using the [ID, IDREF, and IDREFS attributes](id_idrefs.md) to create cross-references between related elements. Ultimately, these provisions allow units of information appearing in dispersed locations across a METS instance document to be linked to all of their appropriate contexts without redundancy. METS `<md>` and `<file>` elements have required ID attributes, which allow the metadata and content file elements to be referenced from the other parts of the METS instance document to which they pertain. In addition, ``<div>`` elements in the ``<structMap>`` and many other elements can include ID attribute values that allow them to be referenced by other elements. METS’ specific cross-referencing provisions for different contexts are outlined below.
 
-## Context 1: ``<md>`` metadata
+## Context 1: `<md>` metadata
 
-* A unique ID attribute value must identify each ``<md>`` element in a METS instance document.
-* Each of the following elements can reference one or more specific ``<md>`` elements by citing their ID values in their MDID attribute (the MDID attribute is of type IDREFS):
+* A unique ID attribute value must identify each `<md>` element in a METS instance document.
+* Each of the following elements can reference one or more specific `<md>` elements by citing their ID values in their MDID attribute (the MDID attribute is of type IDREFS):
   * mets/metsHdr
   * mets/mdSec/md
   * mets/fileSec/fileGrp
@@ -20,7 +20,7 @@ METS makes extensive provisions for using the ID, IDREF, and IDREFS attributes t
 
 ### Example 1: Descriptive metadata
 
-In the example below, the ID attribute value “MD1” identifies the single ``<md>`` element. The root `<div>` in the `<structMap>` references this `<md>` element by means of its MDID attribute. Thus, the encoding indicates that the descriptive metadata in the `<md>` element identified by the ID value “MD1” applies to the entire content as represented by the root `<div>` in the `<structMap>`.
+In the example below the ID attribute value of “MD1” identifies the single `<md>` element. The root `<div>` in the `<structMap>` references this `<md>` element by means of its MDID attribute. Thus, the encoding indicates that the descriptive metadata in the `<md>` element identified by the ID value “MD1” applies to the entire content as represented by the root `<div>` in the `<structMap>`.
 ```xml
 <mets:mets
     xmlns:mets="http://www.loc.gov/METS/v2"

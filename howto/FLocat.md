@@ -6,7 +6,7 @@ parent: METS How-Tos
 
 The **file location** element `<FLocat>` provides a pointer to the location of a content file. 
 
-NOTE: `<FLocat>` is an empty element. The location of the resource pointed to MUST be stored in the LOCREF attribute.
+NOTE: `<FLocat>` is an empty element. The location of the resource to which it points MUST be stored in the LOCREF attribute.
 
 See also: [Linking to external resources from METS](locref.md)
 

@@ -4,11 +4,11 @@ parent: METS How-Tos
 ---
 # Recording who created or modified a METS document
 
-The **agent** element `<agent>` provides for various parties and their roles with respect to the METS record to be documented.
+The **agent** element `<agent>` provides a way to document various parties and their roles with respect to the METS record.
 
 ## Sub-elements
 
-The element `<agent>` has two sub-elements, `<name>` and `<note>`. The element `<name>` can be used to record the full name of the agent. The `<note>` element can be used to record any additional information regarding the agent's activities with respect to the METS document.
+The element `<agent>` has two sub-elements: `<name>` and `<note>`. The `<name>` element can be used to record the full name of the agent. The `<note>` element can be used to record any additional information regarding the agent's activities with respect to the METS document.
 
 ## Example
 

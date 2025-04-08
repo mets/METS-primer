@@ -1,10 +1,10 @@
 ---
-title: "File section example: multiple image representations"
+title: "File section example: Multiple image representations"
 parent: METS How-Tos
 ---
-# File section example: multiple image representations
+# File section example: Multiple image representations
 
-Each physical page from the book is represented by three associated content files in the TIFF, JPEG and GIF formats.
+Each physical page from the book is represented by three associated content files in the TIFF, JPEG, and GIF formats.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

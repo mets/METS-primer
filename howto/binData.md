@@ -16,4 +16,4 @@ If the digital content represented by a `<file>` element is not in XML format, i
 
 See also: 
 * [Embedding file content](FContent.md)
-* [Descriptive metadata - embedding binary MARC records](binary_marc.md)
+* [Descriptive metadata: Embedding binary MARC records](binary_marc.md)

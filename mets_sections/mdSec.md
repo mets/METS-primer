@@ -9,12 +9,12 @@ The **metadata section** `<mdSec>` records metadata pertaining to the METS objec
 
 METS does not itself provide a vocabulary or syntax for encoding the included or referred metadata. Content guidelines are supplied by the specific standard used. METS does, however, provide a means for linking this metadata to the digital content of the entity and to other types of metadata related to the object, such as structural metadata.
 
-Elements included in the metadata section:
+## More information
 * [Describing the digital object with metadata](../howto/md.md)
 * [Referring to external metadata](../howto/mdRef.md)
 * [Embedding metadata in METS](../howto/mdWrap.md)
 
-Examples of metadata sections:
+## Examples
 * [Descriptive metadata - embedding binary MARC records](../howto/binary_marc.md)
 * [Including descriptive metadata with MODS](../howto/mods.md)
 * [Technical metadata for images](../howto/technical_metadata.md)

@@ -13,7 +13,7 @@ For our *Epigrams* example digital object, we could have used `<sourceMD>` to li
 ```xml
 <mets:md ID="SMD_MJF_Tape_0010_Side_A" STATUS="Draft, unformatted"
     CREATED="2006-08-28T15:36:53" USE="SOURCE">
-  <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="Draft AES-X098-SC-03-06-B, version 2006-05-19"
+  <mets:mdWrap MDTYPE="Draft AES-X098-SC-03-06-B, version 2006-05-19"
       MIMETYPE="audio/x-wave">
     <mets:xmlData>
       <dataroot xmlns:od="urn:schemas-microsoft-com:officedata"

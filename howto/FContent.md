@@ -16,11 +16,11 @@ See also:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <mets:mets xmlns:mets="http://www/loc/gov/METS/v2"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www/loc/gov/METS/v2
-   http://www/loc/gov/standards/mets/mets.xsd"
- OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
-  ...
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www/loc/gov/METS/v2
+      http://www/loc/gov/standards/mets/mets.xsd"
+    OBJID="ark:/13030/kt9s2009hz" LABEL="Martial Epigrams">
+  [...]
   <mets:fileSec>
     <mets:fileGrp ID="TIFF_GRP01" USE="MASTER IMAGE">
       <mets:file ID="epi01m" SIZE="65768" CREATED="2006-04-11T07:35:22"
@@ -31,5 +31,5 @@ See also:
       </mets:file>
     </mets:fileGrp>
   <mets:fileSec>
-  ...
+  [...]
 ```

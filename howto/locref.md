@@ -4,14 +4,14 @@ parent: METS How-Tos
 ---
 # Linking to external resources from METS
 
-METS uses its own attributes to provide links to external resources from elements within METS. Specifically, the LOCREF attribute is used to specify the URL of the pertinent external resource; and the LOCTYPE can be used to specify or associate pertinent metadata with the specified xlink:href link. These attributes can be used in two main contexts in METS.
+METS uses its own attributes to provide links to external resources from elements within a METS document. Specifically, the LOCREF attribute is used to specify the URL of the pertinent external resource, and the LOCTYPE can be used to specify or associate pertinent metadata with the specified xlink:href link. These attributes are used in two main contexts in METS.
 
-## Context 1: The `<mdRef>` sub-element in elements of mdType
+## Context 1: The `<mdRef>` sub-element of `<md>` elements in the `<mdSec>`
 
-The `<mdRef>` element in `<md>` elements uses LOCREF attribute to point to the external resource containing the pertinent metadata.
+The `<mdRef>` element, which appears within `<md>` elements, uses the LOCREF attribute to point to an external resource containing the relevant metadata.
 ### Example
 
-In the `<mdSec>` below, the LOCREF attribute cites a URL that identifies the location of an external, EAD based description.
+In the `<mdSec>` below, the LOCREF attribute cites a URL that identifies the location of an external EAD-based description.
 
 ```xml
 <mets:mdSec>
@@ -20,9 +20,9 @@ In the `<mdSec>` below, the LOCREF attribute cites a URL that identifies the loc
     </mets:md>
 </mets:mdSec>
 ```
-## Context 2: The `<FLocat>` sub-element of the `<file>` elements in the `<fileSec>`
+## Context 2: The `<FLocat>` sub-element of `<file>` elements in the `<fileSec>`
 
-The `<FLocat>` element uses an xlink:href attribute to point to the pertinent content file in its external location. The other XLink simpleLink attributes can be used to describe this link. 
+The `<FLocat>` element uses the xlink:href attribute to point to the corresponding content file at its external location. The other XLink simpleLink attributes can also be used to describe this link. 
 
 See also: [Referencing external files](FLocat.md)
 ### Example

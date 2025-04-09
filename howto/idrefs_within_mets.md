@@ -4,12 +4,12 @@ parent: METS How-Tos
 ---
 # Referring to elements within METS
 
-METS makes extensive provisions for using attributes of the [[Referring to Parts of XML Documents|ID, IDREF and IDREFS datatypes]] to create cross-references between related elements. Ultimately, these provisions allow units of information appearing in dispersed locations across a METS instance document to be linked to all of their appropriate contexts without redundancy. METS elements of the mdType and fileType datatypes have required ID attributes which allow the metadata and content file elements that implement these datatypes to be referenced from the other parts of the METS instance document to which they pertain. In addition to this, ``<div>`` elements in the ``<structMap>`` and many other elements can include ID attribute values that allow them to be referenced by other elements. METS’ specific cross-referencing provisions for different contexts follow.
+METS makes extensive provisions for using the ID, IDREF, and IDREFS attributes to create cross-references between related elements. Ultimately, these provisions allow units of information appearing in dispersed locations across a METS instance document to be linked to all of their appropriate contexts without redundancy. METS `<md>` and `<file>` elements have required ID attributes, which allow the metadata and content file elements to be referenced from the other parts of the METS instance document to which they pertain. In addition, ``<div>`` elements in the ``<structMap>`` and many other elements can include ID attribute values that allow them to be referenced by other elements. METS’ specific cross-referencing provisions for different contexts are outlined below.
 
 ## Context 1: ``<md>`` metadata
 
 * A unique ID attribute value must identify each ``<md>`` element in a METS instance document.
-* Each of the following elements can reference one or more specific ``<md>`` elements by citing their ID values in its MDID attribute (the MDID attribute is of IDREFS type):
+* Each of the following elements can reference one or more specific ``<md>`` elements by citing their ID values in their MDID attribute (the MDID attribute is of type IDREFS):
   * mets/metsHdr
   * mets/mdSec/md
   * mets/fileSec/fileGrp
@@ -19,7 +19,7 @@ METS makes extensive provisions for using attributes of the [[Referring to Parts
   * mets/structMap/div/fptr//area
 ### Example 1: Descriptive metadata
 
-In the example below the ID attribute value of “MD1” identifies the single ``<md>`` element. The root `<div>` in the `<structMap>` references this `<md>` by means of its MDID attribute. Thus the encoding indicates that the descriptive metadata in the `<md>` identified by the ID value “MD1” applies to the entire content as represented by the root `<div>` in the `<structMap>`.
+In the example below, the ID attribute value “MD1” identifies the single ``<md>`` element. The root `<div>` in the `<structMap>` references this `<md>` element by means of its MDID attribute. Thus, the encoding indicates that the descriptive metadata in the `<md>` element identified by the ID value “MD1” applies to the entire content as represented by the root `<div>` in the `<structMap>`.
 ```xml
 <mets:mets
     xmlns:mets="http://www.loc.gov/METS/v2" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -48,7 +48,7 @@ In the example below the ID attribute value of “MD1” identifies the single `
 ```
 ### Example 2: Administrative metadata
 
-In the example below the ID attribute value of “App4ADM1” identifies the first `<md>` element and the ID value “App4ADM2” identifies the second `<md>` element. The MDID attribute on the single `<file>` element in the `<fileSec>` references both of these ID values (“App4ADM1 App4ADM2”). Thus the encoding indicates that both the technical metadata in the first `<md>` element identified by the ID value “App4ADM1” and the rights metadata in the second `<md>` element identified by the ID value “App4ADM2” apply to the content file represented by the `<file>` element.
+In the example below, the ID attribute value “App4ADM1” identifies the first `<md>` element, and the value “App4ADM2” identifies the second `<md>` element. The MDID attribute on the single `<file>` element in the `<fileSec>` references both of these ID values (“App4ADM1 App4ADM2”). Thus, the encoding indicates that both the technical metadata in the first `<md>` element (“App4ADM1”) and the rights metadata in the second `<md>` element (“App4ADM2”) apply to the content file represented by the `<file>` element.
 
 ```xml
 <mets:mets xmlns:mets="http://www.loc.gov/METS/v2" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:rts="http://cosimo.stanford.edu/sdr/metsrights/" xmlns:mix="http://www.loc.gov/mix/v20"
@@ -151,11 +151,11 @@ In the example below the ID attribute value of “App4ADM1” identifies the fir
 ## Context 2: `<file>` content files
 
 * A unique ID attribute value must identify each `<file>` element in the `<fileSec>` of a METS document.
-* Each of the following elements can reference the specific `<file>` pertinent to it by citing the `<file>` element’s ID value in its FILEID attribute. (The FILEID attribute is of type IDREF).
+* Each of the following elements can reference the specific `<file>` pertinent to it by citing the `<file>` element’s ID value in its FILEID attribute (the FILEID attribute is of type IDREF).
   * mets/structMap/div/fptr
   * mets/structMap/div/fptr/area
   * mets/structMap/div/fptr/seq/area
   * mets/structMap/div/fptr/par/area
   * mets/structMap/div/fptr/par/seq/area
 ### Example
-The _Example 2_ of the previous usage context immediately above also demonstrates the current context. In that example, the ID attribute value of “App4FID1” identifies the single `<file>` element. The single `<fptr>` element under the root `<div>` of the `<structMap>` references this ID value. Thus the encoding indicates that the content file represented by the `<file>` element with an ID value of “App4FID1” manifests the root `<div>` element.
+Example 2 from the previous context also demonstrates this one. In that example, the ID attribute value “App4FID1” identifies the single `<file>` element. The single `<fptr>` element under the root `<div>` of the `<structMap>` references this ID value. Thus, the encoding indicates that the content file represented by the `<file>` element with the ID value “App4FID1” manifests the root `<div>` element.

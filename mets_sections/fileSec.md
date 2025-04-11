@@ -9,7 +9,7 @@ The overall purpose of the content **file section** element `<fileSec>` is to pr
 
 `<fileGrp>` may point to relevant metadata groups `<mdGrp>` and metadata elements `<md>` in the Metadata Section `<mdSec>` of the METS document by means of an MDID attribute.
 
-Similarly, `<file>` elements within a `<fileGrp>` can point to metadata using an MDID attribute; see "[Grouping related files](../howto/fileGrp.md)]".
+Similarly, `<file>` elements within a `<fileGrp>` can point to metadata using an MDID attribute; see "[Grouping related files](../howto/fileGrp.md)".
 
 ## More information
 * [Grouping related files](../howto/fileGrp.md)

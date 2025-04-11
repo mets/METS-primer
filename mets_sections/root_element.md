@@ -20,13 +20,13 @@ The METS document structure consists of four major sections, which in turn may c
 
 At the most general level, a METS document may contain the following sections, each of which is described in a separate section of this chapter.
 
-* [METS Header - metsHdr](metsHdr.md) -- The METS Header contains metadata describing the METS document itself, including information such as creator, editor, etc.
+* [METS header - metsHdr](metsHdr.md) -- The METS header contains metadata describing the METS document itself, including information such as creator, editor, etc.
 
-* [Metadata Section - mdSec](mdSec.md) -- This section contains metadata that is external to the METS document, internally embedded metadata, or both. Multiple instances of both external and internal metadata can be included in the Metadata Section. For example, the Metadata Section may contain descriptive metadata, information about how the files were created and stored, intellectual property rights, metadata about the original source object from which the digital object was derived, information about the provenance of the files that comprise the object (i.e., master/derivative file relationships, and migration/transformation information).
+* [Metadata section - mdSec](mdSec.md) -- This section contains metadata that is external to the METS document, internally embedded metadata, or both. Multiple instances of both external and internal metadata can be included in the metadata section. For example, the metadata section may contain descriptive metadata, information about how the files were created and stored, intellectual property rights, metadata about the original source object from which the digital object was derived, information about the provenance of the files that comprise the object (i.e., master/derivative file relationships, and migration/transformation information).
 
-* [File Section - fileSec](fileSec.md) -- A list of all files containing content that make up the electronic versions of the digital object. File elements may be grouped within file group elements, to allow for subdivision of files by object version or other criteria such as file type, size, etc.
+* [File section - fileSec](fileSec.md) -- A list of all files containing content that make up the electronic versions of the digital object. File elements may be grouped within file group elements, to allow for subdivision of files by object version or other criteria such as file type, size, etc.
 
-* [Structural Map Section - structSec](structSec.md) -- The Structural Map Section outlines a hierarchical structure for the digital object, and links the elements of that structure to the content files and metadata associated with each element.
+* [Structural map section - structSec](structSec.md) -- The structural map section outlines a hierarchical structure for the digital object, and links the elements of that structure to the content files and metadata associated with each element.
 
 ## METS root element example
 

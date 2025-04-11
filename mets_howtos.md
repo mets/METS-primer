@@ -6,7 +6,7 @@ has_toc: false
 
 # METS How-Tos
 
-Examples and descriptions of how to accomplish various tasks in METS using the available elements and attributes as well as how to relate together various parts of the METS document and the components digital object it describes.
+Examples and descriptions of how to accomplish various tasks in METS using the available elements and attributes, and how to relate different parts of the METS document and the component digital object it describes.
 
 ## METS Header
 * [Alternative identifiers for a digital object](howto/altRecordID.md)
@@ -14,7 +14,7 @@ Examples and descriptions of how to accomplish various tasks in METS using the a
 
 ## Metadata
 * [Describing the digital object with metadata](howto/md.md)
-* [Descriptive metadata - embedding binary MARC records](howto/binary_marc.md)
+* [Descriptive metadata: Embedding binary MARC records](howto/binary_marc.md)
 * [Digital provenance metadata -- PREMIS](howto/premis.md)
 * [Describing characteristics of the source material](howto/source_metadata.md)
 * [Including descriptive metadata with MODS](howto/mods.md)

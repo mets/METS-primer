@@ -3,7 +3,7 @@ title: METS Header
 parent: Sections of a METS Document
 nav_order: 2
 ---
-# METS Header 
+# METS header 
 
 The **mets header** element `<metsHdr>` records metadata about the METS document itself, not about the digital object the METS document encodes. Although it captures a more limited set of metadata, it is very similar in function and purpose to the headers used in other schemas such as the Text Encoding Initiative (TEI) or the Encoded Archival Description (EAD).
 

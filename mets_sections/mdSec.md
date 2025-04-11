@@ -3,7 +3,7 @@ title: Metadata Section
 parent: Sections of a METS Document
 nav_order: 3
 ---
-# Metadata Section
+# Metadata section
 
 The **metadata section** `<mdSec>` records metadata about the METS object as a whole or one of its components. The METS document may have only one metadata section. Multiple metadata subelements `<md>` are allowed so that metadata can be recorded for each separate item or component within the METS document. Metadata elements `<md>` may also be grouped within metadata group elements `<mdGrp>`.
 

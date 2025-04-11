@@ -5,7 +5,7 @@ nav_order: 2
 ---
 # METS Header 
 
-The **mets header** element `<metsHdr>` captures metadata about the METS document itself, not the digital object the METS document encodes.  Although it records a more limited set of metadata, it is very similar in function and purpose to the headers employed in other schema such as the Text Encoding Initiative (TEI) or in the Encoded Archival Description (EAD).
+The **mets header** element `<metsHdr>` records metadata about the METS document itself, not about the digital object the METS document encodes. Although it captures a more limited set of metadata, it is very similar in function and purpose to the headers used in other schemas such as the Text Encoding Initiative (TEI) or the Encoded Archival Description (EAD).
 
 The `<metsHdr>` may include: document author or agent, any alternative identifiers for a METS document, creation and update dates and times, and the status of the METS document.
 
@@ -16,7 +16,7 @@ The `<metsHdr>` may include: document author or agent, any alternative identifie
 
 ## Example
 
-Modification to this example record is indicated in LASTMODDATE.
+Modification to this example record is indicated in the LASTMODDATE attribute.
 
 ```xml
 <metsHdr CREATEDATE="2006-05-09T15:00:00"
